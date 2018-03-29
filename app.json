@@ -1,0 +1,47 @@
+{
+  "pages":[
+    "pages/main/main",
+    "pages/index/index",
+    "pages/hotelDetails/hotelDetails",
+    "pages/myCenter/myCenter",
+    "pages/productDetail/productDetail",
+    "pages/airticket/airticket",
+    "pages/selectcity/selectcity",
+    "pages/order/order"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "white",
+    "navigationBarTitleText": "畅想旅行",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar":{
+    "selectedColor":"#25538a",
+    "backgroundColor": "white",
+    "borderStyle": "black",
+    "list":[{
+      "pagePath": "pages/main/main",
+      "text": "首页",
+      "iconPath":"./images/cxhome.png",
+      "selectedIconPath":"./images/cxhome.png"
+    },{
+      "pagePath": "pages/index/index",
+      "text": "航班提醒",
+      "iconPath":"./images/cxwarn.png",
+      "selectedIconPath":"./images/cxwarn.png"
+    },{
+      "pagePath": "pages/order/order",
+      "text": "中转服务",
+      "iconPath":"./images/cxtransfer.png",
+      "selectedIconPath":"./images/cxtransfer.png"
+    },{
+      "pagePath": "pages/myCenter/myCenter",
+      "text": "个人中心",
+      "iconPath":"./images/cxme.png",
+      "selectedIconPath":"./images/cxme.png"
+    }]
+  },
+  "networkTimeout": {
+    "request": 120000
+  }
+}
