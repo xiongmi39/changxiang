@@ -1,5 +1,6 @@
 .container {
   height: 100vh;
+  background: #fff;
 }
 
 .pd-70 {
@@ -117,8 +118,13 @@
 }
 
 .date {
-  font-size: 30rpx;
+  font-size: 23rpx;
   margin-right: 1.067rem;
+  color: #898989;
+}
+
+.time{
+  font-size: 65rpx;
 }
 
 .week {
@@ -224,4 +230,47 @@
 }
 .to {
   text-align: right;
+}
+
+/*列表*/
+.weui-cells__title {
+  text-align: center;
+}
+
+.weui-cells{
+  background: #f6f6f6;
+  margin: 30rpx 0;
+}
+
+.weui-cell_access{
+
+}
+
+.weui-cell__bd{
+  display: flex;
+  border-right: 1px solid #e1e1e1;
+  margin-right: 10px;
+}
+.flight{
+  color: #cf4227;
+}
+.arrow{
+  width: 100px;
+  height: 15px;
+
+}
+.plan{
+  color: #015f89;
+  font-size: 0.8rem;
+}
+
+.inner{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background: #eee;
+  border:1px solid #e1e1e1;
+  font-size:23rpx;
+  text-align: center;
+  line-height: 100rpx;
 }

@@ -23,12 +23,13 @@ App({
     console.log('App Hide')
   },
   logIn:function(){
+    var that = this;
     wx.login({
       success: function (resdata) {
         if (resdata.code) {
           //发起网络请求
           wx.request({
-            url: appConfig.config.login,
+            url: appConfig.config.getOpenId,
             data: {
               code: resdata.code
             },
