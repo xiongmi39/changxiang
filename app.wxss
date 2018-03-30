@@ -13,3 +13,7 @@
 .maintext{
   color: #015f89;
 }
+
+page{
+	background: #f8f8f8;
+}

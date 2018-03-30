@@ -1,4 +1,3 @@
-var appConfig = require('../../utils/appConfig.js')
 
 var app = getApp()
 Page({
@@ -19,34 +18,22 @@ Page({
   },
   onLoad: function () {
     console.log('onLoad')
-    var that = this
+    var that = this;
+    console.log(app.appConfig);
   	//登录
-    wx.login({
-      success: function () {
-        wx.getUserInfo({
-          success: function (res) {
-            that.setData({userInfo: res.userInfo})
-            that.update();
-            console.log(res);
-          }
-        })
-      },
-      fail: function (res) {
-        console.log(res)
-      }
-    });
+    app.logIn();
     //接口测试
-    wx.request({
-      url: appConfig.config.test,
-      method: 'GET',
-      data: {},
-      header: {
-        'Accept': 'application/json'
-      },
-      success: function(res) {
-        console.log(res.data)
-      }
-    })
+    // wx.request({
+    //   url: appConfig.config.test,
+    //   method: 'GET',
+    //   data: {},
+    //   header: {
+    //     'Accept': 'application/json'
+    //   },
+    //   success: function(res) {
+    //     console.log(res.data)
+    //   }
+    // })
 
   },
   bindViewTap: function(event){
