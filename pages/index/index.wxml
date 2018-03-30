@@ -9,7 +9,7 @@
     </view>
 
 
-    <view class="chooseCity pd-70">
+    <view class="chooseCity pd-70" wx:if="{{showInputPanel==false}}">
       <view class="citySelect">
         <view class="smlabel from">出发地</view>
         <view class="smlabel to">到达地</view>
@@ -17,32 +17,19 @@
   		<view class="citySelect">
   			<view class="startCity" bindtap="selectCity">{{startCity}}</view>
   			<view class="citySelect_img">
-<!--           <view bindtap="rotate_img" animation="{{animation}}">
-            <image class="changeCity_bg" src="../../images/changeCity_bg.png"></image>
-          </view> -->
   				<image class="samll_plane" src="../../images/cxplan.png"></image>
   			</view>
   			<view class="endCity" bindtap="selectCity">{{endCity}}</view>
   		</view>
+    </view>
 
-<!--       <view class="chooseDate">
-        <block>
-          <picker mode="date">
-            <view class="startDate">
-              <text class="date">9月8日</text>
-              <text class="week">周二出发</text>
-            </view>
-          </picker>
-        </block>
-        <block wx:if="{{currentIndex==1}}">
-          <picker mode="date">
-            <view class="endDate">
-              <text class="date">9月11日</text>
-              <text class="week">周五返回</text>
-            </view>
-          </picker>
-        </block>
-      </view> -->
+    <view class="chooseCity pd-70" wx:if="{{showInputPanel}}">
+      <view class="citySelect">
+        <view class="smlabel from">航班号</view>
+      </view>
+      <view class="citySelect">
+        <input placeholder="请输入航班号" type="text" name="userName" placeholder-style="color:#929FB1; font-size:0.9em;font-weight:bold" />
+      </view>
     </view>
 
 <!--     <view class="title">酒店</view>

@@ -1,12 +1,13 @@
 Page({
   data: {
-    currentIndex:1,
+    currentIndex:0,
     startCity:'西安咸阳',
     endCity:'北京首都',
     hotelCity:'上海',
     adultNum: 1,
     childNum: 1,
-    rotate: -180
+    rotate: -180,
+    showInputPanel: false
   },
   onLoad: function(){
     console.log('页面加载成功');
@@ -58,7 +59,14 @@ Page({
     })
   },
   changeBtn: function(ev) {//单程，往返切换
+    var tag = false;
+    if(ev.target.dataset.index == 0){
+      tag = true;
+    }else{
+      tag = false;
+    }
     this.setData({
+      showInputPanel: tag,
       currentIndex: ev.target.dataset.index
     })
   },

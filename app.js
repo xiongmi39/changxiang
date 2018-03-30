@@ -34,15 +34,18 @@ App({
               code: resdata.code
             },
             success: function(res){
-              that.globalData.session_key = res.session_key;
+              that.globalData.token = res.token;
               that.globalData.openid = res.openid;
               wx.getUserInfo({
                 success: function (res) {
-                  that.setData({userInfo: res.userInfo})
-                  that.update();
+                  // that.setData({userInfo: res.userInfo})
+                  // that.update();
+                  that.globalData.userInfo = res.userInfo;
                   console.log(res);
                 }
               })
+              //debug
+              console.log(that.globalData);
             }
           })
 
