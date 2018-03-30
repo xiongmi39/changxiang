@@ -1,8 +1,8 @@
 Page({
   data: {
     currentIndex:1,
-    startCity:'上海',
-    endCity:'北京',
+    startCity:'西安咸阳',
+    endCity:'北京首都',
     hotelCity:'上海',
     adultNum: 1,
     childNum: 1,

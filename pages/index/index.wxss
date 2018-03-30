@@ -10,6 +10,8 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  border-top: 2rpx solid #e1e1e1;
+  margin: 2rpx 0 0 0 ;
 }
 
 .btn {
@@ -18,7 +20,8 @@
   flex-direction: row;
   font-size: 32rpx;
   justify-content: center;
-  border-bottom: 2rpx solid #cececf;
+  border-bottom: 2rpx solid #e1e1e1;
+  background: #fff;
 }
 
 .btn view {
@@ -26,20 +29,19 @@
   height: 2rem;
   line-height: 2rem;
   text-align: center;
-  color: #000;
   font-weight: 500;
 }
 
 .btn view.active {
-  color: #59A5F0;
-  border-bottom: 7rpx solid #59A5F0;
+  color: #cf4227;
+  border-bottom: 5rpx solid #cf4227;
 }
 
 .chooseCity {
   box-sizing: border-box;
   padding-top: 0.96rem;
   background-color: #fff;
-  border-bottom: 2rpx solid #cececf;
+  border-bottom: 1rpx solid #015f89;
   overflow: hidden;
 }
 
@@ -91,10 +93,10 @@
 }
 
 .chooseCity .citySelect .citySelect_img .samll_plane {
-  width: 1.653rem;
-  height: 1.12rem;
+  width: 45px;
+  height: 46px;
   position: absolute;
-  top: 54%;
+  top: 16%;
   left: 54%;
   transform: translate(-50%, -50%);
 }
@@ -212,8 +214,14 @@
 }
 
 .sureBtn {
-  color: #fff;
-  background-color: #58a4ef;
-  width: 90%;
   margin-top: 1.333333rem;
+}
+
+.smlabel {
+  color: #898989;
+  font-size: 26rpx;
+  width: 3rem;
+}
+.to {
+  text-align: right;
 }

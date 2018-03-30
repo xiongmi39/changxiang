@@ -1,27 +1,31 @@
-<!-- 
+
 <view class="container">
 
   <view class="wrap">
 
     <view class="btn" bindtap="changeBtn">
-      <view class="{{currentIndex==0?'active':''}}" data-index="0">单程</view>
-  	  <view class="{{currentIndex==1?'active':''}}" data-index="1">往返</view>
+      <view class="{{currentIndex==0?'active':''}}" data-index="0">按航班号</view>
+  	  <view class="{{currentIndex==1?'active':''}}" data-index="1">按目的地</view>
     </view>
 
 
     <view class="chooseCity pd-70">
+      <view class="citySelect">
+        <view class="smlabel from">出发地</view>
+        <view class="smlabel to">到达地</view>
+      </view>
   		<view class="citySelect">
   			<view class="startCity" bindtap="selectCity">{{startCity}}</view>
   			<view class="citySelect_img">
-          <view bindtap="rotate_img" animation="{{animation}}">
+<!--           <view bindtap="rotate_img" animation="{{animation}}">
             <image class="changeCity_bg" src="../../images/changeCity_bg.png"></image>
-          </view>
-  				<image class="samll_plane" src="../../images/samll_plane.png"></image>
+          </view> -->
+  				<image class="samll_plane" src="../../images/cxplan.png"></image>
   			</view>
   			<view class="endCity" bindtap="selectCity">{{endCity}}</view>
   		</view>
 
-      <view class="chooseDate">
+<!--       <view class="chooseDate">
         <block>
           <picker mode="date">
             <view class="startDate">
@@ -38,10 +42,10 @@
             </view>
           </picker>
         </block>
-      </view>
+      </view> -->
     </view>
 
-    <view class="title">酒店</view>
+<!--     <view class="title">酒店</view>
 
     <view class="chooseCity pd-70 pdt-0">
   		<view class="citySelect">
@@ -92,9 +96,8 @@
         <image src="../../images/tishi.png" class="tsimg"></image>
       </view>
 
-    </view>
+    </view> -->
 
-    <button class="sureBtn" bindtap="seatchProduct">确定</button>
+    <button class="sureBtn" bindtap="seatchProduct">查询航班</button>
   </view>
 </view>
- -->

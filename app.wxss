@@ -14,6 +14,16 @@
   color: #015f89;
 }
 
-page{
+page {
 	background: #f8f8f8;
+	color: #015f89;
+}
+
+button {
+	background-color: #015f89;
+	height: 45px;
+	width: 90%;
+	color: #fff;
+	font-size: 18px;
+	border-radius: 20px;
 }

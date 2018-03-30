@@ -33,11 +33,11 @@
 }
 
 .longgrid{
-  height: 280rpx;
+  height: 310rpx;
   margin: 5px 0;
 }
 .shortgrid{
-  height: 220rpx;
+  height: 250rpx;
   margin: 5px 0;
 }
 
