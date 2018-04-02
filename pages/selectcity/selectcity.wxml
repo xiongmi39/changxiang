@@ -2,7 +2,7 @@
 <view class="container">
     <view class="nav" bindtap="handleTapEvent">
         <view class="home {{currentIndex==0?'active':''}}" data-index="0">国内</view>
-        <view class="abroad {{currentIndex==1?'active':''}}" data-index="1">国际/地区</view>
+        <view class="abroad {{currentIndex==1?'active':''}}" data-index="1">国际/港澳台</view>
     </view>
     <view class="toolBar">
         <scroll-view scroll-y="true">
@@ -14,14 +14,6 @@
             <swiper-item>
                 <scroll-view scroll-y="true" >
                     <view class="wrap">
-                        <view class="now">
-                            <view>当前城市</view><image class="line" src="../../images/line.png"></image>
-                        </view>
-                        <view class="cities">
-                            <button class="city" wx:for="{{array}}" wx:key="id">
-                                {{item.message}}
-                            </button>
-                        </view>
                         <view class="hot">
                             <view>热门城市</view><image class="line" src="../../images/line.png"></image>
                         </view>

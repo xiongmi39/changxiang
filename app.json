@@ -3,11 +3,13 @@
     "pages/main/main",
     "pages/index/index",
     "pages/index/flightList/flightList",
+    "pages/index/flightDetail/flightDetail",
     "pages/hotelDetails/hotelDetails",
     "pages/myCenter/myCenter",
     "pages/productDetail/productDetail",
     "pages/airticket/airticket",
     "pages/selectcity/selectcity",
+    "pages/switchcity/switchcity",
     "pages/order/order"
   ],
   "window":{
@@ -18,7 +20,7 @@
   },
   "tabBar":{
     "selectedColor":"#25538a",
-    "backgroundColor": "white",
+    "backgroundColor": "#fff",
     "borderStyle": "black",
     "list":[{
       "pagePath": "pages/main/main",

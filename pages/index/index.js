@@ -80,7 +80,8 @@ Page({
   selectCity:function(){//选择城市
     console.log('跳转城市选择页面');
     wx.navigateTo({
-      url: '../selectcity/selectcity'
+      // url: '../selectcity/selectcity'
+      url: '../switchcity/switchcity'
     })
   },
   seatchFlight:function(){

@@ -1,6 +1,6 @@
 <!--flightList.wxml-->
 <view class="container">
-  <view class="weui-cells weui-cells_after-title">
+  <view class="weui-cells weui-cells_after-title"  bindtap="goDetail">
     <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
       <view class="weui-cell__hd">
         <view class="date">2018/3/12</view>
@@ -25,6 +25,8 @@
         <view class="inner remindme">提醒我</view>
       </view>
     </navigator>
+  </view>
+  <view class="weui-cells weui-cells_after-title">
     <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
       <view class="weui-cell__hd">
         <view class="date">2018/3/12</view>
@@ -49,6 +51,8 @@
         <view class="inner reminding">提醒中</view>
       </view>
     </navigator>
+  </view>
+  <view class="weui-cells weui-cells_after-title">
     <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
       <view class="weui-cell__hd">
         <view class="date">2018/3/12</view>
@@ -74,4 +78,5 @@
       </view>
     </navigator>
   </view>
+
 </view>

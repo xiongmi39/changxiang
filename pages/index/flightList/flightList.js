@@ -6,14 +6,13 @@ Page({
     motto: 'Hello World',
     userInfo: {}
   },
-  //事件处理函数
-  bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
-  },
   onLoad: function () {
     console.log('onLoad')
     var that = this
+  },
+  goDetail: function(){
+    wx.navigateTo({
+      url: '../flightDetail/flightDetail?flightId='+'aaa'
+    })
   }
 })
