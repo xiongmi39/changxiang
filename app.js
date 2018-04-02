@@ -60,14 +60,17 @@ App({
       }
     });
     //test
-    wx.getUserInfo({
-      success: function (res) {
-                  // that.setData({userInfo: res.userInfo})
-                  // that.update();
-                  that.globalData.userInfo = res.userInfo;
-                  console.log(res);
-                }
-              })
+          wx.request({
+            url: appConfig.config.test,
+            data: {
+              aaa:'aaa',
+              bbb:'bbb',
+              sign: appConfig.getSign(appConfig.config.test,[{key:"aaa",value:"aaa"},{key:"bbb",value:"bbb"}])
+            },
+            success: function(res){
+              console.log(res);
+            }
+          })
   }
 
 })
