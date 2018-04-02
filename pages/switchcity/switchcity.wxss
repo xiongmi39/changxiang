@@ -77,18 +77,18 @@
 
 .thisCityName {
   display: inline-block;
-  border: 1rpx solid #2ab4ff;
+  border: 1rpx solid #015f89;
   border-radius: 8rpx;
   padding: 10rpx 0;
   font-size: 24rpx;
-  color: #2ab4ff;
+  color: #015f89;
   text-align: center;
   min-width: 149.5rpx;
   margin: 20rpx 0 20rpx 30rpx;
 }
 
 .thishotText {
-  color: #2ab4ff;
+  color: #015f89;
   font-size: 20rpx;
   margin: 0 !important;
 }
@@ -107,9 +107,10 @@
   padding: 10rpx 0;
   width: 149.5rpx;
   box-sizing: border-box;
-  border: 1rpx solid #ececec;
+  border: 1rpx solid #f9f8f9;
   border-radius: 8rpx;
   margin: 10rpx 12rpx;
+  background: #f9f8f9;
 }
 
 .weui-grid__label {
@@ -126,15 +127,21 @@
   display:flex;
   height:2.133rem;
   border-bottom:1rpx solid #C7C7C9;
+  background: #fff;
+  border-top: 2px solid #e1e1e1;
 }
 .nav view {
   flex:1;
   text-align: center;
   height:2.107rem;
   line-height: 2.107rem;
-  color:#4A586A;
+  color:#015f89;
 }
 .nav view.active{
-  color:#59A5F0;
-  border-bottom: 4rpx solid #59A5F0;
+  color:#cf4227;
+  border-bottom: 4rpx solid #cf4227;
+}
+
+.weui-grids{
+  border-top: none;
 }

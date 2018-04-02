@@ -19,6 +19,7 @@ Page({
     // 生命周期函数--监听页面加载
     var searchLetter = city.searchLetter;
     var cityList = city.cityList();
+    console.log(cityList);
     var sysInfo = wx.getSystemInfoSync();
     var winHeight = sysInfo.windowHeight;
     var itemH = winHeight / searchLetter.length;
@@ -88,11 +89,29 @@ Page({
     this.setData({
       city: e.currentTarget.dataset.city
     })
+    this.navigateBackFunc();
   },
   //点击热门城市回到顶部
   hotCity: function () {
     this.setData({
       scrollTop: 0,
     })
+  },
+  handleTapEvent:function(ev){
+    // console.log(ev.target.dataset.index);
+
+    this.setData({
+      currentIndex:ev.target.dataset.index
+    })
+  },
+  navigateBackFunc: function(){
+    var pages = getCurrentPages()
+    var prevPage = pages[pages.length-1]  //当前界面
+    var prevPage = pages[pages.length-2]  //上一个页面
+    var that = this
+    prevPage.setData({
+      endCity: that.data.city
+    })
+    wx.navigateBack(prevPage);
   }
 })
