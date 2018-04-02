@@ -10,7 +10,7 @@ function getSign(url,params){
 	var paramstext = "";
 	if(params.length>0){
 		for (var i = 0 ;i<params.length; i++) {
-			var tmptext = `&${params[i].key}=${params[i].value}`;
+			var tmptext = `${params[i].key}=${params[i].value}&`;
 			paramstext += tmptext;
 		}
 	}
@@ -19,6 +19,7 @@ function getSign(url,params){
 	console.log("currentdate:"+currentdate);
 	console.log("token:"+wx.getStorageSync('token'));
 	console.log("openid:"+wx.getStorageSync('openid'));
+	console.log(`${url.replace("http://", "")}?${paramstext}token=${wx.getStorageSync('token')}&date=${currentdate}`);
 	var sign = md5.hexMD5(`${url.replace("http://", "")}?${paramstext}&token=${wx.getStorageSync('token')}&date=${currentdate}`);
 	return sign;
 }

@@ -1,10 +1,31 @@
 <!--flightDetail.wxml-->
 <view class="container">
-  <view  bindtap="bindViewTap" class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+	<view class="mainTitle">
+		<view>飞机预计起飞时间9:20</view>
+		<view style="font-size:35rpx">正在值机</view>
+	</view>
+	<view class="chooseCity pd-70">
+		<view class="citySelect">
+			<view class="smlabeldark from">西安咸阳</view>
+			<view class="smlabeldark to">北京首都</view>
+		</view>
+		<view class="citySelect">
+			<view class="smlabeldark from">T3</view>
+			<view class="smlabeldark to">T2</view>
+		</view>
+		<view class="citySelect">
+			<view class="startCity" >9:20</view>
+			<view class="citySelect_img">
+				<image class="samll_plane" src="../../../images/cxplan.png"></image>
+			</view>
+			<view class="endCity" bindtap="selectCity">11:10</view>
+		</view>
+	</view>
+	<view class="chooseCity pd-70">
+		<view class="citySelect">
+			<view class="smlabeldark from">值机区</view>
+			<view class="smlabeldark">柜台</view>
+			<view class="smlabeldark to">登机口</view>
+		</view>
+	</view>
 </view>
