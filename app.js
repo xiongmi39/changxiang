@@ -24,6 +24,8 @@ App({
   },
   logIn:function(){
     var that = this;
+    that.globalData.token = "testtoken";
+    console.log(that.globalData);
     wx.login({
       success: function (resdata) {
         if (resdata.code) {
@@ -34,8 +36,10 @@ App({
               code: resdata.code
             },
             success: function(res){
-              that.globalData.token = res.token;
-              that.globalData.openid = res.openid;
+              that.globalData.token = res.data.token;
+              that.globalData.openid = res.data.openid;
+              wx.setStorageSync('token', res.data.token);
+              wx.setStorageSync('openid', res.data.openid);
               wx.getUserInfo({
                 success: function (res) {
                   // that.setData({userInfo: res.userInfo})
@@ -44,8 +48,7 @@ App({
                   console.log(res);
                 }
               })
-              //debug
-              console.log(that.globalData);
+
             }
           })
 
@@ -60,17 +63,22 @@ App({
       }
     });
     //test
-          wx.request({
-            url: appConfig.config.test,
-            data: {
-              aaa:'aaa',
-              bbb:'bbb',
-              sign: appConfig.getSign(appConfig.config.test,[{key:"aaa",value:"aaa"},{key:"bbb",value:"bbb"}])
-            },
-            success: function(res){
-              console.log(res);
-            }
-          })
+    wx.setStorageSync('token', "tokentest");
+    wx.setStorageSync('openid', "openidtest");
+    // wx.request({
+    //   url: appConfig.config.saveUserInfo,
+    //   data: {
+    //     aaa:'123',
+    //     openid:"openid",
+    //     sign: appConfig.getSign(appConfig.config.test,[{key:"aaa",value:"123"}])
+    //   },
+    //   success: function(res){
+    //     console.log(res);
+    //   }
+    // })
+
+
+
   }
 
 })

@@ -22,17 +22,7 @@ Page({
   	//登录
     app.logIn();
     //接口测试
-    // wx.request({
-    //   url: appConfig.config.test,
-    //   method: 'GET',
-    //   data: {},
-    //   header: {
-    //     'Accept': 'application/json'
-    //   },
-    //   success: function(res) {
-    //     console.log(res.data)
-    //   }
-    // })
+
 
   },
   bindViewTap: function(event){

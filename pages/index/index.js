@@ -1,3 +1,5 @@
+var app = getApp()
+
 Page({
   data: {
     currentIndex:0,
@@ -12,7 +14,20 @@ Page({
   },
   onLoad: function(){
     console.log('页面加载成功');
-  },
+    console.log("openid");
+        //test
+        wx.request({
+          url: app.appConfig.config.saveUserInfo,
+          data: {
+            aaa:'123',
+            openid:wx.getStorageSync('openid'),
+            sign: app.appConfig.getSign(app.appConfig.config.saveUserInfo,[{key:"aaa",value:"123"}])
+          },
+          success: function(res){
+            console.log(res);
+          }
+        })
+      },
   onReady: function(){
     this.animation = wx.createAnimation({
       timingFunction: "ease",
