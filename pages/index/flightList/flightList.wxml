@@ -11,7 +11,7 @@
         <view style="width: 6.3rem">
           <view class="date flight">东方航空MU1234</view>
           <view class="time">
-            <image src="../../images/cxarrow.png" class="arrow"></image>
+            <image src="../../../images/cxarrow.png" class="arrow"></image>
           </view>
           <view class="date plan">计划起飞</view>
         </view>
@@ -37,7 +37,7 @@
         <view style="width: 6.3rem">
           <view class="date flight">东方航空MU1234</view>
           <view class="time">
-            <image src="../../images/cxarrow.png" class="arrow"></image>
+            <image src="../../../images/cxarrow.png" class="arrow"></image>
           </view>
           <view class="date plan">计划起飞</view>
         </view>
@@ -63,7 +63,7 @@
         <view style="width: 6.3rem">
           <view class="date flight">东方航空MU1234</view>
           <view class="time">
-            <image src="../../images/cxarrow.png" class="arrow"></image>
+            <image src="../../../images/cxarrow.png" class="arrow"></image>
           </view>
           <view class="date plan">计划起飞</view>
         </view>

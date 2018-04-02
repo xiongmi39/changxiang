@@ -1,0 +1,45 @@
+//所有城市数据 国内
+ // 国际/港澳台
+
+{
+    "data": [
+        {
+            "initial": "topcity",
+            "cityInfo": [
+                {
+                    "id": "1",
+                    "provincecode": "110000",
+                    "city": "北京市",
+                    "code": "110100",
+                    "initial": "topcity"
+                },
+                {
+                    "id": "1",
+                    "provincecode": "110000",
+                    "city": "上海市",
+                    "code": "110100",
+                    "initial": "topcity"
+                }
+            ]
+        },
+        {
+            "initial": "A",
+            "cityInfo": [
+                {
+                    "id": "1",
+                    "provincecode": "110000",
+                    "city": "北京市",
+                    "code": "110100",
+                    "initial": "A"
+                },
+                {
+                    "id": "1",
+                    "provincecode": "110000",
+                    "city": "上海市",
+                    "code": "110100",
+                    "initial": "A"
+                }
+            ]
+        }
+    ]
+}
