@@ -11,8 +11,8 @@
 
     <view class="chooseCity pd-70" wx:if="{{showInputPanel==false}}">
       <view class="citySelect">
-        <view class="smlabel from">出发地</view>
-        <view class="smlabel to">到达地</view>
+        <view class="smlabeldark from">出发地</view>
+        <view class="smlabeldark to">到达地</view>
       </view>
   		<view class="citySelect">
   			<view class="startCity" bindtap="selectCity">{{startCity}}</view>
@@ -23,12 +23,12 @@
   		</view>
     </view>
 
-    <view class="chooseCity pd-70" wx:if="{{showInputPanel}}">
+    <view class="chooseCity pd-70" wx:if="{{showInputPanel==true}}">
       <view class="citySelect">
         <view class="smlabel from">航班号</view>
       </view>
       <view class="citySelect">
-        <input placeholder="请输入航班号" type="text" name="userName" placeholder-style="color:#929FB1; font-size:0.9em;font-weight:bold" />
+        <input placeholder="请输入航班号" type="text" name="userName" placeholder-style="color:#b2b1b1; font-size:0.9em;" />
       </view>
     </view>
 
@@ -85,10 +85,11 @@
 
     </view> -->
 
-    <button class="sureBtn" bindtap="seatchProduct">查询航班</button>
+    <button class="sureBtn" bindtap="seatchFlight">查询航班</button>
 
   <!-- 航班列表 -->
   <view class="weui-cells__title">已添加的航班提醒</view>
+  <view wx:if="{{warnFlightLst.length > 0}}">
   <view class="weui-cells weui-cells_after-title">
     <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
       <view class="weui-cell__hd">
@@ -115,5 +116,15 @@
       </view>
     </navigator>
   </view>
+  </view>
+  <view class="weui-cells weui-cells_after-title" wx:if="{{warnFlightLst.length == 0}}">
+    <view class="warnmsg">
+      <view style="color:#b2b1b1 ">请添加航班信息，机场将免费为您提供</view>
+      <view>1.电话通知登机口变更</view>
+      <view>2.电话通知登机</view>
+      <view>3.短信通知航班延误/取消/...</view>
+    </view>
+  </view>
+
   </view>
 </view>

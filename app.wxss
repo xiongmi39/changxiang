@@ -27,3 +27,36 @@ button {
 	font-size: 18px;
 	border-radius: 20px;
 }
+.date {
+  font-size: 23rpx;
+  margin-right: 1.067rem;
+  color: #898989;
+}
+
+.time{
+  font-size: 65rpx;
+}
+
+
+/*圆形提醒*/
+.inner{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background: #eee;
+  border:1px solid #e1e1e1;
+  font-size:23rpx;
+  text-align: center;
+  line-height: 100rpx;
+}
+.remindme{
+  color: #fff;
+  background: #015f89;
+}
+.reminding{
+  color: #015f89;
+}
+.reminded{
+  background: #fff;
+  color: #898989;
+}

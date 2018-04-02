@@ -2,6 +2,7 @@
   "pages":[
     "pages/main/main",
     "pages/index/index",
+    "pages/index/flightList/flightList",
     "pages/hotelDetails/hotelDetails",
     "pages/myCenter/myCenter",
     "pages/productDetail/productDetail",

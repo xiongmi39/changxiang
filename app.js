@@ -59,6 +59,15 @@ App({
         console.log(res)
       }
     });
+    //test
+    wx.getUserInfo({
+      success: function (res) {
+                  // that.setData({userInfo: res.userInfo})
+                  // that.update();
+                  that.globalData.userInfo = res.userInfo;
+                  console.log(res);
+                }
+              })
   }
 
 })

@@ -7,7 +7,8 @@ Page({
     adultNum: 1,
     childNum: 1,
     rotate: -180,
-    showInputPanel: false
+    showInputPanel: true,
+    warnFlightLst:[1]
   },
   onLoad: function(){
     console.log('页面加载成功');
@@ -76,13 +77,15 @@ Page({
       url:'../productDetail/productDetail'
     })
   },
-
-
-
   selectCity:function(){//选择城市
     console.log('跳转城市选择页面');
     wx.navigateTo({
       url: '../selectcity/selectcity'
+    })
+  },
+  seatchFlight:function(){
+    wx.navigateTo({
+      url: './flightList/flightList'
     })
   }
 

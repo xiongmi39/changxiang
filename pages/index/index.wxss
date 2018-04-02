@@ -224,7 +224,12 @@
 }
 
 .smlabel {
-  color: #898989;
+  color: #015f89;
+  font-size: 26rpx;
+  width: 3rem;
+}
+.smlabeldark {
+  color: #b2b1b1;
   font-size: 26rpx;
   width: 3rem;
 }
@@ -264,13 +269,11 @@
   font-size: 0.8rem;
 }
 
-.inner{
-  width: 100rpx;
-  height: 100rpx;
-  border-radius: 50%;
-  background: #eee;
-  border:1px solid #e1e1e1;
-  font-size:23rpx;
-  text-align: center;
-  line-height: 100rpx;
+
+.warnmsg{
+  width: 80%;
+  margin: 0 auto;
+  color: #cf4227;
+  font-size: 33rpx;
+  line-height: 1.3rem;
 }
