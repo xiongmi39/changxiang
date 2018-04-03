@@ -1,6 +1,6 @@
 
 <view class="container">
-
+<loading hidden="{{hiddenLoading}}">正在查询</loading>
   <view class="wrap">
 
     <view class="btn" bindtap="changeBtn">
@@ -31,6 +31,7 @@
         <input placeholder="请输入航班号"  bindinput="flightNoInput" type="text" placeholder-style="color:#b2b1b1; font-size:0.9em;" />
       </view>
     </view>
+    <view class="errmsg" hidden="{{ifShowErrmsg}}"><icon type="clear" color="#cf4227" size="10"/>航班号输入错误</view>
 
     <button class="sureBtn" bindtap="seatchFlight">查询航班</button>
 

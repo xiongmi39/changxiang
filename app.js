@@ -1,9 +1,11 @@
 var appConfig = require('./utils/appConfig.js');
+var util = require('./utils/util.js');
 
 App({
   // ========== 全局数据对象（整个应用程序共享） ==========
   globalData: {},
   appConfig: appConfig,
+  util:util,
 
   // ========== 应用程序全局方法 ==========
   

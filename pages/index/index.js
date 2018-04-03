@@ -12,7 +12,9 @@ Page({
     rotate: -180,
     showInputPanel: true,
     warnFlightLst:[1],
-    flightNo:""
+    flightNo:"",
+    ifShowErrmsg: true,
+    hiddenLoading:true
   },
   onLoad: function(){
     console.log('页面加载成功');
@@ -44,15 +46,13 @@ Page({
     })
   },
   seatchFlight:function(){
-    if(this.data.currentIndex === 0){
-      if(this.data.flightNo.length == 0){
+    if(this.data.currentIndex == 0){
+      if(app.util.commonCheck.isNull(this.data.flightNo)){
         return;
       }
-      wx.navigateTo({
-        url: './flightDetail/flightDetail?flightNo='+this.data.flightNo
-      })
+      this.searchFlightByNo();
     }else{
-      if(this.data.cityCode.length == 0){
+      if(app.util.commonCheck.isNull(this.data.cityCode)){
         return;
       }
       wx.navigateTo({
@@ -63,7 +63,8 @@ Page({
   },
   flightNoInput:function(e){
     this.setData({
-      flightNo:e.detail.value
+      flightNo:e.detail.value,
+      ifShowErrmsg:true
     })
   },
   changeBtn: function(ev) {//单程，往返切换
@@ -76,6 +77,34 @@ Page({
     this.setData({
       showInputPanel: tag,
       currentIndex: ev.target.dataset.index
+    })
+  },
+  searchFlightByNo:function(){
+    var that = this;
+    that.setData({
+      hiddenLoading:false
+    })  
+    wx.request({
+      url: app.appConfig.config.getAllFlightList,
+      data: {
+        FLIGHT_NO:that.data.flightNo,
+        openid:wx.getStorageSync('openid'),
+        sign: app.appConfig.getSign(app.appConfig.config.saveUserInfo,[{key:"FLIGHT_NO",value:that.data.flightNo}])
+      },
+      success: function(res){
+        that.setData({
+          hiddenLoading:true
+        }) 
+        wx.navigateTo({
+          url: './flightDetail/flightDetail?flightNo='+this.data.flightNo
+        })
+      },
+      fail: function(){
+        that.setData({
+          ifShowErrmsg:false,
+          hiddenLoading:true
+        })        
+      }
     })
   }
 

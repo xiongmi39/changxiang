@@ -78,3 +78,15 @@ button {
   height: 27rpx;
   width: 27rpx;
 }
+
+.errmsg{
+  font-size: 30rpx;
+  margin-left: 2rem;
+  color: #cf4227;
+
+}
+
+.errmsg icon{
+  height: 30rpx;
+  width: 30rpx;
+}
