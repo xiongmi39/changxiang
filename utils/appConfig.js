@@ -4,7 +4,7 @@ var md5 = require('./md5.js');
 var app = require('./md5.js');
 
 //测试服务地址
-var basePath = "http://192.168.4.82:9080/pss_mp/login/";
+var basePath = "http://192.168.4.82:9080/pss_mp/";
 
 function getSign(url,params){
 	var paramstext = "";
@@ -55,8 +55,9 @@ return format;
 var config = {
 	'test': `${basePath}test`,
 	'login':basePath+'login'+'?',
-	'getOpenId':`${basePath}getOpenId`,
-	'saveUserInfo':`${basePath}saveUserInfo`
+	'getOpenId':`${basePath}login/getOpenId`,
+	'saveUserInfo':`${basePath}login/saveUserInfo`,
+	'getAllFlightList':`${basePath}flight/getAllFlightList`
 };
 
 module.exports = {

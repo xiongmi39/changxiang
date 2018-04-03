@@ -5,13 +5,14 @@
 		<view style="font-size:35rpx">正在值机</view>
 	</view>
 	<view class="chooseCity pd-70">
+		<view class="date flight"><image class="flighticon" src="../../../images/cxflight.png"></image>东方航空MU1234</view>
 		<view class="citySelect">
 			<view class="smlabeldark from">西安咸阳</view>
 			<view class="smlabeldark to">北京首都</view>
 		</view>
 		<view class="citySelect">
-			<view class="smlabeldark from">T3</view>
-			<view class="smlabeldark to">T2</view>
+			<view class="mdlabel from">T3</view>
+			<view class="mdlabel ">T2</view>
 		</view>
 		<view class="citySelect">
 			<view class="startCity" >9:20</view>
@@ -21,11 +22,18 @@
 			<view class="endCity" bindtap="selectCity">11:10</view>
 		</view>
 	</view>
-	<view class="chooseCity pd-70">
+	<view class="chooseCity pd-70 nobottom">
 		<view class="citySelect">
 			<view class="smlabeldark from">值机区</view>
 			<view class="smlabeldark">柜台</view>
 			<view class="smlabeldark to">登机口</view>
 		</view>
+		<view class="citySelect">
+			<view class="smlabeldark from">K,L</view>
+			<view class="smlabeldark">H37</view>
+			<view class="smlabeldark to">737</view>
+		</view>
 	</view>
+	<button class="sureBtn" bindtap="seatchFlight">添加航班提醒</button>
+	<button class="redbtn" bindtap="seatchFlight">分享我的行程</button>
 </view>

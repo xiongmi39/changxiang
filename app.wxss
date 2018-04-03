@@ -26,6 +26,12 @@ button {
 	color: #fff;
 	font-size: 18px;
 	border-radius: 20px;
+  margin: 1.333333rem auto;
+}
+.redbtn{
+  background: #fff;
+  border:1px solid #cf4227;
+  color: #015f89;
 }
 .date {
   font-size: 23rpx;
@@ -59,4 +65,16 @@ button {
 .reminded{
   background: #fff;
   color: #898989;
+}
+
+.mdlabel{
+  width: 2.5rem;
+  font-size: 30rpx;
+  text-align: center;
+  color: #005378;
+}
+
+.flighticon{
+  height: 27rpx;
+  width: 27rpx;
 }
