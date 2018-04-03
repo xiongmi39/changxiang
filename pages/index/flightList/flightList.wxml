@@ -1,5 +1,7 @@
 <!--flightList.wxml-->
 <view class="container">
+        <cxmodal id='cxmodal' >
+        </cxmodal>
   <view class="weui-cells weui-cells_after-title"  >
     <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
       <view class="weui-cell__hd">
@@ -74,7 +76,7 @@
         </view>
       </view>
       <view >
-        <view class="inner reminded">已提醒</view>
+        <view class="inner reminded" bindtap="showCxmodal">已提醒</view>
       </view>
     </navigator>
   </view>
@@ -88,10 +90,9 @@
     <input type='text'placeholder="请输入内容" auto-focus/>  
   </modal>  -->
   <!--弹窗-->
-  <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{hiddenmodalput}}"></view>
+<!--   <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{hiddenmodalput}}"></view>
   <view class="modal-dialog" wx:if="{{hiddenmodalput}}">
-<!--     <view class="modal-title">添加数量</view> -->
-<image src="../../../images/cxcancel.png" class="cancelbtn" bindtap="cancel" data-status="cancel"></image>
+    <image src="../../../images/cxcancel.png" class="cancelbtn" bindtap="cancel" data-status="cancel"></image>
     <view class="modal-content">
       <view class="warnmsg">
         <view style="color:#b2b1b1 ">机场将免费为您提供:</view>
@@ -106,10 +107,5 @@
       </view>
     </view>
     <button class="sureBtn" data-status="confirm" bindtap="confirm">确定</button>
-<!--     <view class="modal-footer">
-      <view class="btn-cancel" bindtap="cancel" data-status="cancel">取消</view>
-      <view class="btn-confirm" bindtap="confirm" data-status="confirm">确定</view>
-
-    </view> -->
-  </view>
+  </view> -->
 </view>

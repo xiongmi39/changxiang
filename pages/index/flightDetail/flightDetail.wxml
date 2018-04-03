@@ -1,18 +1,20 @@
 <!--flightDetail.wxml-->
 <view class="container">
+	<cxmodal id='cxmodal'>
+	</cxmodal>
 	<view class="mainTitle">
 		<view>飞机预计起飞时间9:20</view>
 		<view style="font-size:35rpx">正在值机</view>
 	</view>
 	<view class="chooseCity pd-70">
-		<view class="date flight"><image class="flighticon" src="../../../images/cxflight.png"></image>东方航空MU1234</view>
+		<view class="date flight"><image class="flighticon" src="../../../images/cxflight.png"></image>{{flightInfo.FLIGHT_NO}}</view>
 		<view class="citySelect">
-			<view class="smlabeldark from">西安咸阳</view>
-			<view class="smlabeldark to">北京首都</view>
+			<view class="smlabeldark from">{{startCity}}</view>
+			<view class="smlabeldark to">{{endCity}}</view>
 		</view>
 		<view class="citySelect">
-			<view class="mdlabel from">T3</view>
-			<view class="mdlabel ">T2</view>
+			<view class="mdlabel from">{{flightInfo.TERMINAL}}</view>
+			<view class="mdlabel ">{{flightInfo.ARRIVE_EXIT}}</view>
 		</view>
 		<view class="citySelect">
 			<view class="startCity" >9:20</view>
@@ -29,11 +31,11 @@
 			<view class="smlabeldark to">登机口</view>
 		</view>
 		<view class="citySelect">
-			<view class="smlabeldark from">K,L</view>
+			<view class="smlabeldark from">{{flightInfo.ISLANDS}}</view>
 			<view class="smlabeldark">H37</view>
 			<view class="smlabeldark to">737</view>
 		</view>
 	</view>
-	<button class="sureBtn" bindtap="seatchFlight">添加航班提醒</button>
+	<button class="sureBtn" bindtap="showCxmodal">添加航班提醒</button>
 	<button class="redbtn" bindtap="seatchFlight">分享我的行程</button>
 </view>

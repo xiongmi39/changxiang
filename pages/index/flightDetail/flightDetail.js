@@ -3,7 +3,16 @@
 var app = getApp()
 Page({
   data: {
-    flightNo:""
+    flightInfo:"",
+    startCity:"",
+    endCity:""
+  },
+  onReady: function () {
+    //获得dialog组件
+    this.cxmodal = this.selectComponent("#cxmodal");
+  },
+  showCxmodal(){
+    this.cxmodal.modalinput();
   },
   //事件处理函数
   bindViewTap: function() {
@@ -13,23 +22,15 @@ Page({
   },
   onLoad: function (options) {
     this.setData({    
-      flightNo: options.flightNo    
-    })  
-    console.log(this.data.flightNo);
-    this.searchFlightByNo();
-  },
-  searchFlightByNo:function(){
-    var that = this;
-    wx.request({
-      url: app.appConfig.config.getAllFlightList,
-      data: {
-        FLIGHT_NO:that.data.flightNo,
-        openid:wx.getStorageSync('openid'),
-        sign: app.appConfig.getSign(app.appConfig.config.saveUserInfo,[{key:"FLIGHT_NO",value:that.data.flightNo}])
-      },
-      success: function(res){
-        console.log(res);
-      }
+      flightInfo: JSON.parse(options.flightInfo)    
+    })
+    console.log(this.data.flightInfo);
+    var citys = flightInfo.ROUTE_C.split("-");
+    var start = citys[0];
+    var end = citys[1];
+    this.setData({
+      startCity: start,
+      endCity: end
     })
   }
 })

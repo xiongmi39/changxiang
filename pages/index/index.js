@@ -23,9 +23,9 @@ Page({
         wx.request({
           url: app.appConfig.config.saveUserInfo,
           data: {
-            aaa:'123',
+            USERNAME:'123',
             openid:wx.getStorageSync('openid'),
-            sign: app.appConfig.getSign(app.appConfig.config.saveUserInfo,[{key:"aaa",value:"123"}])
+            sign: app.appConfig.getSign(app.appConfig.config.saveUserInfo,[{key:"USERNAME",value:"123"}])
           },
           success: function(res){
             console.log(res);
@@ -94,9 +94,17 @@ Page({
       success: function(res){
         that.setData({
           hiddenLoading:true
-        }) 
+        })
+        if(!res.data.pd || res.data.pd <0){
+          that.setData({
+            ifShowErrmsg:false,
+            hiddenLoading:true
+          }) 
+          return;
+        }
+        var flightInfo = JSON.stringify(res.data.pd); 
         wx.navigateTo({
-          url: './flightDetail/flightDetail?flightNo='+this.data.flightNo
+          url: './flightDetail/flightDetail?flightInfo='+flightInfo
         })
       },
       fail: function(){

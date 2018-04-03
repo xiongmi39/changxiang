@@ -57,7 +57,8 @@ var config = {
 	'login':basePath+'login'+'?',
 	'getOpenId':`${basePath}login/getOpenId`,
 	'saveUserInfo':`${basePath}login/saveUserInfo`,
-	'getAllFlightList':`${basePath}flight/getAllFlightList`
+	'getAllFlightList':`${basePath}flight/getAllFlightByFlightNo`,
+	'getAllFlightListByDest': `${basePath}flight/getAllFlightListByDest`
 };
 
 module.exports = {

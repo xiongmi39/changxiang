@@ -6,12 +6,20 @@ Page({
     dest:"",
     hiddenmodalput:false
   },
+  onReady: function () {
+    //获得dialog组件
+    this.cxmodal = this.selectComponent("#cxmodal");
+  },
   onLoad: function (options) {
     this.setData({    
       dest: options.dest    
     })  
+    
     console.log(this.data.dest);
     this.searchFlightByDest();
+  },
+  showCxmodal(){
+    this.cxmodal.modalinput();
   },
   goDetail: function(){
     wx.navigateTo({
@@ -21,7 +29,7 @@ Page({
   searchFlightByDest:function(){
     var that = this;
     wx.request({
-      url: app.appConfig.config.getAllFlightList,
+      url: app.appConfig.config.getAllFlightListByDest,
       data: {
         DEST:that.data.dest,
         openid:wx.getStorageSync('openid'),
