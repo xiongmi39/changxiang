@@ -3,7 +3,8 @@
 var app = getApp()
 Page({
   data: {
-    dest:""
+    dest:"",
+    hiddenmodalput:false
   },
   onLoad: function (options) {
     this.setData({    
@@ -30,5 +31,22 @@ Page({
         console.log(res);
       }
     })
-  }
+  },
+  modalinput:function(){  
+    this.setData({  
+     hiddenmodalput: !this.data.hiddenmodalput  
+   })  
+  },  
+    //取消按钮  
+    cancel: function(){  
+      this.setData({  
+        hiddenmodalput: false  
+      });  
+    },  
+    //确认  
+    confirm: function(){  
+      this.setData({  
+        hiddenmodalput: false  
+      })  
+    } 
 })

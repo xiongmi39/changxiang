@@ -11,7 +11,7 @@ Page({
     childNum: 1,
     rotate: -180,
     showInputPanel: true,
-    warnFlightLst:[1],
+    warnFlightLst:[],
     flightNo:"",
     ifShowErrmsg: true,
     hiddenLoading:true

@@ -65,7 +65,7 @@
     </navigator>
   </view>
   </view>
-  <view class="weui-cells weui-cells_after-title" wx:if="{{warnFlightLst.length == 0}}">
+  <view class="weui-cells weui-cells_after-title warnpanel" wx:if="{{warnFlightLst.length == 0}}">
     <view class="warnmsg">
       <view style="color:#b2b1b1 ">请添加航班信息，机场将免费为您提供</view>
       <view>1.电话通知登机口变更</view>

@@ -1,13 +1,13 @@
 <!--flightList.wxml-->
 <view class="container">
-  <view class="weui-cells weui-cells_after-title"  bindtap="goDetail">
+  <view class="weui-cells weui-cells_after-title"  >
     <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
       <view class="weui-cell__hd">
         <view class="date">2018/3/12</view>
         <view class="time">8:00</view>
         <view class="date">西安咸阳</view>
       </view>
-      <view class="weui-cell__bd ">
+      <view class="weui-cell__bd " bindtap="goDetail">
         <view style="width: 6.3rem">
           <view class="date flight">东方航空MU1234</view>
           <view class="time">
@@ -22,7 +22,7 @@
         </view>
       </view>
       <view >
-        <view class="inner remindme">提醒我</view>
+        <view class="inner remindme" bindtap="modalinput">提醒我</view>
       </view>
     </navigator>
   </view>
@@ -78,5 +78,37 @@
       </view>
     </navigator>
   </view>
+<!--   <modal hidden="{{hiddenmodalput}}" title="" confirm-text="提交" cancel-text="重置" bindcancel="cancel" bindconfirm="confirm">
+    <view class="warnmsg">
+      <view style="color:#b2b1b1 ">请添加航班信息，机场将免费为您提供</view>
+      <view>1.电话通知登机口变更</view>
+      <view>2.电话通知登机</view>
+      <view>3.短信通知航班延误/取消/...</view>
+    </view>  
+    <input type='text'placeholder="请输入内容" auto-focus/>  
+  </modal>  -->
+  <!--弹窗-->
+  <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{hiddenmodalput}}"></view>
+  <view class="modal-dialog" wx:if="{{hiddenmodalput}}">
+<!--     <view class="modal-title">添加数量</view> -->
+<image src="../../../images/cxcancel.png" class="cancelbtn" bindtap="cancel" data-status="cancel"></image>
+    <view class="modal-content">
+      <view class="warnmsg">
+        <view style="color:#b2b1b1 ">机场将免费为您提供:</view>
+        <view>1.电话通知登机口变更</view>
+        <view>2.电话通知登机</view>
+        <view>3.短信通知航班延误/取消/...</view>
+      </view>  
+      <view class="modal-input">
+        <input placeholder-class="input-holder" type="number" maxlength="10" bindinput="inputChange" class="input" placeholder="请输入手机号"></input>
+        <input placeholder-class="input-holder" type="number" maxlength="10" bindinput="inputChange" class="input" placeholder="请输入验证码"></input>
+      </view>
+    </view>
+    <button class="sureBtn" data-status="confirm" bindtap="confirm">确定</button>
+<!--     <view class="modal-footer">
+      <view class="btn-cancel" bindtap="cancel" data-status="cancel">取消</view>
+      <view class="btn-confirm" bindtap="confirm" data-status="confirm">确定</view>
 
+    </view> -->
+  </view>
 </view>

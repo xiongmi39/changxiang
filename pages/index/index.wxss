@@ -270,10 +270,8 @@
 }
 
 
-.warnmsg{
-  width: 80%;
-  margin: 0 auto;
-  color: #cf4227;
-  font-size: 33rpx;
-  line-height: 1.3rem;
+
+
+.warnpanel{
+  height: 400px;
 }
