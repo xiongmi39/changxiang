@@ -45,10 +45,16 @@ Page({
   },
   seatchFlight:function(){
     if(this.data.currentIndex === 0){
+      if(this.data.flightNo.length == 0){
+        return;
+      }
       wx.navigateTo({
         url: './flightDetail/flightDetail?flightNo='+this.data.flightNo
       })
     }else{
+      if(this.data.cityCode.length == 0){
+        return;
+      }
       wx.navigateTo({
         url: './flightList/flightList?dest='+this.data.cityCode
       })
@@ -59,27 +65,6 @@ Page({
     this.setData({
       flightNo:e.detail.value
     })
-  },
-  seatchFlightByNo:function(){
-    console.log('No');
-    if(this.data.flightNo.length == 0){
-      return;
-    }
-    var that = this;
-    wx.request({
-      url: app.appConfig.config.getAllFlightList,
-      data: {
-        FLIGHT_NO:that.data.flightNo,
-        openid:wx.getStorageSync('openid'),
-        sign: app.appConfig.getSign(app.appConfig.config.saveUserInfo,[{key:"FLIGHT_NO",value:that.data.flightNo}])
-      },
-      success: function(res){
-        console.log(res);
-      }
-    })
-  },
-  searchFlightByDest:function(){
-    console.log('Dest');
   },
   changeBtn: function(ev) {//单程，往返切换
     var tag = false;
