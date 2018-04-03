@@ -3,12 +3,13 @@
 var app = getApp()
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {}
+    dest:""
   },
-  onLoad: function () {
-    console.log('onLoad')
-    var that = this
+  onLoad: function (options) {
+    this.setData({    
+      dest: options.dest    
+    })  
+    console.log(this.data.dest);
   },
   goDetail: function(){
     wx.navigateTo({
