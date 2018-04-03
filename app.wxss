@@ -197,3 +197,9 @@ input-holder {
   right: 10px;
   top: 10px;
 }
+.sendTxt{
+  position: absolute;
+  font-size: 30rpx;
+  right: 15%;
+  top: 40%;
+}

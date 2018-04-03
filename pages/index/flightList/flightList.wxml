@@ -100,6 +100,7 @@
         <view>3.短信通知航班延误/取消/...</view>
       </view>  
       <view class="modal-input">
+        <view class="sendTxt">获取验证码</view>
         <input placeholder-class="input-holder" type="number" maxlength="10" bindinput="inputChange" class="input" placeholder="请输入手机号"></input>
         <input placeholder-class="input-holder" type="number" maxlength="10" bindinput="inputChange" class="input" placeholder="请输入验证码"></input>
       </view>
