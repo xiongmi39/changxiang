@@ -32,8 +32,8 @@
 		</view>
 		<view class="citySelect">
 			<view class="smlabeldark from">{{flightInfo.ISLANDS}}</view>
-			<view class="smlabeldark">H37</view>
-			<view class="smlabeldark to">737</view>
+			<view class="smlabeldark">{{flightInfo.COUNTERS}}</view>
+			<view class="smlabeldark to">{{flightInfo.GATES}}</view>
 		</view>
 	</view>
 	<button class="sureBtn" bindtap="showCxmodal">添加航班提醒</button>

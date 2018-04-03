@@ -25,7 +25,7 @@ Page({
       flightInfo: JSON.parse(options.flightInfo)    
     })
     console.log(this.data.flightInfo);
-    var citys = flightInfo.ROUTE_C.split("-");
+    var citys = this.data.flightInfo.ROUTE_C.split("-");
     var start = citys[0];
     var end = citys[1];
     this.setData({
