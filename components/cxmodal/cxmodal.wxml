@@ -1,6 +1,6 @@
 <!--cxmodal.wxml-->
   <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{hiddenmodalput}}"></view>
-  <view class="modal-dialog" wx:if="{{hiddenmodalput}}">
+  <view class="modal-dialog {{isUp?'kbup':''}}" wx:if="{{hiddenmodalput}}" >
     <image src="../../images/cxcancel.png" class="cancelbtn" bindtap="cancel" data-status="cancel"></image>
     <view class="modal-content">
       <view class="warnmsg">
@@ -11,8 +11,10 @@
       </view>  
       <view class="modal-input">
         <view class="sendTxt" bindtap="getVertiCode">{{sendCount}}</view>
-        <input placeholder-class="input-holder" type="number" maxlength="11" bindinput="inputChange" id="phoneNo" class="input" placeholder="请输入手机号" bindfocus="onFocus" value="{{phoneNo}}"></input>
-        <input placeholder-class="input-holder" type="number" maxlength="10" bindinput="inputChange" class="input" placeholder="请输入验证码">{{verticode}}</input>
+        <input placeholder-class="input-holder" type="number" maxlength="11" bindinput="inputChange" id="phoneNo" class="input" placeholder="请输入手机号" bindfocus="onFocus"  value="{{phoneNo}}"></input>
+        <view class="errmsg" hidden="{{ifPhoneErr}}"><icon type="clear" color="#cf4227" size="10"/>请输入正确的手机号</view>
+        <input placeholder-class="input-holder" bindfocus="onFocus"  type="number" id="verticode" maxlength="10" bindinput="inputChange" class="input" placeholder="请输入验证码">{{verticode}}</input>
+        <view class="errmsg" hidden="{{ifVericodeErr}}"><icon type="clear" color="#cf4227" size="10"/>请输入正确的验证码</view>
       </view>
     </view>
     <button class="sureBtn" data-status="confirm" bindtap="confirm">确定</button>

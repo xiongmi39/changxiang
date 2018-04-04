@@ -42,7 +42,10 @@ Component({
     isDisabled: false,
     phoneNo:"",
     wait:60,
-    sendCount:"获取验证码"
+    sendCount:"获取验证码",
+    ifPhoneErr:true,
+    isUp:false,
+    ifVericodeErr:true
 
   },
 
@@ -59,21 +62,26 @@ Component({
     //取消按钮  
     cancel: function(){  
       this.setData({  
-        hiddenmodalput: false  
+        hiddenmodalput: false,
+        isUp:false
       });  
     },  
     //确认  
     confirm: function(){  
       this.setData({  
-        hiddenmodalput: false  
+        hiddenmodalput: false,
+        isUp:false  
       })  
     },
     getVertiCode: function(){
       if(this.data.isDisabled == true){
         return;
       }
-      if(app.util.commonCheck.isPhone(this.data.phoneNo)){
-        console.log("不是电话号码");
+      if(app.util.commonCheck.isNull(this.data.phoneNo) || !app.util.commonCheck.isPhone(this.data.phoneNo)){
+        console.log("不能为空");
+        this.setData({
+          ifPhoneErr:false
+        })
         return;
       }
       // if(!this.commonCheck.isPhone(this.formData.LoginName)){
@@ -130,11 +138,20 @@ Component({
       var value = e.detail.value;
       console.log(e);
       this.setData({
-        [key]:value
+        [key]:value,
+        ifPhoneErr:true,
+        ifVericodeErr:true
       })
     },
-    onFocus: function(e){
-
+    onFocus: function(){
+      this.setData({
+        isUp:true
+      })
+    },
+    onBlur: function(){
+     this.setData({
+      isUp:false
+    })   
     }
   }
 })

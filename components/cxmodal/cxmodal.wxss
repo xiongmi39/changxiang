@@ -109,3 +109,19 @@ input-holder {
   right: 15%;
   top: 40%;
 }
+
+.errmsg{
+  font-size: 30rpx;
+  margin-left: 2rem;
+  color: #cf4227;
+
+}
+
+.errmsg icon{
+  height: 30rpx;
+  width: 30rpx;
+}
+
+.kbup{
+  bottom: 330rpx;
+}
