@@ -4,7 +4,7 @@
         </cxmodal>
   <loading hidden="{{hiddenLoading}}">正在查询</loading>
   <view class="weui-cells weui-cells_after-title"  wx:for="{{flightList}}">
-    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+    <view open-type="switchTab"  class="weui-cell weui-cell_access" hover-class="weui-cell_active">
       <view class="weui-cell__hd">
         <view class="date">2018/3/12</view>
         <view class="time">8:00</view>
@@ -29,6 +29,6 @@
 <!--          <view class="inner reminding" bindtap="showCxmodal">提醒中</view>
         <view class="inner reminded" bindtap="showCxmodal">已提醒</view> -->
       </view>
-    </navigator>
+    </view>
   </view>
 </view>

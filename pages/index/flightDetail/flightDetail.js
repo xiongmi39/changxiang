@@ -5,7 +5,8 @@ Page({
   data: {
     flightInfo:"",
     startCity:"",
-    endCity:""
+    endCity:"",
+    realisland:""
   },
   onReady: function () {
     //获得dialog组件
@@ -25,12 +26,22 @@ Page({
       flightInfo: JSON.parse(options.flightInfo)    
     })
     console.log(this.data.flightInfo);
-    var citys = this.data.flightInfo.ROUTE_C.split("-");
+    this.handleflightInfo(this.data.flightInfo);
+  },
+  handleflightInfo: function(info){
+    var citys = info.ROUTE_C.split("-");
     var start = citys[0];
     var end = citys[1];
+
+    var islandarr = info.COUNTERS.split(",");
+    var realisland = "";
+    for(var i=0 ; i<islandarr.length;i++){
+      realisland += islandarr[i].slice(0,1);
+    }
     this.setData({
       startCity: start,
-      endCity: end
+      endCity: end,
+      realisland: realisland
     })
   }
 })

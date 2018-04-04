@@ -36,7 +36,8 @@ Component({
    */
   data: {
     // 弹窗显示控制
-    hiddenmodalput:false
+    hiddenmodalput:false,
+    verticode:""
   },
 
   /**
@@ -60,6 +61,9 @@ Component({
       this.setData({  
         hiddenmodalput: false  
       })  
+    },
+    getVertiCode: function(){
+
     }
   }
 })
