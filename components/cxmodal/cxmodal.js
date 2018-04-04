@@ -58,20 +58,35 @@ Component({
         this.setData({  
          hiddenmodalput: !this.data.hiddenmodalput  
        })  
+    },
+    resetData: function(){
+      this.setData({  
+        hiddenmodalput:false,
+        verticode:"",
+        isDisabled: false,
+        phoneNo:"",
+        wait:0,
+        sendCount:"获取验证码",
+        ifPhoneErr:true,
+        isUp:false,
+        ifVericodeErr:true
+      }) 
+
+
     },  
     //取消按钮  
     cancel: function(){  
-      this.setData({  
-        hiddenmodalput: false,
-        isUp:false
-      });  
+      this.resetData();
     },  
     //确认  
     confirm: function(){  
-      this.setData({  
-        hiddenmodalput: false,
-        isUp:false  
-      })  
+      if(app.util.commonCheck.isNull(this.data.verticode)){
+        this.setData({
+          ifVericodeErr:false
+        })
+        return;
+      }
+      this.resetData(); 
     },
     getVertiCode: function(){
       if(this.data.isDisabled == true){

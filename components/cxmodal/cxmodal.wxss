@@ -104,10 +104,18 @@ input-holder {
   top: 10px;
 }
 .sendTxt{
-  position: absolute;
+/*  position: absolute;
   font-size: 30rpx;
   right: 15%;
   top: 40%;
+  z-index: 999;*/
+  float: right;
+  position: relative;
+  font-size: 30rpx;
+  right: 10%;
+  /*top: 70rpx;*/
+  top: 20rpx;
+  z-index: 999;
 }
 
 .errmsg{
@@ -124,4 +132,11 @@ input-holder {
 
 .kbup{
   bottom: 330rpx;
+}
+
+.line-css {
+    height: 1px;
+    background: #015f89;
+    margin: 0 auto;
+    width: 80%;
 }
