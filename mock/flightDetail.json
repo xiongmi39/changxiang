@@ -1,0 +1,18 @@
+{
+    "result": "01",
+    "pd": {
+        "TERMINAL": "T2",
+        "ISLANDS": "",
+        "FLIGHT_NO": "JD5103",
+        "ARRIVE_EXIT": "",
+        "DP_TIME": 1522149300000,
+        "FLIGHT_TYPE": "D",
+        "COUNTERS": "C",
+        "ROUTE_C": "西安-济南",
+        "GATES": "",
+        "STATUS_PRO_EXT": "",
+        "ORIGIN": "XIY",
+        "FLIGHT_ID": "002d3494c66d46af8c29d72747259e66",
+        "DEST": "TNA"
+    }
+}

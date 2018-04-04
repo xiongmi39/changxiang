@@ -2,16 +2,17 @@
 <view class="container">
         <cxmodal id='cxmodal' >
         </cxmodal>
-  <view class="weui-cells weui-cells_after-title"  >
+  <loading hidden="{{hiddenLoading}}">正在查询</loading>
+  <view class="weui-cells weui-cells_after-title"  wx:for="{{flightList}}">
     <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
       <view class="weui-cell__hd">
         <view class="date">2018/3/12</view>
         <view class="time">8:00</view>
-        <view class="date">西安咸阳</view>
+        <view class="date">{{item.endCity}}</view>
       </view>
-      <view class="weui-cell__bd " bindtap="goDetail">
+      <view class="weui-cell__bd " bindtap="goDetail" data-detail = "{{item}}">
         <view style="width: 6.3rem">
-          <view class="date flight">东方航空MU1234</view>
+          <view class="date flight">{{item.FLIGHT_NO}}</view>
           <view class="time">
             <image src="../../../images/cxarrow.png" class="arrow"></image>
           </view>
@@ -20,92 +21,14 @@
         <view style="display: flex;flex-direction: column;justify-content:space-between;">
           <view class="date" style="text-align: right;width: 4.3rem">2018/3/12</view>
           <view class="time" style="text-align: right;width: 4.3rem">10:23</view>
-          <view class="date" style="text-align: right;width: 4.3rem">北京首都</view>
+          <view class="date" style="text-align: right;width: 4.3rem">{{endCity}}</view>
         </view>
       </view>
       <view >
-        <view class="inner remindme" bindtap="modalinput">提醒我</view>
+        <view class="inner remindme" bindtap="showCxmodal">提醒我</view>
+<!--          <view class="inner reminding" bindtap="showCxmodal">提醒中</view>
+        <view class="inner reminded" bindtap="showCxmodal">已提醒</view> -->
       </view>
     </navigator>
   </view>
-  <view class="weui-cells weui-cells_after-title">
-    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-      <view class="weui-cell__hd">
-        <view class="date">2018/3/12</view>
-        <view class="time">8:00</view>
-        <view class="date">西安咸阳</view>
-      </view>
-      <view class="weui-cell__bd ">
-        <view style="width: 6.3rem">
-          <view class="date flight">东方航空MU1234</view>
-          <view class="time">
-            <image src="../../../images/cxarrow.png" class="arrow"></image>
-          </view>
-          <view class="date plan">计划起飞</view>
-        </view>
-        <view style="display: flex;flex-direction: column;justify-content:space-between;">
-          <view class="date" style="text-align: right;width: 4.3rem">2018/3/12</view>
-          <view class="time" style="text-align: right;width: 4.3rem">10:23</view>
-          <view class="date" style="text-align: right;width: 4.3rem">北京首都</view>
-        </view>
-      </view>
-      <view >
-        <view class="inner reminding">提醒中</view>
-      </view>
-    </navigator>
-  </view>
-  <view class="weui-cells weui-cells_after-title">
-    <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
-      <view class="weui-cell__hd">
-        <view class="date">2018/3/12</view>
-        <view class="time">8:00</view>
-        <view class="date">西安咸阳</view>
-      </view>
-      <view class="weui-cell__bd ">
-        <view style="width: 6.3rem">
-          <view class="date flight">东方航空MU1234</view>
-          <view class="time">
-            <image src="../../../images/cxarrow.png" class="arrow"></image>
-          </view>
-          <view class="date plan">计划起飞</view>
-        </view>
-        <view style="display: flex;flex-direction: column;justify-content:space-between;">
-          <view class="date" style="text-align: right;width: 4.3rem">2018/3/12</view>
-          <view class="time" style="text-align: right;width: 4.3rem">10:23</view>
-          <view class="date" style="text-align: right;width: 4.3rem">北京首都</view>
-        </view>
-      </view>
-      <view >
-        <view class="inner reminded" bindtap="showCxmodal">已提醒</view>
-      </view>
-    </navigator>
-  </view>
-<!--   <modal hidden="{{hiddenmodalput}}" title="" confirm-text="提交" cancel-text="重置" bindcancel="cancel" bindconfirm="confirm">
-    <view class="warnmsg">
-      <view style="color:#b2b1b1 ">请添加航班信息，机场将免费为您提供</view>
-      <view>1.电话通知登机口变更</view>
-      <view>2.电话通知登机</view>
-      <view>3.短信通知航班延误/取消/...</view>
-    </view>  
-    <input type='text'placeholder="请输入内容" auto-focus/>  
-  </modal>  -->
-  <!--弹窗-->
-<!--   <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{hiddenmodalput}}"></view>
-  <view class="modal-dialog" wx:if="{{hiddenmodalput}}">
-    <image src="../../../images/cxcancel.png" class="cancelbtn" bindtap="cancel" data-status="cancel"></image>
-    <view class="modal-content">
-      <view class="warnmsg">
-        <view style="color:#b2b1b1 ">机场将免费为您提供:</view>
-        <view>1.电话通知登机口变更</view>
-        <view>2.电话通知登机</view>
-        <view>3.短信通知航班延误/取消/...</view>
-      </view>  
-      <view class="modal-input">
-        <view class="sendTxt">获取验证码</view>
-        <input placeholder-class="input-holder" type="number" maxlength="10" bindinput="inputChange" class="input" placeholder="请输入手机号"></input>
-        <input placeholder-class="input-holder" type="number" maxlength="10" bindinput="inputChange" class="input" placeholder="请输入验证码"></input>
-      </view>
-    </view>
-    <button class="sureBtn" data-status="confirm" bindtap="confirm">确定</button>
-  </view> -->
 </view>

@@ -4,7 +4,9 @@ var app = getApp()
 Page({
   data: {
     dest:"",
-    hiddenmodalput:false
+    hiddenmodalput:false,
+    flightList:[],
+    hiddenLoading:true
   },
   onReady: function () {
     //获得dialog组件
@@ -21,13 +23,18 @@ Page({
   showCxmodal(){
     this.cxmodal.modalinput();
   },
-  goDetail: function(){
+  goDetail: function(e){
+    var flightInfo = JSON.stringify(e.currentTarget.dataset.detail);
+    console.log(dataDetail);
     wx.navigateTo({
-      url: '../flightDetail/flightDetail?flightId='+'aaa'
+      url: '../flightDetail/flightDetail?flightInfo='+flightInfo
     })
   },
   searchFlightByDest:function(){
     var that = this;
+    that.setData({
+      hiddenLoading:false
+    }) 
     wx.request({
       url: app.appConfig.config.getAllFlightListByDest,
       data: {
@@ -36,25 +43,39 @@ Page({
         sign: app.appConfig.getSign(app.appConfig.config.saveUserInfo,[{key:"DEST",value:that.data.dest}])
       },
       success: function(res){
-        console.log(res);
+        that.setData({
+          hiddenLoading:true
+        })
+        if(!res.data.pd || res.data.pd <0){
+          that.setData({
+            hiddenLoading:true
+          }) 
+          return;
+        }
+        that.handleFlightList(res.data.pd);
+        that.setData({
+          flightList:res.data.pd
+        }) 
+
+      },
+      fail: function(){
+        that.setData({
+          hiddenLoading:true
+        })  
       }
     })
   },
-  modalinput:function(){  
-    this.setData({  
-     hiddenmodalput: !this.data.hiddenmodalput  
-   })  
-  },  
-    //取消按钮  
-    cancel: function(){  
-      this.setData({  
-        hiddenmodalput: false  
-      });  
-    },  
-    //确认  
-    confirm: function(){  
-      this.setData({  
-        hiddenmodalput: false  
-      })  
-    } 
+  handleFlightList:function(list){
+    list.forEach((item)=> {
+      let citys = item.ROUTE_C.split("-");
+      if(citys.length == 0){
+        return
+      }
+      let start = citys[0];
+      let end = citys[1];
+      item.startCity = start;
+      item.endCity = end;
+
+    });
+  }
 })

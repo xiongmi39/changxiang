@@ -76,7 +76,8 @@ Page({
     }
     this.setData({
       showInputPanel: tag,
-      currentIndex: ev.target.dataset.index
+      currentIndex: ev.target.dataset.index,
+      ifShowErrmsg:true
     })
   },
   searchFlightByNo:function(){

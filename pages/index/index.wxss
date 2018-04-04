@@ -97,7 +97,6 @@
   width: 45px;
   height: 46px;
   position: absolute;
-  top: 16%;
   left: 54%;
   transform: translate(-50%, -50%);
 }
@@ -274,4 +273,8 @@
 
 .warnpanel{
   height: 400px;
+}
+
+.destlabel{
+  font-size: 37rpx;
 }
