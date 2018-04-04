@@ -41,7 +41,7 @@ Component({
     verticode:"",
     isDisabled: false,
     phoneNo:"",
-    wait:"",
+    wait:60,
     sendCount:"获取验证码"
 
   },
@@ -82,7 +82,7 @@ Component({
       //   return;
       // }
       this.time();
-      this.data.isDisabled = true;
+      // this.data.isDisabled = true;
       // this.homeService.getSMSCodeSend({
       //   ReguserID: '',
       //   PhoneNumber: this.formData.LoginName
@@ -108,17 +108,33 @@ Component({
     },
     time: function() {
       if (this.data.wait == 0) {
-        this.data.sendCount="获取验证码";
+        this.setData({
+          sendCount: "获取验证码"
+        })
         this.data.wait = 60;
         this.data.isDisabled = false;
       } else { 
-        this.data.sendCount=this.data.wait+"s";
+        var showcount =this.data.wait+"s";
+        this.setData({
+          sendCount: showcount
+        })
         this.data.wait--;
         setTimeout(()=>{
-          this.data.time();
+          this.time();
         },1000);
         this.data.isDisabled = true;
       }
+    },
+    inputChange: function(e){
+      var key = e.currentTarget.id;
+      var value = e.detail.value;
+      console.log(e);
+      this.setData({
+        [key]:value
+      })
+    },
+    onFocus: function(e){
+
     }
   }
 })
