@@ -25,7 +25,6 @@ Page({
   },
   goDetail: function(e){
     var flightInfo = JSON.stringify(e.currentTarget.dataset.detail);
-    console.log(dataDetail);
     wx.navigateTo({
       url: '../flightDetail/flightDetail?flightInfo='+flightInfo
     })

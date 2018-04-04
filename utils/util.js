@@ -59,6 +59,15 @@ var commonCheck = {
 	}
 }
 
+function json2Form(json) { 
+  var str = []; 
+  for(var p in json){ 
+    str.push(encodeURIComponent(p) + "=" + encodeURIComponent(json[p])); 
+  } 
+  return str.join("&"); 
+} 
+
 module.exports = {
-	commonCheck:commonCheck
+	commonCheck:commonCheck,
+	json2Form:json2Form
 }

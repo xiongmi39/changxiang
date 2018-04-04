@@ -1,7 +1,6 @@
 //假数据
 // var basePath = "http://rap2api.taobao.org/app/mock/8763/GET/";
 var md5 = require('./md5.js');
-var app = require('./md5.js');
 
 //测试服务地址
 var basePath = "http://192.168.4.82:9080/pss_mp/";
