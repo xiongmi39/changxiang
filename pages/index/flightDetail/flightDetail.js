@@ -34,10 +34,11 @@ Page({
     var end = citys[1];
 
     var islandarr = info.COUNTERS.split(",");
-    var realisland = "";
+    var realisland = [];
     for(var i=0 ; i<islandarr.length;i++){
-      realisland += islandarr[i].slice(0,1);
+      realisland.push(islandarr[i].slice(0,1));
     }
+    realisland =realisland.join(",");
     this.setData({
       startCity: start,
       endCity: end,

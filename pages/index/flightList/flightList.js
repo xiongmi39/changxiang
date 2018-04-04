@@ -38,8 +38,8 @@ Page({
       url: app.appConfig.config.getAllFlightListByDest,
       data: {
         DEST:that.data.dest,
-        openid:wx.getStorageSync('openid'),
-        sign: app.appConfig.getSign(app.appConfig.config.saveUserInfo,[{key:"DEST",value:that.data.dest}])
+        openId:wx.getStorageSync('openId'),
+        sign: app.appConfig.getSign(app.appConfig.config.getAllFlightListByDest,[{key:"DEST",value:that.data.dest}])
       },
       success: function(res){
         that.setData({

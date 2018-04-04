@@ -64,14 +64,15 @@ App({
             },
             success: function(res){
               that.globalData.token = res.data.token;
-              that.globalData.openid = res.data.openid;
+              that.globalData.openId = res.data.openId;
               wx.setStorageSync('token', res.data.token);
-              wx.setStorageSync('openid', res.data.openid);
+              wx.setStorageSync('openId', res.data.openid);
               wx.getUserInfo({
                 success: function (res) {
                   // that.setData({userInfo: res.userInfo})
                   // that.update();
                   that.globalData.userInfo = res.userInfo;
+                  res.userInfo.openId = wx.getStorageSync('openId');
                   console.log(res);
                   that.sendUserInfo(res.userInfo);
                 }
@@ -90,23 +91,23 @@ App({
         console.log(res)
       }
     });
-    wx.getUserInfo({
-      success: function (res) {
-                  // that.setData({userInfo: res.userInfo})
-                  // that.update();
-                  that.globalData.userInfo = res.userInfo;
-                  console.log(res);
-                  that.sendUserInfo(res.userInfo);
-                }
-    })
+    // wx.getUserInfo({
+    //   success: function (res) {
+    //               // that.setData({userInfo: res.userInfo})
+    //               // that.update();
+    //               that.globalData.userInfo = res.userInfo;
+    //               console.log(res);
+    //               that.sendUserInfo(res.userInfo);
+    //             }
+    // })
     //test
     wx.setStorageSync('token', "tokentest");
-    wx.setStorageSync('openid', "openidtest");
+    wx.setStorageSync('openId', "openIdtest");
     // wx.request({
     //   url: appConfig.config.saveUserInfo,
     //   data: {
     //     aaa:'123',
-    //     openid:"openid",
+    //     openId:"openId",
     //     sign: appConfig.getSign(appConfig.config.test,[{key:"aaa",value:"123"}])
     //   },
     //   success: function(res){

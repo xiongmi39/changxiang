@@ -1,4 +1,5 @@
 //cxmodal.js
+var app = getApp()
 Component({
   options: {
     multipleSlots: true // 在组件定义时的选项中启用多slot支持
@@ -37,7 +38,12 @@ Component({
   data: {
     // 弹窗显示控制
     hiddenmodalput:false,
-    verticode:""
+    verticode:"",
+    isDisabled: false,
+    phoneNo:"",
+    wait:"",
+    sendCount:"获取验证码"
+
   },
 
   /**
@@ -63,7 +69,56 @@ Component({
       })  
     },
     getVertiCode: function(){
-
+      if(this.data.isDisabled == true){
+        return;
+      }
+      if(app.util.commonCheck.isPhone(this.data.phoneNo)){
+        console.log("不是电话号码");
+        return;
+      }
+      // if(!this.commonCheck.isPhone(this.formData.LoginName)){
+      //   this.ifShowMsg = true;
+      //   this.msg = "电话号码不正确";
+      //   return;
+      // }
+      this.time();
+      this.data.isDisabled = true;
+      // this.homeService.getSMSCodeSend({
+      //   ReguserID: '',
+      //   PhoneNumber: this.formData.LoginName
+      // }).subscribe((data:any) => {
+      //   let alert = this.alertCtrl.create({
+      //     title: '验证码获取成功',
+      //     buttons: [
+      //     {
+      //       text: data
+      //     }
+      //     ]
+      //   });
+      //   alert.present();
+      //   this.time();
+      // },err =>{
+      //   let toast = this.toastCtrl.create({
+      //     message: '获取验证码失败',
+      //     duration: 1000,
+      //     position: 'top'
+      //   });
+      //   toast.present();
+      // });
+    },
+    time: function() {
+      if (this.data.wait == 0) {
+        this.data.sendCount="获取验证码";
+        this.data.wait = 60;
+        this.data.isDisabled = false;
+      } else { 
+        this.data.sendCount=this.data.wait+"s";
+        this.data.wait--;
+        setTimeout(()=>{
+          this.data.time();
+        },1000);
+        this.data.isDisabled = true;
+      }
     }
   }
 })

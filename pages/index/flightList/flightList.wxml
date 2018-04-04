@@ -8,7 +8,7 @@
       <view class="weui-cell__hd">
         <view class="date">2018/3/12</view>
         <view class="time">8:00</view>
-        <view class="date">{{item.endCity}}</view>
+        <view class="date">{{item.startCity}}</view>
       </view>
       <view class="weui-cell__bd " bindtap="goDetail" data-detail = "{{item}}">
         <view style="width: 6.3rem">
@@ -21,7 +21,7 @@
         <view style="display: flex;flex-direction: column;justify-content:space-between;">
           <view class="date" style="text-align: right;width: 4.3rem">2018/3/12</view>
           <view class="time" style="text-align: right;width: 4.3rem">10:23</view>
-          <view class="date" style="text-align: right;width: 4.3rem">{{endCity}}</view>
+          <view class="date" style="text-align: right;width: 4.3rem">{{item.endCity}}</view>
         </view>
       </view>
       <view >

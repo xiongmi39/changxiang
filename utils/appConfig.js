@@ -14,10 +14,10 @@ function getSign(url,params){
 		}
 	}
 	var currentdate =  dateFormatter(new Date(), 'yyyyMMdd');
-	console.log("url:"+url.replace("http://", "")+paramstext);
-	console.log("currentdate:"+currentdate);
-	console.log("token:"+wx.getStorageSync('token'));
-	console.log("openid:"+wx.getStorageSync('openid'));
+	// console.log("url:"+url.replace("http://", "")+paramstext);
+	// console.log("currentdate:"+currentdate);
+	// console.log("token:"+wx.getStorageSync('token'));
+	// console.log("openid:"+wx.getStorageSync('openid'));
 	
 	var finalurl = `${url.replace("http://", "")}?${paramstext}token=${wx.getStorageSync('token')}&date=${currentdate}`;
 	console.log("finalurl:" + finalurl);

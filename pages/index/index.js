@@ -18,19 +18,19 @@ Page({
   },
   onLoad: function(){
     console.log('页面加载成功');
-    console.log("openid");
+    console.log("openId");
         //test
-        wx.request({
-          url: app.appConfig.config.saveUserInfo,
-          data: {
-            USERNAME:'123',
-            openid:wx.getStorageSync('openid'),
-            sign: app.appConfig.getSign(app.appConfig.config.saveUserInfo,[{key:"USERNAME",value:"123"}])
-          },
-          success: function(res){
-            console.log(res);
-          }
-        })
+        // wx.request({
+        //   url: app.appConfig.config.saveUserInfo,
+        //   data: {
+        //     USERNAME:'123',
+        //     openId:wx.getStorageSync('openId'),
+        //     sign: app.appConfig.getSign(app.appConfig.config.saveUserInfo,[{key:"USERNAME",value:"123"}])
+        //   },
+        //   success: function(res){
+        //     console.log(res);
+        //   }
+        // })
       },
   onReady: function(){
     this.animation = wx.createAnimation({
@@ -89,7 +89,7 @@ Page({
       url: app.appConfig.config.getAllFlightList,
       data: {
         FLIGHT_NO:that.data.flightNo,
-        openid:wx.getStorageSync('openid'),
+        openId:wx.getStorageSync('openId'),
         sign: app.appConfig.getSign(app.appConfig.config.saveUserInfo,[{key:"FLIGHT_NO",value:that.data.flightNo}])
       },
       success: function(res){
