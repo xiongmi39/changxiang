@@ -6,12 +6,12 @@
   <view class="weui-cells weui-cells_after-title"  wx:for="{{flightList}}">
     <view open-type="switchTab"  class="weui-cell weui-cell_access" hover-class="weui-cell_active">
       <view class="weui-cell__hd">
-        <view class="date">2018/3/12</view>
-        <view class="time">8:00</view>
+        <view class="date">{{item.startDate}}</view>
+        <view class="time">{{item.startTime}}</view>
         <view class="date">{{item.startCity}}</view>
       </view>
       <view class="weui-cell__bd " bindtap="goDetail" data-detail = "{{item}}">
-        <view style="width: 6.3rem">
+        <view style="width: 5rem">
           <view class="date flight">{{item.FLIGHT_NO}}</view>
           <view class="time">
             <image src="../../../images/cxarrow.png" class="arrow"></image>
@@ -19,8 +19,8 @@
           <view class="date plan">计划起飞</view>
         </view>
         <view style="display: flex;flex-direction: column;justify-content:space-between;">
-          <view class="date" style="text-align: right;width: 4.3rem">2018/3/12</view>
-          <view class="time" style="text-align: right;width: 4.3rem">10:23</view>
+          <view class="date" style="text-align: right;width: 4.3rem">{{item.endDate}}</view>
+          <view class="time" style="text-align: right;width: 4.3rem">{{item.reachTime}}</view>
           <view class="date" style="text-align: right;width: 4.3rem">{{item.endCity}}</view>
         </view>
       </view>

@@ -17,11 +17,11 @@
 			<view class="mdlabel ">{{flightInfo.ARRIVE_EXIT}}</view>
 		</view>
 		<view class="citySelect">
-			<view class="startCity" >9:20</view>
+			<view class="startCity" >{{startTime}}</view>
 			<view class="citySelect_img">
 				<image class="samll_plane" src="../../../images/cxplan.png"></image>
 			</view>
-			<view class="endCity" bindtap="selectCity">11:10</view>
+			<view class="endCity" bindtap="selectCity">{{reachTime}}</view>
 		</view>
 	</view>
 	<view class="chooseCity pd-70 nobottom">

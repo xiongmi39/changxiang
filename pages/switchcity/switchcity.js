@@ -133,6 +133,9 @@ Page({
             sign: app.appConfig.getSign(app.appConfig.config.getAllInlandDestCityinfo,[])
           },
           success: function(res){
+            if(!res.data.inlandDestCityList){
+              return;
+            }
             var cityList = city.cityList(res.data.inlandDestCityList);
             that.setData({
               cityList: cityList,
@@ -150,6 +153,9 @@ Page({
             sign: app.appConfig.getSign(app.appConfig.config.getAllInternationDestCityinfo,[])
           },
           success: function(res){
+            if(!res.data.internationDestCityList){
+              return;
+            }
             var cityList = city.cityList(res.data.internationDestCityList);
             that.setData({
               cityList: cityList,

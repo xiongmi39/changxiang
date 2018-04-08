@@ -23,7 +23,7 @@
       <text class="hotcity hotcity-common">热门城市</text>
       <view class="weui-grids">
         <block wx:for-items="{{hotcityList}}" wx:key="{{index}}">
-          <view class="weui-grid" data-cityCode="{{item.dest}}" data-city="{{item.ARPT_BRIEF_C}}" bindtap="bindHotCity" >
+          <view class="weui-grid" data-cityCode="{{item.ARPT_IATA}}" data-city="{{item.ARPT_BRIEF_C}}" bindtap="bindHotCity" >
             <view class="weui-grid__label">{{item.ARPT_BRIEF_C}}</view>
           </view>
         </block>

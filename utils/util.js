@@ -1,7 +1,7 @@
 
 var commonCheck = {
 	isNull: function(data){
-		if(!data && data.trim().length == 0){
+		if(!data || data.trim().length == 0){
 			return true;
 		}else {
 			return false;
