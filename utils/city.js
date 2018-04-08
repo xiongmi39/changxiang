@@ -18,7 +18,13 @@ function cityList(cityObj) {
         var tempArr = {};
         tempArr.initial = initial;
         for (var j = 0; j < cityObj.length; j++) {
-            if (initial == cityObj[j].dest.substring(0,1)) {
+        	var tmpinitial = "";
+        	if(cityObj[j].arpt_brief_e){
+        		tmpinitial = cityObj[j].arpt_brief_e.substring(0,1);
+        	}else{
+        		tmpinitial = cityObj[j].dest.substring(0,1)
+        	}
+            if (initial == tmpinitial) {
             	cityObj[j].initial = initial;
                 cityInfo.push(cityObj[j]);
             }

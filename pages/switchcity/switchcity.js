@@ -104,11 +104,14 @@ Page({
     })
   },
   handleTapEvent:function(ev){
-    // console.log(ev.target.dataset.index);
-
     this.setData({
       currentIndex:ev.target.dataset.index
     })
+    if(ev.target.dataset.index == 0){
+      this.getChinaCities();
+    }else{
+      this.getAllInternationDestCityinfo();
+    }
   },
   navigateBackFunc: function(){
     var pages = getCurrentPages()
@@ -123,17 +126,34 @@ Page({
   },
   getChinaCities: function(){
     var that = this;
-            //test
         wx.request({
-          url: app.appConfig.config.getAllDestCityInfo,
+          url: app.appConfig.config.getAllInlandDestCityinfo,
           data: {
             openId:wx.getStorageSync('openId'),
-            sign: app.appConfig.getSign(app.appConfig.config.getAllDestCityInfo,[])
+            sign: app.appConfig.getSign(app.appConfig.config.getAllInlandDestCityinfo,[])
           },
           success: function(res){
-            var cityList = city.cityList(res.data.pd);
+            var cityList = city.cityList(res.data.inlandDestCityList);
             that.setData({
-              cityList: cityList
+              cityList: cityList,
+              hotcityList: res.data.inlandHotCityList
+            })
+          }
+        })
+  },
+  getAllInternationDestCityinfo: function(){
+    var that = this;
+        wx.request({
+          url: app.appConfig.config.getAllInternationDestCityinfo,
+          data: {
+            openId:wx.getStorageSync('openId'),
+            sign: app.appConfig.getSign(app.appConfig.config.getAllInternationDestCityinfo,[])
+          },
+          success: function(res){
+            var cityList = city.cityList(res.data.inlandDestCityList);
+            that.setData({
+              cityList: cityList,
+              hotcityList: res.data.inlandHotCityList
             })
           }
         })

@@ -40,20 +40,32 @@
 }
 .tui-show{display: block;}
 .tui-hide{display: none;}
+.tui-hide .down{
+  display: block;
+  transform :rotate(-180deg);
+}
 
 .weui-label{
   width: 130px;
   text-align: right;
   margin-right: 10px;
+  color: #6c6c6c;
+}
+.weui-input{
+  color: #015f89;
 }
 .radio-group{
   line-height: 2.58823529em;
+  
+}
+.radio-cell{
+  border-bottom: 1px solid #eee;
 }
 picker{
   width: 20px;
   height: 20px;
   position: absolute;
-  right: 35px;
+  right: 90px;
   top: 0px;
 }
 .dateInput{
@@ -69,4 +81,12 @@ picker{
     margin: 0 auto;
     width: 80%;
     display: inline-block;
+}
+.down{
+  display: inline-block;
+  position: absolute;
+  top: 20rpx;
+  right: 40rpx;
+  width: 17px;
+  height: 22px;
 }

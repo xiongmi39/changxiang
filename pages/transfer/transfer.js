@@ -15,7 +15,8 @@ Page({
     {name: 'plane', value: '飞机'},
     {name: 'train', value: '高铁', checked: 'true'}
     ],
-    reachDate:'2016-09-01'
+    reachflDate:'2016-09-01',
+    reachtrDate:'2016-09-01'
   },
   //事件处理函数
   bindViewTap: function() {
@@ -44,8 +45,12 @@ Page({
     });
   },
   bindDateChange: function(e) {
+    var key = e.currentTarget.dataset.dateType;
     this.setData({
-      date: e.detail.value
+      [key]: e.detail.value
     })
+  },
+  reachRdoChange: function(e){
+    
   }
 })

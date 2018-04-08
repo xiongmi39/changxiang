@@ -58,7 +58,8 @@ var config = {
 	'saveUserInfo':`${basePath}login/saveUserInfo`,
 	'getAllFlightList':`${basePath}flight/getAllFlightByFlightNo`,
 	'getAllFlightListByDest': `${basePath}flight/getAllFlightListByDest`,
-	'getAllDestCityInfo': `${basePath}dest/getAllDestCityInfo`
+	'getAllInlandDestCityinfo': `${basePath}dest/getAllInlandDestCityinfo`,
+	'getAllInternationDestCityinfo': `${basePath}dest/getAllInternationDestCityinfo`
 };
 
 module.exports = {

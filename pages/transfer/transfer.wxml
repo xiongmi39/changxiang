@@ -26,39 +26,65 @@
 			
 		</view>
 		<view class="weui-cells weui-cells_after-title">
-			<view class="weui-cell weui-cell_input"  bindtap="showFrom" data-param="1">
+			<view class="weui-cell weui-cell_input radio-cell"    >
 				<view class="weui-cell__hd">
 					<view class="weui-label">您到达西安方式</view>
 				</view>
-				<view class="weui-cell__bd">
-					<radio-group class="radio-group" bindchange="radioChange">
+
+					<radio-group class="radio-group" bindchange="reachRdoChange">
 						<label class="radio" wx:for="{{items}}">
 							<radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
 						</label>
 					</radio-group>
-				</view>
+					<view style="top:0" bindtap="showFrom" data-param="1" class="down {{isShowFrom1 ? 'tui-hide' : ''}}"><image   src="../../images/cxdown.png" class=" down "></image></view>
+					
+
 			</view>
 			<view class=" {{isShowFrom1 ? '' : 'tui-hide'}}">
-			<view class="weui-cell weui-cell_input">
-				<view class="weui-cell__hd">
-					<view class="weui-label">航班号</view>
+				<view >
+					<view class="weui-cell weui-cell_input">
+						<view class="weui-cell__hd">
+							<view class="weui-label">航班号</view>
+						</view>
+						<view class="weui-cell__bd">
+							<input class="weui-input" placeholder="请输入航班号"/>
+						</view>
+					</view>
+					<view class="weui-cell weui-cell_input">
+						<view class="weui-cell__hd">
+							<view class="weui-label">到达日期</view>
+						</view>
+						<view class="weui-cell__bd">
+							<view class="weui-label dateInput" >{{reachflDate}}</view>
+							<!-- <view class="line-css"></view> -->
+							<picker data-date-type="reachflDate" class="weui-btn" mode="date" value="{{reachflDate}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+								<image  src="../../images/cxcalendar.png" class="img calendar"></image>
+							</picker>
+						</view>
+					</view>
 				</view>
-				<view class="weui-cell__bd">
-					<input class="weui-input" placeholder="请输入姓名"/>
+				<view >
+					<view class="weui-cell weui-cell_input">
+						<view class="weui-cell__hd">
+							<view class="weui-label">高铁车次</view>
+						</view>
+						<view class="weui-cell__bd">
+							<input class="weui-input" placeholder="请输入高铁车次"/>
+						</view>
+					</view>
+					<view class="weui-cell weui-cell_input">
+						<view class="weui-cell__hd">
+							<view class="weui-label">到达日期</view>
+						</view>
+						<view class="weui-cell__bd">
+							<view class="weui-label dateInput" >{{reachtrDate}}</view>
+							<!-- <view class="line-css"></view> -->
+							<picker data-date-type="reachtrDate" class="weui-btn" mode="date" value="{{reachtrDate}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+								<image  src="../../images/cxcalendar.png" class="img calendar"></image>
+							</picker>
+						</view>
+					</view>
 				</view>
-			</view>
-			<view class="weui-cell weui-cell_input">
-				<view class="weui-cell__hd">
-					<view class="weui-label">到达日期</view>
-				</view>
-				<view class="weui-cell__bd">
-					<view class="weui-label dateInput" >{{reachDate}}</view>
-					<!-- <view class="line-css"></view> -->
-					<picker class="weui-btn" mode="date" value="{{reachDate}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
-						<image  src="../../images/cxcalendar.png" class="img calendar"></image>
-					</picker>
-				</view>
-			</view>
 			</view>
 		</view>
 	</view>

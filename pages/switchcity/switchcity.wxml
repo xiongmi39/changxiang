@@ -17,14 +17,14 @@
     </block>
     <scroll-view scroll-y="true" style="height:{{winHeight}}px;background: #fff" bindscroll="bindScroll" 
     scroll-into-view="{{scrollTopId}}" scroll-top="{{scrollTop}}">
-    <view class="hotcity-common thisCity">当前选择城市</view>
-    <view class="thisCityName">{{city}}</view>
+<!--     <view class="hotcity-common thisCity">当前选择城市</view>
+    <view class="thisCityName">{{city}}</view> -->
     <view>
       <text class="hotcity hotcity-common">热门城市</text>
       <view class="weui-grids">
         <block wx:for-items="{{hotcityList}}" wx:key="{{index}}">
-          <view class="weui-grid" data-cityCode="{{item.cityCode}}" data-city="{{item.city}}" bindtap="bindHotCity" >
-            <view class="weui-grid__label">{{item.city}}</view>
+          <view class="weui-grid" data-cityCode="{{item.dest}}" data-city="{{item.ARPT_BRIEF_C}}" bindtap="bindHotCity" >
+            <view class="weui-grid__label">{{item.ARPT_BRIEF_C}}</view>
           </view>
         </block>
       </view>
