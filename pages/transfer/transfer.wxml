@@ -1,0 +1,26 @@
+<!--transfer.wxml-->
+<view class="container">
+	<view class="page__bd">
+		<view class="weui-cells__title">
+			<button class="sbtn" bindtap="seatchFlight">进入历史订单</button>
+		</view>
+		<view class="weui-cells weui-cells_after-title">
+			<view class="weui-cell weui-cell_input">
+				<view class="weui-cell__hd">
+					<view class="weui-label">身份证号</view>
+				</view>
+				<view class="weui-cell__bd">
+					<input class="weui-input" placeholder="请输入身份证号"/>
+				</view>
+			</view>
+			<view class="weui-cell weui-cell_input">
+				<view class="weui-cell__hd">
+					<view class="weui-label">姓名</view>
+				</view>
+				<view class="weui-cell__bd">
+					<input class="weui-input" placeholder="请输入姓名"/>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

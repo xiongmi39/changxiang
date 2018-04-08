@@ -1,5 +1,6 @@
 {
   "usingComponents": {
     "cxmodal": "../../../components/cxmodal/cxmodal"
-  }
+  },
+  "navigationBarTitleText": "航班提醒"
 }

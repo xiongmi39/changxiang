@@ -1,4 +1,4 @@
-<!--  
+ 
 <view class="{{addhidden?'aa':'hid'}}" >
 <view class="head">
     <view class="bord containerSmall " >  
@@ -286,4 +286,3 @@
 
  
 
- -->

@@ -33,6 +33,18 @@ button {
   border:1px solid #cf4227;
   color: #015f89;
 }
+.sbtn{
+  display: inline-block;
+  background: #fff;
+  border: 1px solid #015f89;
+  width: 30%;
+  height: 50rpx;
+  font-size: 20rpx;
+  color: #015f89;
+  margin: 0;
+  border-radius: 10px;
+  margin-left: 70%;
+}
 .date {
   font-size: 23rpx;
   margin-right: 1.067rem;

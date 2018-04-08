@@ -96,7 +96,7 @@ Page({
         that.setData({
           hiddenLoading:true
         })
-        if(!res.data.pd || res.data.pd <0){
+        if(!res.data.pd || !res.data.pd.FLIGHT_NO){
           that.setData({
             ifShowErrmsg:false,
             hiddenLoading:true

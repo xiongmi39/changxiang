@@ -10,7 +10,7 @@
     "pages/airticket/airticket",
     "pages/selectcity/selectcity",
     "pages/switchcity/switchcity",
-    "pages/order/order"
+    "pages/transfer/transfer"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -33,7 +33,7 @@
       "iconPath":"./images/cxwarn.png",
       "selectedIconPath":"./images/cxwarn.png"
     },{
-      "pagePath": "pages/order/order",
+      "pagePath": "pages/transfer/transfer",
       "text": "中转服务",
       "iconPath":"./images/cxtransfer.png",
       "selectedIconPath":"./images/cxtransfer.png"
