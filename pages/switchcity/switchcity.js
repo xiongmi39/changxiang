@@ -150,10 +150,10 @@ Page({
             sign: app.appConfig.getSign(app.appConfig.config.getAllInternationDestCityinfo,[])
           },
           success: function(res){
-            var cityList = city.cityList(res.data.inlandDestCityList);
+            var cityList = city.cityList(res.data.internationDestCityList);
             that.setData({
               cityList: cityList,
-              hotcityList: res.data.inlandHotCityList
+              hotcityList: res.data.internationHotCityList
             })
           }
         })

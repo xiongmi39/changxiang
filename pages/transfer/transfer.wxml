@@ -40,8 +40,8 @@
 					
 
 			</view>
-			<view class=" {{isShowFrom1 ? '' : 'tui-hide'}}">
-				<view >
+			<view >
+				<view class="{{isShowFrom1 ? '' : 'tui-hide'}} {{isShowRF ? '' : 'tui-hide'}}">
 					<view class="weui-cell weui-cell_input">
 						<view class="weui-cell__hd">
 							<view class="weui-label">航班号</view>
@@ -63,6 +63,7 @@
 						</view>
 					</view>
 				</view>
+				<view class="{{isShowFrom1 ? '' : 'tui-hide'}} {{isShowRT ? '' : 'tui-hide'}}">
 				<view >
 					<view class="weui-cell weui-cell_input">
 						<view class="weui-cell__hd">
@@ -84,6 +85,7 @@
 							</picker>
 						</view>
 					</view>
+				</view>
 				</view>
 			</view>
 		</view>

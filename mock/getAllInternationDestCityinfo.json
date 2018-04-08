@@ -1,0 +1,147 @@
+{
+    "result": "01",
+    "internationDestCityList": [
+        {
+            "ARPT_BRIEF_C": "阿拉木图",
+            "arpt_brief_e": "Almaty",
+            "dest": "ALA"
+        },
+        {
+            "ARPT_BRIEF_C": "阿姆斯特丹",
+            "arpt_brief_e": "Schiphol",
+            "dest": "AMS"
+        },
+        {
+            "ARPT_BRIEF_C": "曼谷素那他普",
+            "arpt_brief_e": "Bangkok",
+            "dest": "BKK"
+        },
+        {
+            "ARPT_BRIEF_C": "巴黎",
+            "arpt_brief_e": "Paris",
+            "dest": "CDG"
+        },
+        {
+            "ARPT_BRIEF_C": "芽庄",
+            "arpt_brief_e": "Cam Ranh",
+            "dest": "CXR"
+        },
+        {
+            "ARPT_BRIEF_C": "曼谷廊曼",
+            "arpt_brief_e": "Bangkok",
+            "dest": "DMK"
+        },
+        {
+            "ARPT_BRIEF_C": "巴厘岛",
+            "arpt_brief_e": "Ngurah Rai",
+            "dest": "DPS"
+        },
+        {
+            "ARPT_BRIEF_C": "迪拜",
+            "arpt_brief_e": "Dubai",
+            "dest": "DXB"
+        },
+        {
+            "ARPT_BRIEF_C": "罗马",
+            "arpt_brief_e": "Rome",
+            "dest": "FCO"
+        },
+        {
+            "ARPT_BRIEF_C": "首尔/金浦",
+            "arpt_brief_e": "Kimpo",
+            "dest": "GMP"
+        },
+        {
+            "ARPT_BRIEF_C": "香港",
+            "arpt_brief_e": "HongKong",
+            "dest": "HKG"
+        },
+        {
+            "ARPT_BRIEF_C": "普吉岛",
+            "arpt_brief_e": "Phuket",
+            "dest": "HKT"
+        },
+        {
+            "ARPT_BRIEF_C": "首尔/仁川",
+            "arpt_brief_e": "Seoul/Incheon",
+            "dest": "ICN"
+        },
+        {
+            "ARPT_BRIEF_C": "甲米",
+            "arpt_brief_e": "Krabi",
+            "dest": "KBV"
+        },
+        {
+            "ARPT_BRIEF_C": "大阪关西",
+            "arpt_brief_e": "Kansai",
+            "dest": "KIX"
+        },
+        {
+            "ARPT_BRIEF_C": "吉隆坡",
+            "arpt_brief_e": "Kuala Lumpur",
+            "dest": "KUL"
+        },
+        {
+            "ARPT_BRIEF_C": "名古屋",
+            "arpt_brief_e": "Nagoya",
+            "dest": "NGO"
+        },
+        {
+            "ARPT_BRIEF_C": "东京成田",
+            "arpt_brief_e": "Tokyo",
+            "dest": "NRT"
+        },
+        {
+            "ARPT_BRIEF_C": "冲绳",
+            "arpt_brief_e": "Okinawa",
+            "dest": "OKA"
+        },
+        {
+            "ARPT_BRIEF_C": "芝加哥",
+            "arpt_brief_e": "Chicago",
+            "dest": "ORD"
+        },
+        {
+            "ARPT_BRIEF_C": "金边",
+            "arpt_brief_e": "Phnompenh",
+            "dest": "PNH"
+        },
+        {
+            "ARPT_BRIEF_C": "釜山",
+            "arpt_brief_e": "Busan",
+            "dest": "PUS"
+        },
+        {
+            "ARPT_BRIEF_C": "新加坡",
+            "arpt_brief_e": "Singapore",
+            "dest": "SIN"
+        },
+        {
+            "ARPT_BRIEF_C": "莫斯科",
+            "arpt_brief_e": "Moscow",
+            "dest": "SVO"
+        },
+        {
+            "ARPT_BRIEF_C": "悉尼",
+            "arpt_brief_e": "Sydney",
+            "dest": "SYD"
+        },
+        {
+            "ARPT_BRIEF_C": "台北桃园",
+            "arpt_brief_e": "Taoyuan",
+            "dest": "TPE"
+        }
+    ],
+    "internationHotCityList": [
+        {
+            "ARPT_BRIEF_C": "东京成田",
+            "ARPT_IATA": "NRT",
+            "arpt_brief_e": "Tokyo"
+        },
+        {
+            "ARPT_BRIEF_C": "新加坡",
+            "ARPT_IATA": "SIN",
+            "arpt_brief_e": "Singapore"
+        }
+    ]
+}

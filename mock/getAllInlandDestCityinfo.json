@@ -1,196 +1,241 @@
 {
     "result": "01",
-    "pd": [
+    "inlandHotCityList": [
+        {
+            "ARPT_BRIEF_C": "上海虹桥",
+            "ARPT_IATA": "SHA",
+            "arpt_brief_e": "Shanghai"
+        },
+        {
+            "ARPT_BRIEF_C": "厦门",
+            "ARPT_IATA": "XMN",
+            "arpt_brief_e": "Xiamen"
+        },
+        {
+            "ARPT_BRIEF_C": "北京",
+            "ARPT_IATA": "PEK",
+            "arpt_brief_e": "Beijing"
+        },
+        {
+            "ARPT_BRIEF_C": "乌鲁木齐",
+            "ARPT_IATA": "URC",
+            "arpt_brief_e": "Wulumuqi"
+        },
+        {
+            "ARPT_BRIEF_C": "杭州",
+            "ARPT_IATA": "HGH",
+            "arpt_brief_e": "Hangzhou"
+        },
+        {
+            "ARPT_BRIEF_C": "上海浦东",
+            "ARPT_IATA": "PVG",
+            "arpt_brief_e": "Pudong"
+        },
+        {
+            "ARPT_BRIEF_C": "广州",
+            "ARPT_IATA": "CAN",
+            "arpt_brief_e": "Guangzhou"
+        },
+        {
+            "ARPT_BRIEF_C": "深圳",
+            "ARPT_IATA": "SZX",
+            "arpt_brief_e": "Shenzhen"
+        }
+    ],
+    "inlandDestCityList": [
         {
             "ARPT_BRIEF_C": "阿克苏",
+            "arpt_brief_e": "Aksu",
             "dest": "AKU"
         },
         {
-            "ARPT_BRIEF_C": "阿拉木图",
-            "dest": "ALA"
-        },
-        {
-            "ARPT_BRIEF_C": "阿姆斯特丹",
-            "dest": "AMS"
-        },
-        {
             "ARPT_BRIEF_C": "阿左旗",
+            "arpt_brief_e": "Azuoqi",
             "dest": "AXF"
         },
         {
             "ARPT_BRIEF_C": "包头",
+            "arpt_brief_e": "Baotou",
             "dest": "BAV"
         },
         {
             "ARPT_BRIEF_C": "北海",
+            "arpt_brief_e": "Beihai",
             "dest": "BHY"
         },
         {
             "ARPT_BRIEF_C": "曼谷素那他普",
+            "arpt_brief_e": "Bangkok",
             "dest": "BKK"
         },
         {
             "ARPT_BRIEF_C": "广州",
+            "arpt_brief_e": "Guangzhou",
             "dest": "CAN"
         },
         {
-            "ARPT_BRIEF_C": "巴黎",
-            "dest": "CDG"
-        },
-        {
             "ARPT_BRIEF_C": "常德",
+            "arpt_brief_e": "Changde",
             "dest": "CGD"
         },
         {
             "ARPT_BRIEF_C": "郑州",
+            "arpt_brief_e": "Zhengzhou",
             "dest": "CGO"
         },
         {
             "ARPT_BRIEF_C": "长春",
+            "arpt_brief_e": "Changchun",
             "dest": "CGQ"
         },
         {
             "ARPT_BRIEF_C": "赤峰",
+            "arpt_brief_e": "CHIFENG",
             "dest": "CIF"
         },
         {
             "ARPT_BRIEF_C": "重庆",
+            "arpt_brief_e": "Chongqing",
             "dest": "CKG"
         },
         {
             "ARPT_BRIEF_C": "清迈",
+            "arpt_brief_e": "Chiangmai",
             "dest": "CNX"
         },
         {
             "ARPT_BRIEF_C": "长沙",
+            "arpt_brief_e": "Changsha",
             "dest": "CSX"
         },
         {
             "ARPT_BRIEF_C": "成都",
+            "arpt_brief_e": "Chengdu",
             "dest": "CTU"
         },
         {
             "ARPT_BRIEF_C": "芽庄",
+            "arpt_brief_e": "Cam Ranh",
             "dest": "CXR"
         },
         {
             "ARPT_BRIEF_C": "常州",
+            "arpt_brief_e": "Changzhou",
             "dest": "CZX"
         },
         {
             "ARPT_BRIEF_C": "大同",
+            "arpt_brief_e": "Datong",
             "dest": "DAT"
         },
         {
             "ARPT_BRIEF_C": "稻城",
+            "arpt_brief_e": "daocheng",
             "dest": "DCY"
         },
         {
             "ARPT_BRIEF_C": "大连",
+            "arpt_brief_e": "Dalian",
             "dest": "DLC"
         },
         {
             "ARPT_BRIEF_C": "大理",
+            "arpt_brief_e": "Dali",
             "dest": "DLU"
         },
         {
-            "ARPT_BRIEF_C": "曼谷廊曼",
-            "dest": "DMK"
-        },
-        {
             "ARPT_BRIEF_C": "敦煌",
+            "arpt_brief_e": "Dunhuang",
             "dest": "DNH"
         },
         {
             "ARPT_BRIEF_C": "东营",
+            "arpt_brief_e": "Dongying",
             "dest": "DOY"
         },
         {
-            "ARPT_BRIEF_C": "巴厘岛",
-            "dest": "DPS"
-        },
-        {
             "ARPT_BRIEF_C": "大庆",
+            "arpt_brief_e": "Daqing",
             "dest": "DQA"
         },
         {
             "ARPT_BRIEF_C": "鄂尔多斯",
+            "arpt_brief_e": "Ordos",
             "dest": "DSN"
         },
         {
-            "ARPT_BRIEF_C": "迪拜",
-            "dest": "DXB"
-        },
-        {
             "ARPT_BRIEF_C": "张家界",
+            "arpt_brief_e": "Zhangjiajie",
             "dest": "DYG"
         },
         {
             "ARPT_BRIEF_C": "额济纳旗",
+            "arpt_brief_e": "ejinaqi",
             "dest": "EJN"
         },
         {
             "ARPT_BRIEF_C": "延安",
+            "arpt_brief_e": "Yan`an",
             "dest": "ENY"
         },
         {
-            "ARPT_BRIEF_C": "罗马",
-            "dest": "FCO"
-        },
-        {
             "ARPT_BRIEF_C": "福州",
+            "arpt_brief_e": "Fuzhou",
             "dest": "FOC"
         },
         {
-            "ARPT_BRIEF_C": "首尔/金浦",
-            "dest": "GMP"
-        },
-        {
             "ARPT_BRIEF_C": "果洛",
+            "arpt_brief_e": "Guoluo",
             "dest": "GMQ"
         },
         {
             "ARPT_BRIEF_C": "格尔木",
+            "arpt_brief_e": "Ge`er`mu",
             "dest": "GOQ"
         },
         {
             "ARPT_BRIEF_C": "固原",
+            "arpt_brief_e": "Guyuan",
             "dest": "GYU"
         },
         {
             "ARPT_BRIEF_C": "海口",
+            "arpt_brief_e": "Haikou",
             "dest": "HAK"
         },
         {
             "ARPT_BRIEF_C": "呼和浩特",
+            "arpt_brief_e": "Huhehaote",
             "dest": "HET"
         },
         {
             "ARPT_BRIEF_C": "合肥",
+            "arpt_brief_e": "Hefei",
             "dest": "HFE"
         },
         {
             "ARPT_BRIEF_C": "杭州",
+            "arpt_brief_e": "Hangzhou",
             "dest": "HGH"
         },
         {
             "ARPT_BRIEF_C": "香港",
+            "arpt_brief_e": "HongKong",
             "dest": "HKG"
         },
         {
-            "ARPT_BRIEF_C": "普吉岛",
-            "dest": "HKT"
-        },
-        {
             "ARPT_BRIEF_C": "海拉尔",
+            "arpt_brief_e": "Haila`ai",
             "dest": "HLD"
         },
         {
             "ARPT_BRIEF_C": "哈密",
+            "arpt_brief_e": "Hami",
             "dest": "HMI"
         },
         {
             "ARPT_BRIEF_C": "哈尔滨",
+            "arpt_brief_e": "Ha`erbin",
             "dest": "HRB"
         },
         {
@@ -199,302 +244,312 @@
         },
         {
             "ARPT_BRIEF_C": "台州",
+            "arpt_brief_e": "Taizhou",
             "dest": "HYN"
         },
         {
             "ARPT_BRIEF_C": "汉中",
+            "arpt_brief_e": "Hanzhong",
             "dest": "HZG"
         },
         {
-            "ARPT_BRIEF_C": "首尔/仁川",
-            "dest": "ICN"
-        },
-        {
             "ARPT_BRIEF_C": "银川",
+            "arpt_brief_e": "Yinchuan",
             "dest": "INC"
         },
         {
             "ARPT_BRIEF_C": "嘉峪关",
+            "arpt_brief_e": "Jiayuguan",
             "dest": "JGN"
         },
         {
             "ARPT_BRIEF_C": "西双版纳",
+            "arpt_brief_e": "Xishuangbanna",
             "dest": "JHG"
         },
         {
             "ARPT_BRIEF_C": "金昌",
+            "arpt_brief_e": "Jinchang",
             "dest": "JIC"
         },
         {
             "ARPT_BRIEF_C": "泉州",
+            "arpt_brief_e": "Quanzhou",
             "dest": "JJN"
         },
         {
-            "ARPT_BRIEF_C": "甲米",
-            "dest": "KBV"
-        },
-        {
             "ARPT_BRIEF_C": "喀什",
+            "arpt_brief_e": "Kashi",
             "dest": "KHG"
         },
         {
             "ARPT_BRIEF_C": "南昌",
+            "arpt_brief_e": "Nanchang",
             "dest": "KHN"
         },
         {
-            "ARPT_BRIEF_C": "大阪关西",
-            "dest": "KIX"
-        },
-        {
             "ARPT_BRIEF_C": "昆明",
+            "arpt_brief_e": "Kunming",
             "dest": "KMG"
         },
         {
             "ARPT_BRIEF_C": "库尔勒",
+            "arpt_brief_e": "Kuerle",
             "dest": "KRL"
         },
         {
             "ARPT_BRIEF_C": "克拉玛依",
+            "arpt_brief_e": "Kelamayi",
             "dest": "KRY"
         },
         {
-            "ARPT_BRIEF_C": "吉隆坡",
-            "dest": "KUL"
-        },
-        {
             "ARPT_BRIEF_C": "贵阳",
+            "arpt_brief_e": "Guiyang",
             "dest": "KWE"
         },
         {
             "ARPT_BRIEF_C": "桂林",
+            "arpt_brief_e": "Guilin",
             "dest": "KWL"
         },
         {
             "ARPT_BRIEF_C": "兰州",
+            "arpt_brief_e": "Lanzhou",
             "dest": "LHW"
         },
         {
             "ARPT_BRIEF_C": "丽江",
+            "arpt_brief_e": "Lijiang",
             "dest": "LJG"
         },
         {
             "ARPT_BRIEF_C": "吕梁",
+            "arpt_brief_e": "Lvliang",
             "dest": "LLV"
         },
         {
             "ARPT_BRIEF_C": "芒市",
+            "arpt_brief_e": "Mangshi",
             "dest": "LUM"
         },
         {
             "ARPT_BRIEF_C": "拉萨",
+            "arpt_brief_e": "Lasa",
             "dest": "LXA"
         },
         {
             "ARPT_BRIEF_C": "梅县",
+            "arpt_brief_e": "MeiXian",
             "dest": "MXZ"
         },
         {
             "ARPT_BRIEF_C": "南苑",
+            "arpt_brief_e": "Nanyuan",
             "dest": "NAY"
         },
         {
             "ARPT_BRIEF_C": "宁波",
+            "arpt_brief_e": "Ningbo",
             "dest": "NGB"
         },
         {
-            "ARPT_BRIEF_C": "名古屋",
-            "dest": "NGO"
-        },
-        {
             "ARPT_BRIEF_C": "南京",
+            "arpt_brief_e": "Nanjing",
             "dest": "NKG"
         },
         {
             "ARPT_BRIEF_C": "南宁",
+            "arpt_brief_e": "Nanning",
             "dest": "NNG"
         },
         {
-            "ARPT_BRIEF_C": "东京成田",
-            "dest": "NRT"
-        },
-        {
             "ARPT_BRIEF_C": "南通",
+            "arpt_brief_e": "Nantong",
             "dest": "NTG"
         },
         {
-            "ARPT_BRIEF_C": "冲绳",
-            "dest": "OKA"
-        },
-        {
-            "ARPT_BRIEF_C": "芝加哥",
-            "dest": "ORD"
-        },
-        {
             "ARPT_BRIEF_C": "北京",
+            "arpt_brief_e": "Beijing",
             "dest": "PEK"
         },
         {
-            "ARPT_BRIEF_C": "金边",
-            "dest": "PNH"
-        },
-        {
             "ARPT_BRIEF_C": "普罗瑟派恩",
+            "arpt_brief_e": "Whitsunday Coast",
             "dest": "PPP"
         },
         {
-            "ARPT_BRIEF_C": "釜山",
-            "dest": "PUS"
-        },
-        {
             "ARPT_BRIEF_C": "上海浦东",
+            "arpt_brief_e": "Pudong",
             "dest": "PVG"
         },
         {
             "ARPT_BRIEF_C": "上海虹桥",
+            "arpt_brief_e": "Shanghai",
             "dest": "SHA"
         },
         {
             "ARPT_BRIEF_C": "沈阳",
+            "arpt_brief_e": "Shenyang",
             "dest": "SHE"
         },
         {
-            "ARPT_BRIEF_C": "新加坡",
-            "dest": "SIN"
-        },
-        {
             "ARPT_BRIEF_C": "石家庄",
+            "arpt_brief_e": "Shijiazhuang",
             "dest": "SJW"
         },
         {
-            "ARPT_BRIEF_C": "莫斯科",
-            "dest": "SVO"
-        },
-        {
             "ARPT_BRIEF_C": "揭阳",
+            "arpt_brief_e": "Jieyang",
             "dest": "SWA"
         },
         {
-            "ARPT_BRIEF_C": "悉尼",
-            "dest": "SYD"
-        },
-        {
             "ARPT_BRIEF_C": "三亚",
+            "arpt_brief_e": "Sanya",
             "dest": "SYX"
         },
         {
             "ARPT_BRIEF_C": "深圳",
+            "arpt_brief_e": "Shenzhen",
             "dest": "SZX"
         },
         {
             "ARPT_BRIEF_C": "青岛",
+            "arpt_brief_e": "Qingdao",
             "dest": "TAO"
         },
         {
             "ARPT_BRIEF_C": "腾冲",
+            "arpt_brief_e": "Tengchong",
             "dest": "TCZ"
         },
         {
             "ARPT_BRIEF_C": "通辽",
+            "arpt_brief_e": "Tongliao",
             "dest": "TGO"
         },
         {
             "ARPT_BRIEF_C": "济南",
+            "arpt_brief_e": "Jinan",
             "dest": "TNA"
         },
         {
             "ARPT_BRIEF_C": "台北桃园",
+            "arpt_brief_e": "Taoyuan",
             "dest": "TPE"
         },
         {
             "ARPT_BRIEF_C": "天津",
+            "arpt_brief_e": "Tianjin",
             "dest": "TSN"
         },
         {
             "ARPT_BRIEF_C": "太原",
+            "arpt_brief_e": "Taiyuan",
             "dest": "TYN"
         },
         {
             "ARPT_BRIEF_C": "乌鲁木齐",
+            "arpt_brief_e": "Wulumuqi",
             "dest": "URC"
         },
         {
             "ARPT_BRIEF_C": "榆林",
+            "arpt_brief_e": "Yulin",
             "dest": "UYN"
         },
         {
             "ARPT_BRIEF_C": "邵阳武冈",
+            "arpt_brief_e": "Shaoyangwugang",
             "dest": "WGN"
         },
         {
             "ARPT_BRIEF_C": "温州",
+            "arpt_brief_e": "Wenzhou",
             "dest": "WNZ"
         },
         {
             "ARPT_BRIEF_C": "乌海",
+            "arpt_brief_e": "Wuhai",
             "dest": "WUA"
         },
         {
             "ARPT_BRIEF_C": "武汉",
+            "arpt_brief_e": "Wuhan",
             "dest": "WUH"
         },
         {
             "ARPT_BRIEF_C": "无锡",
+            "arpt_brief_e": "Wuxi",
             "dest": "WUX"
         },
         {
             "ARPT_BRIEF_C": "西郊",
+            "arpt_brief_e": "Xijiao",
             "dest": "XIJ"
         },
         {
             "ARPT_BRIEF_C": "锡林浩特",
+            "arpt_brief_e": "Xilinhaote",
             "dest": "XIL"
         },
         {
             "ARPT_BRIEF_C": "西安",
+            "arpt_brief_e": "Xi`an",
             "dest": "XIY"
         },
         {
             "ARPT_BRIEF_C": "厦门",
+            "arpt_brief_e": "Xiamen",
             "dest": "XMN"
         },
         {
             "ARPT_BRIEF_C": "西宁",
+            "arpt_brief_e": "Xining",
             "dest": "XNN"
         },
         {
             "ARPT_BRIEF_C": "徐州",
+            "arpt_brief_e": "Xuzhou",
             "dest": "XUZ"
         },
         {
             "ARPT_BRIEF_C": "伊宁",
+            "arpt_brief_e": "Yining",
             "dest": "YIN"
         },
         {
             "ARPT_BRIEF_C": "烟台",
+            "arpt_brief_e": "Yantai",
             "dest": "YNT"
         },
         {
             "ARPT_BRIEF_C": "扬州",
+            "arpt_brief_e": "YangZhou",
             "dest": "YTY"
         },
         {
             "ARPT_BRIEF_C": "玉树",
+            "arpt_brief_e": "Yushu",
             "dest": "YUS"
         },
         {
             "ARPT_BRIEF_C": "张掖",
+            "arpt_brief_e": "Zhangye",
             "dest": "YZY"
         },
         {
             "ARPT_BRIEF_C": "湛江",
+            "arpt_brief_e": "Zhanjiang",
             "dest": "ZHA"
         },
         {
             "ARPT_BRIEF_C": "中卫",
+            "arpt_brief_e": "Zhongwei",
             "dest": "ZHY"
         },
         {
             "ARPT_BRIEF_C": "珠海",
+            "arpt_brief_e": "Zhuhai",
             "dest": "ZUH"
         }
     ]
