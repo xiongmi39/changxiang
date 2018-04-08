@@ -215,3 +215,7 @@ input-holder {
   right: 15%;
   top: 40%;
 }
+.calendar{
+  height: 20px;
+  width: 20px;
+}

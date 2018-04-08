@@ -3,8 +3,19 @@
 var app = getApp()
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {}
+    isShowFrom1: false,
+    isShowFrom2: false,
+    isShowFrom3: false,
+    indicatorDots: true,
+    vertical: false,
+    autoplay: true,
+    interval: 3000,
+    duration: 800,
+    items: [
+    {name: 'plane', value: '飞机'},
+    {name: 'train', value: '高铁', checked: 'true'}
+    ],
+    reachDate:'2016-09-01'
   },
   //事件处理函数
   bindViewTap: function() {
@@ -13,15 +24,28 @@ Page({
     })
   },
   onLoad: function () {
-   //  console.log('onLoad')
-   //  var that = this
-  	// //调用应用实例的方法获取全局数据
-   //  app.getUserInfo(function(userInfo){
-   //    //更新数据
-   //    that.setData({
-   //      userInfo:userInfo
-   //    })
-   //    that.update()
-   //  })
+    console.log('onLoad')
+    var that = this
+  	//调用应用实例的方法获取全局数据
+    // app.getUserInfo(function(userInfo){
+    //   //更新数据
+    //   that.setData({
+    //     userInfo:userInfo
+    //   })
+    //   that.update()
+    // })
+  },
+  showFrom: function(e){
+    var param = e.currentTarget.dataset.param; 
+    this.setData({ 
+      isShowFrom1: param == 1 ? (!this.data.isShowFrom1) : false,
+      isShowFrom2: param == 2 ? (!this.data.isShowFrom2) : false,
+      isShowFrom3: param == 3 ? (!this.data.isShowFrom3) : false
+    });
+  },
+  bindDateChange: function(e) {
+    this.setData({
+      date: e.detail.value
+    })
   }
 })

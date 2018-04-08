@@ -19,3 +19,44 @@
 .usermotto {
   margin-top: 200px;
 }
+
+/*折叠面板*/
+.tui-accordion-content{
+  margin: 10px;
+  border: 1px solid #c8c7cc;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.tui-accordion-from{padding-left: 0;}
+.tui-accordion-from input{
+  height: 80rpx;
+  line-height: 80rpx;
+}
+
+.tui-input-name{
+  height: 80rpx;
+  float: left;
+  width: 200rpx;
+}
+.tui-show{display: block;}
+.tui-hide{display: none;}
+
+.weui-label{
+  width: 130px;
+  text-align: right;
+  margin-right: 10px;
+}
+.radio-group{
+  line-height: 2.58823529em;
+}
+picker{
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  right: 35px;
+  top: 0px;
+}
+.dateInput{
+  line-height: 2.58823529em;
+  text-align: left;
+}
