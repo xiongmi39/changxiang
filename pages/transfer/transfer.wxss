@@ -59,4 +59,14 @@ picker{
 .dateInput{
   line-height: 2.58823529em;
   text-align: left;
+  border-bottom: 1px solid #015f89;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+.line-css {
+    height: 1px;
+    background: #015f89;
+    margin: 0 auto;
+    width: 80%;
+    display: inline-block;
 }

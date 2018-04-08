@@ -19,8 +19,9 @@ Page({
   onLoad: function () {
     // 生命周期函数--监听页面加载
     var searchLetter = city.searchLetter;
-    var cityList = city.cityList();
-    console.log(cityList);
+    this.getChinaCities();
+    // var cityList = city.cityList();
+    // console.log(cityList);
     var sysInfo = wx.getSystemInfoSync();
     var winHeight = sysInfo.windowHeight;
     var itemH = winHeight / searchLetter.length;
@@ -35,8 +36,7 @@ Page({
     this.setData({
       winHeight: winHeight,
       itemH: itemH,
-      searchLetter: tempObj,
-      cityList: cityList
+      searchLetter: tempObj
     })
 
   },
@@ -86,6 +86,7 @@ Page({
      city: e.currentTarget.dataset.city,
      cityCode: e.currentTarget.dataset.citycode
     })
+    this.navigateBackFunc();
   },
   //选择热门城市
   bindHotCity: function (e) {
@@ -119,5 +120,22 @@ Page({
       cityCode: that.data.cityCode
     })
     wx.navigateBack(prevPage);
+  },
+  getChinaCities: function(){
+    var that = this;
+            //test
+        wx.request({
+          url: app.appConfig.config.getAllDestCityInfo,
+          data: {
+            openId:wx.getStorageSync('openId'),
+            sign: app.appConfig.getSign(app.appConfig.config.getAllDestCityInfo,[])
+          },
+          success: function(res){
+            var cityList = city.cityList(res.data.pd);
+            that.setData({
+              cityList: cityList
+            })
+          }
+        })
   }
 })

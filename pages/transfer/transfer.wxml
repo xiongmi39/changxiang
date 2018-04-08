@@ -53,6 +53,7 @@
 				</view>
 				<view class="weui-cell__bd">
 					<view class="weui-label dateInput" >{{reachDate}}</view>
+					<!-- <view class="line-css"></view> -->
 					<picker class="weui-btn" mode="date" value="{{reachDate}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
 						<image  src="../../images/cxcalendar.png" class="img calendar"></image>
 					</picker>

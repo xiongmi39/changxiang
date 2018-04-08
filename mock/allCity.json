@@ -1,0 +1,501 @@
+{
+    "result": "01",
+    "pd": [
+        {
+            "ARPT_BRIEF_C": "阿克苏",
+            "dest": "AKU"
+        },
+        {
+            "ARPT_BRIEF_C": "阿拉木图",
+            "dest": "ALA"
+        },
+        {
+            "ARPT_BRIEF_C": "阿姆斯特丹",
+            "dest": "AMS"
+        },
+        {
+            "ARPT_BRIEF_C": "阿左旗",
+            "dest": "AXF"
+        },
+        {
+            "ARPT_BRIEF_C": "包头",
+            "dest": "BAV"
+        },
+        {
+            "ARPT_BRIEF_C": "北海",
+            "dest": "BHY"
+        },
+        {
+            "ARPT_BRIEF_C": "曼谷素那他普",
+            "dest": "BKK"
+        },
+        {
+            "ARPT_BRIEF_C": "广州",
+            "dest": "CAN"
+        },
+        {
+            "ARPT_BRIEF_C": "巴黎",
+            "dest": "CDG"
+        },
+        {
+            "ARPT_BRIEF_C": "常德",
+            "dest": "CGD"
+        },
+        {
+            "ARPT_BRIEF_C": "郑州",
+            "dest": "CGO"
+        },
+        {
+            "ARPT_BRIEF_C": "长春",
+            "dest": "CGQ"
+        },
+        {
+            "ARPT_BRIEF_C": "赤峰",
+            "dest": "CIF"
+        },
+        {
+            "ARPT_BRIEF_C": "重庆",
+            "dest": "CKG"
+        },
+        {
+            "ARPT_BRIEF_C": "清迈",
+            "dest": "CNX"
+        },
+        {
+            "ARPT_BRIEF_C": "长沙",
+            "dest": "CSX"
+        },
+        {
+            "ARPT_BRIEF_C": "成都",
+            "dest": "CTU"
+        },
+        {
+            "ARPT_BRIEF_C": "芽庄",
+            "dest": "CXR"
+        },
+        {
+            "ARPT_BRIEF_C": "常州",
+            "dest": "CZX"
+        },
+        {
+            "ARPT_BRIEF_C": "大同",
+            "dest": "DAT"
+        },
+        {
+            "ARPT_BRIEF_C": "稻城",
+            "dest": "DCY"
+        },
+        {
+            "ARPT_BRIEF_C": "大连",
+            "dest": "DLC"
+        },
+        {
+            "ARPT_BRIEF_C": "大理",
+            "dest": "DLU"
+        },
+        {
+            "ARPT_BRIEF_C": "曼谷廊曼",
+            "dest": "DMK"
+        },
+        {
+            "ARPT_BRIEF_C": "敦煌",
+            "dest": "DNH"
+        },
+        {
+            "ARPT_BRIEF_C": "东营",
+            "dest": "DOY"
+        },
+        {
+            "ARPT_BRIEF_C": "巴厘岛",
+            "dest": "DPS"
+        },
+        {
+            "ARPT_BRIEF_C": "大庆",
+            "dest": "DQA"
+        },
+        {
+            "ARPT_BRIEF_C": "鄂尔多斯",
+            "dest": "DSN"
+        },
+        {
+            "ARPT_BRIEF_C": "迪拜",
+            "dest": "DXB"
+        },
+        {
+            "ARPT_BRIEF_C": "张家界",
+            "dest": "DYG"
+        },
+        {
+            "ARPT_BRIEF_C": "额济纳旗",
+            "dest": "EJN"
+        },
+        {
+            "ARPT_BRIEF_C": "延安",
+            "dest": "ENY"
+        },
+        {
+            "ARPT_BRIEF_C": "罗马",
+            "dest": "FCO"
+        },
+        {
+            "ARPT_BRIEF_C": "福州",
+            "dest": "FOC"
+        },
+        {
+            "ARPT_BRIEF_C": "首尔/金浦",
+            "dest": "GMP"
+        },
+        {
+            "ARPT_BRIEF_C": "果洛",
+            "dest": "GMQ"
+        },
+        {
+            "ARPT_BRIEF_C": "格尔木",
+            "dest": "GOQ"
+        },
+        {
+            "ARPT_BRIEF_C": "固原",
+            "dest": "GYU"
+        },
+        {
+            "ARPT_BRIEF_C": "海口",
+            "dest": "HAK"
+        },
+        {
+            "ARPT_BRIEF_C": "呼和浩特",
+            "dest": "HET"
+        },
+        {
+            "ARPT_BRIEF_C": "合肥",
+            "dest": "HFE"
+        },
+        {
+            "ARPT_BRIEF_C": "杭州",
+            "dest": "HGH"
+        },
+        {
+            "ARPT_BRIEF_C": "香港",
+            "dest": "HKG"
+        },
+        {
+            "ARPT_BRIEF_C": "普吉岛",
+            "dest": "HKT"
+        },
+        {
+            "ARPT_BRIEF_C": "海拉尔",
+            "dest": "HLD"
+        },
+        {
+            "ARPT_BRIEF_C": "哈密",
+            "dest": "HMI"
+        },
+        {
+            "ARPT_BRIEF_C": "哈尔滨",
+            "dest": "HRB"
+        },
+        {
+            "ARPT_BRIEF_C": "花土沟",
+            "dest": "HTT"
+        },
+        {
+            "ARPT_BRIEF_C": "台州",
+            "dest": "HYN"
+        },
+        {
+            "ARPT_BRIEF_C": "汉中",
+            "dest": "HZG"
+        },
+        {
+            "ARPT_BRIEF_C": "首尔/仁川",
+            "dest": "ICN"
+        },
+        {
+            "ARPT_BRIEF_C": "银川",
+            "dest": "INC"
+        },
+        {
+            "ARPT_BRIEF_C": "嘉峪关",
+            "dest": "JGN"
+        },
+        {
+            "ARPT_BRIEF_C": "西双版纳",
+            "dest": "JHG"
+        },
+        {
+            "ARPT_BRIEF_C": "金昌",
+            "dest": "JIC"
+        },
+        {
+            "ARPT_BRIEF_C": "泉州",
+            "dest": "JJN"
+        },
+        {
+            "ARPT_BRIEF_C": "甲米",
+            "dest": "KBV"
+        },
+        {
+            "ARPT_BRIEF_C": "喀什",
+            "dest": "KHG"
+        },
+        {
+            "ARPT_BRIEF_C": "南昌",
+            "dest": "KHN"
+        },
+        {
+            "ARPT_BRIEF_C": "大阪关西",
+            "dest": "KIX"
+        },
+        {
+            "ARPT_BRIEF_C": "昆明",
+            "dest": "KMG"
+        },
+        {
+            "ARPT_BRIEF_C": "库尔勒",
+            "dest": "KRL"
+        },
+        {
+            "ARPT_BRIEF_C": "克拉玛依",
+            "dest": "KRY"
+        },
+        {
+            "ARPT_BRIEF_C": "吉隆坡",
+            "dest": "KUL"
+        },
+        {
+            "ARPT_BRIEF_C": "贵阳",
+            "dest": "KWE"
+        },
+        {
+            "ARPT_BRIEF_C": "桂林",
+            "dest": "KWL"
+        },
+        {
+            "ARPT_BRIEF_C": "兰州",
+            "dest": "LHW"
+        },
+        {
+            "ARPT_BRIEF_C": "丽江",
+            "dest": "LJG"
+        },
+        {
+            "ARPT_BRIEF_C": "吕梁",
+            "dest": "LLV"
+        },
+        {
+            "ARPT_BRIEF_C": "芒市",
+            "dest": "LUM"
+        },
+        {
+            "ARPT_BRIEF_C": "拉萨",
+            "dest": "LXA"
+        },
+        {
+            "ARPT_BRIEF_C": "梅县",
+            "dest": "MXZ"
+        },
+        {
+            "ARPT_BRIEF_C": "南苑",
+            "dest": "NAY"
+        },
+        {
+            "ARPT_BRIEF_C": "宁波",
+            "dest": "NGB"
+        },
+        {
+            "ARPT_BRIEF_C": "名古屋",
+            "dest": "NGO"
+        },
+        {
+            "ARPT_BRIEF_C": "南京",
+            "dest": "NKG"
+        },
+        {
+            "ARPT_BRIEF_C": "南宁",
+            "dest": "NNG"
+        },
+        {
+            "ARPT_BRIEF_C": "东京成田",
+            "dest": "NRT"
+        },
+        {
+            "ARPT_BRIEF_C": "南通",
+            "dest": "NTG"
+        },
+        {
+            "ARPT_BRIEF_C": "冲绳",
+            "dest": "OKA"
+        },
+        {
+            "ARPT_BRIEF_C": "芝加哥",
+            "dest": "ORD"
+        },
+        {
+            "ARPT_BRIEF_C": "北京",
+            "dest": "PEK"
+        },
+        {
+            "ARPT_BRIEF_C": "金边",
+            "dest": "PNH"
+        },
+        {
+            "ARPT_BRIEF_C": "普罗瑟派恩",
+            "dest": "PPP"
+        },
+        {
+            "ARPT_BRIEF_C": "釜山",
+            "dest": "PUS"
+        },
+        {
+            "ARPT_BRIEF_C": "上海浦东",
+            "dest": "PVG"
+        },
+        {
+            "ARPT_BRIEF_C": "上海虹桥",
+            "dest": "SHA"
+        },
+        {
+            "ARPT_BRIEF_C": "沈阳",
+            "dest": "SHE"
+        },
+        {
+            "ARPT_BRIEF_C": "新加坡",
+            "dest": "SIN"
+        },
+        {
+            "ARPT_BRIEF_C": "石家庄",
+            "dest": "SJW"
+        },
+        {
+            "ARPT_BRIEF_C": "莫斯科",
+            "dest": "SVO"
+        },
+        {
+            "ARPT_BRIEF_C": "揭阳",
+            "dest": "SWA"
+        },
+        {
+            "ARPT_BRIEF_C": "悉尼",
+            "dest": "SYD"
+        },
+        {
+            "ARPT_BRIEF_C": "三亚",
+            "dest": "SYX"
+        },
+        {
+            "ARPT_BRIEF_C": "深圳",
+            "dest": "SZX"
+        },
+        {
+            "ARPT_BRIEF_C": "青岛",
+            "dest": "TAO"
+        },
+        {
+            "ARPT_BRIEF_C": "腾冲",
+            "dest": "TCZ"
+        },
+        {
+            "ARPT_BRIEF_C": "通辽",
+            "dest": "TGO"
+        },
+        {
+            "ARPT_BRIEF_C": "济南",
+            "dest": "TNA"
+        },
+        {
+            "ARPT_BRIEF_C": "台北桃园",
+            "dest": "TPE"
+        },
+        {
+            "ARPT_BRIEF_C": "天津",
+            "dest": "TSN"
+        },
+        {
+            "ARPT_BRIEF_C": "太原",
+            "dest": "TYN"
+        },
+        {
+            "ARPT_BRIEF_C": "乌鲁木齐",
+            "dest": "URC"
+        },
+        {
+            "ARPT_BRIEF_C": "榆林",
+            "dest": "UYN"
+        },
+        {
+            "ARPT_BRIEF_C": "邵阳武冈",
+            "dest": "WGN"
+        },
+        {
+            "ARPT_BRIEF_C": "温州",
+            "dest": "WNZ"
+        },
+        {
+            "ARPT_BRIEF_C": "乌海",
+            "dest": "WUA"
+        },
+        {
+            "ARPT_BRIEF_C": "武汉",
+            "dest": "WUH"
+        },
+        {
+            "ARPT_BRIEF_C": "无锡",
+            "dest": "WUX"
+        },
+        {
+            "ARPT_BRIEF_C": "西郊",
+            "dest": "XIJ"
+        },
+        {
+            "ARPT_BRIEF_C": "锡林浩特",
+            "dest": "XIL"
+        },
+        {
+            "ARPT_BRIEF_C": "西安",
+            "dest": "XIY"
+        },
+        {
+            "ARPT_BRIEF_C": "厦门",
+            "dest": "XMN"
+        },
+        {
+            "ARPT_BRIEF_C": "西宁",
+            "dest": "XNN"
+        },
+        {
+            "ARPT_BRIEF_C": "徐州",
+            "dest": "XUZ"
+        },
+        {
+            "ARPT_BRIEF_C": "伊宁",
+            "dest": "YIN"
+        },
+        {
+            "ARPT_BRIEF_C": "烟台",
+            "dest": "YNT"
+        },
+        {
+            "ARPT_BRIEF_C": "扬州",
+            "dest": "YTY"
+        },
+        {
+            "ARPT_BRIEF_C": "玉树",
+            "dest": "YUS"
+        },
+        {
+            "ARPT_BRIEF_C": "张掖",
+            "dest": "YZY"
+        },
+        {
+            "ARPT_BRIEF_C": "湛江",
+            "dest": "ZHA"
+        },
+        {
+            "ARPT_BRIEF_C": "中卫",
+            "dest": "ZHY"
+        },
+        {
+            "ARPT_BRIEF_C": "珠海",
+            "dest": "ZUH"
+        }
+    ]
+}
