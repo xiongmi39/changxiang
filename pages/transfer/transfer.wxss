@@ -95,3 +95,10 @@ picker{
   width: 66px;
   height: 57.5px;
 }
+.weui-cell:before{
+  border-top: none;
+}
+.weui-input{
+  border-bottom: 1px solid #015f89;
+  width: 130px;
+}
