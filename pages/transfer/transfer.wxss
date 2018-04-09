@@ -90,3 +90,8 @@ picker{
   width: 17px;
   height: 22px;
 }
+
+.uploader{
+  width: 66px;
+  height: 57.5px;
+}

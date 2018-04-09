@@ -8,7 +8,7 @@ Page({
     isShowFrom3: false,
     isShowRF: true,
     isShowRT: false,
-    isShowLF: false,
+    isShowLF: true,
     isShowLT: false,
     indicatorDots: true,
     vertical: false,
@@ -19,8 +19,14 @@ Page({
     {name: 'plane', value: '飞机', checked: 'true'},
     {name: 'train', value: '高铁'}
     ],
-    reachflDate:'2016-09-01',
-    reachtrDate:'2016-09-01'
+    reachflDate:'',
+    reachtrDate:'',
+    leaveflDate:'',
+    leavetrDate:'',
+    start:'',
+    end:'2019-12-30',
+    leavefiles: [],
+    reachfiles: []
   },
   //事件处理函数
   bindViewTap: function() {
@@ -28,24 +34,24 @@ Page({
       url: '../logs/logs'
     })
   },
+  resetData: function(){
+    var currentdate =  app.appConfig.dateFormatter(new Date(), 'yyyy-MM-dd');
+    this.setData({
+     reachflDate:currentdate,
+     reachtrDate:currentdate,
+     leaveflDate:currentdate,
+     leavetrDate:currentdate,
+     start:currentdate  
+   })
+  },
   onLoad: function () {
-    console.log('onLoad')
-    var that = this
-  	//调用应用实例的方法获取全局数据
-    // app.getUserInfo(function(userInfo){
-    //   //更新数据
-    //   that.setData({
-    //     userInfo:userInfo
-    //   })
-    //   that.update()
-    // })
+    this.resetData();
   },
   showFrom: function(e){
     var param = e.currentTarget.dataset.param; 
+    var key = "isShowFrom"+param;
     this.setData({ 
-      isShowFrom1: param == 1 ? (!this.data.isShowFrom1) : false,
-      isShowFrom2: param == 2 ? (!this.data.isShowFrom2) : false,
-      isShowFrom3: param == 3 ? (!this.data.isShowFrom3) : false,
+      [key]: !this.data[key]
     });
   },
   bindDateChange: function(e) {
@@ -55,10 +61,6 @@ Page({
     })
   },
   reachRdoChange: function(e){
-    if(!this.data.isShowFrom1){
-      return;
-    }
-    var param = e.currentTarget.dataset.param; 
     if(e.detail.value == "plane"){
       this.setData({ 
         isShowRF: true,
@@ -70,11 +72,41 @@ Page({
         isShowRT: true
       });       
     }
-    // this.setData({ 
-    //   isShowRF: param == 1 ? (!this.data.isShowRF) : false,
-    //   isShowRT: param == 2 ? (!this.data.isShowRT) : false,
-    //   isShowLF: param == 3 ? (!this.data.isShowLF) : false,
-    //   isShowLT: param == 3 ? (!this.data.isShowLT) : false
-    // });
+  },
+  leaveRdoChange: function(e){
+    if(e.detail.value == "plane"){
+      this.setData({ 
+        isShowLF: true,
+        isShowLT: false
+      });      
+    }else{
+      this.setData({ 
+        isShowLF: false,
+        isShowLT: true
+      });       
+    }    
+  },
+  chooseImage: function (e) {
+    var that = this;
+    var key = e.currentTarget.dataset.key;
+    wx.chooseImage({
+            sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+            sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+            success: function (res) {
+                // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+                that.setData({
+                  [key]: that.data[key].concat(res.tempFilePaths)
+                });
+              }
+            })
+    console.log(this.data.leavefiles);
+    console.log(this.data.reachfiles);
+  },
+  previewImage: function(e){
+    var key = e.currentTarget.dataset.key;
+    wx.previewImage({
+            current: e.currentTarget.id, // 当前显示图片的http链接
+            urls: this.data[key] // 需要预览的图片http链接列表
+          })
   }
 })

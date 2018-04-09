@@ -31,13 +31,13 @@
 					<view class="weui-label">您到达西安方式</view>
 				</view>
 
-					<radio-group class="radio-group" bindchange="reachRdoChange">
-						<label class="radio" wx:for="{{items}}">
-							<radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
-						</label>
-					</radio-group>
-					<view style="top:0" bindtap="showFrom" data-param="1" class="down {{isShowFrom1 ? 'tui-hide' : ''}}"><image   src="../../images/cxdown.png" class=" down "></image></view>
-					
+				<radio-group class="radio-group" bindchange="reachRdoChange">
+					<label class="radio" wx:for="{{items}}">
+						<radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+					</label>
+				</radio-group>
+				<view style="top:0" bindtap="showFrom" data-param="1" class="down {{isShowFrom1 ? 'tui-hide' : ''}}"><image   src="../../images/cxdown.png" class=" down "></image></view>
+
 
 			</view>
 			<view >
@@ -57,20 +57,81 @@
 						<view class="weui-cell__bd">
 							<view class="weui-label dateInput" >{{reachflDate}}</view>
 							<!-- <view class="line-css"></view> -->
-							<picker data-date-type="reachflDate" class="weui-btn" mode="date" value="{{reachflDate}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+							<picker data-date-type="reachflDate" class="weui-btn" mode="date" value="{{reachflDate}}" start="{{start}}" end="{{end}}" bindchange="bindDateChange">
 								<image  src="../../images/cxcalendar.png" class="img calendar"></image>
 							</picker>
 						</view>
 					</view>
 				</view>
 				<view class="{{isShowFrom1 ? '' : 'tui-hide'}} {{isShowRT ? '' : 'tui-hide'}}">
-				<view >
+					<view >
+						<view class="weui-cell weui-cell_input">
+							<view class="weui-cell__hd">
+								<view class="weui-label">高铁车次</view>
+							</view>
+							<view class="weui-cell__bd">
+								<input class="weui-input" placeholder="请输入高铁车次"/>
+							</view>
+						</view>
+						<view class="weui-cell weui-cell_input">
+							<view class="weui-cell__hd">
+								<view class="weui-label">到达日期</view>
+							</view>
+							<view class="weui-cell__bd">
+								<view class="weui-label dateInput" >{{reachtrDate}}</view>
+								<!-- <view class="line-css"></view> -->
+								<picker data-date-type="reachtrDate" class="weui-btn" mode="date" value="{{reachtrDate}}" start="{{start}}" end="{{end}}" bindchange="bindDateChange">
+									<image  src="../../images/cxcalendar.png" class="img calendar"></image>
+								</picker>
+							</view>
+						</view>
+						<view class="weui-cell weui-cell-input">
+							<!-- 上传 -->
+							<view class="weui-cell__hd">
+								<view class="weui-label">高铁凭证</view>
+							</view>
+							<view class="weui-uploader__bd">
+								<view class="weui-uploader__files" id="uploaderFiles">
+									<block wx:for="{{reachfiles}}" wx:key="*this">
+										<view class="weui-uploader__file" data-key="reachfiles" bindtap="previewImage" id="{{item}}">
+											<image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+										</view>
+									</block>
+								</view>
+								<image   src="../../images/cxupload.png" class="uploader" data-key="reachfiles"  bindtap="chooseImage"></image>
+							</view>
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+
+		<view class="weui-cells__title">
+			
+		</view>
+		<view class="weui-cells weui-cells_after-title">
+			<view class="weui-cell weui-cell_input radio-cell"    >
+				<view class="weui-cell__hd">
+					<view class="weui-label">您离开西安方式</view>
+				</view>
+
+				<radio-group class="radio-group" bindchange="leaveRdoChange">
+					<label class="radio" wx:for="{{items}}">
+						<radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+					</label>
+				</radio-group>
+				<view style="top:0" bindtap="showFrom" data-param="2" class="down {{isShowFrom2 ? 'tui-hide' : ''}}"><image   src="../../images/cxdown.png" class=" down "></image></view>
+
+
+			</view>
+			<view >
+				<view class="{{isShowFrom2 ? '' : 'tui-hide'}} {{isShowLF ? '' : 'tui-hide'}}">
 					<view class="weui-cell weui-cell_input">
 						<view class="weui-cell__hd">
-							<view class="weui-label">高铁车次</view>
+							<view class="weui-label">航班号</view>
 						</view>
 						<view class="weui-cell__bd">
-							<input class="weui-input" placeholder="请输入高铁车次"/>
+							<input class="weui-input" placeholder="请输入航班号"/>
 						</view>
 					</view>
 					<view class="weui-cell weui-cell_input">
@@ -78,16 +139,58 @@
 							<view class="weui-label">到达日期</view>
 						</view>
 						<view class="weui-cell__bd">
-							<view class="weui-label dateInput" >{{reachtrDate}}</view>
+							<view class="weui-label dateInput" >{{leaveflDate}}</view>
 							<!-- <view class="line-css"></view> -->
-							<picker data-date-type="reachtrDate" class="weui-btn" mode="date" value="{{reachtrDate}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+							<picker data-date-type="reachflDate" class="weui-btn" mode="date" value="{{reachflDate}}" start="{{start}}" end="{{end}}" bindchange="bindDateChange">
 								<image  src="../../images/cxcalendar.png" class="img calendar"></image>
 							</picker>
 						</view>
 					</view>
 				</view>
+				<view class="{{isShowFrom2 ? '' : 'tui-hide'}} {{isShowLT ? '' : 'tui-hide'}}">
+					<view >
+						<view class="weui-cell weui-cell_input">
+							<view class="weui-cell__hd">
+								<view class="weui-label">高铁车次</view>
+							</view>
+							<view class="weui-cell__bd">
+								<input class="weui-input" placeholder="请输入高铁车次"/>
+							</view>
+						</view>
+						<view class="weui-cell weui-cell_input">
+							<view class="weui-cell__hd">
+								<view class="weui-label">到达日期</view>
+							</view>
+							<view class="weui-cell__bd">
+								<view class="weui-label dateInput" >{{leavetrDate}}</view>
+								<!-- <view class="line-css"></view> -->
+								<picker data-date-type="reachtrDate" class="weui-btn" mode="date" value="{{reachtrDate}}" start="{{start}}" end="{{end}}" bindchange="bindDateChange">
+									<image  src="../../images/cxcalendar.png" class="img calendar"></image>
+								</picker>
+							</view>
+						</view>
+						<view class="weui-cell weui-cell-input">
+							<!-- 上传 -->
+							<view class="weui-cell__hd">
+								<view class="weui-label">高铁凭证</view>
+							</view>
+							<view class="weui-uploader__bd">
+								<view class="weui-uploader__files" id="uploaderFiles">
+									<block wx:for="{{leavefiles}}" wx:key="*this">
+										<view class="weui-uploader__file" data-key="leavefiles" bindtap="previewImage" id="{{item}}">
+											<image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+										</view>
+									</block>
+								</view>
+								<image   src="../../images/cxupload.png" class="uploader" data-key="leavefiles"  bindtap="chooseImage"></image>
+							</view>
+						</view>
+					</view>
 				</view>
 			</view>
+
 		</view>
+
+		<button  bindtap="seatchFlight">下一步</button>
 	</view>
 </view>
