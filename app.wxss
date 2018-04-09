@@ -33,6 +33,18 @@ button {
   border:1px solid #cf4227;
   color: #015f89;
 }
+.smredbtn{
+  background: #fff;
+  border:1px solid #cf4227;
+  color: #015f89;
+  border-radius: 15px;
+  height: 1.6rem;
+  width: 4rem;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.6rem;
+  color: #cf4227;
+}
 .sbtn{
   display: inline-block;
   background: #fff;

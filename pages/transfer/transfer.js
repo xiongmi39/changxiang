@@ -26,7 +26,8 @@ Page({
     start:'',
     end:'2019-12-30',
     leavefiles: [],
-    reachfiles: []
+    reachfiles: [],
+    transferInfo:{}
   },
   //事件处理函数
   bindViewTap: function() {
@@ -108,5 +109,10 @@ Page({
             current: e.currentTarget.id, // 当前显示图片的http链接
             urls: this.data[key] // 需要预览的图片http链接列表
           })
+  },
+  goPickService: function(){
+    wx.navigateTo({
+      url: './pickService/pickService?transferInfo='+this.data.transferInfo
+    })
   }
 })

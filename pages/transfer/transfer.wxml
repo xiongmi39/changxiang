@@ -191,7 +191,7 @@
 
 		</view>
 
-		<button  bindtap="seatchFlight">下一步</button>
+		<button  bindtap="goPickService">下一步</button>
 		<view class="warntext"><icon type="info" color="#898989" size="10"/>仅支持飞机与飞机，飞机与高铁，高铁与飞机间的中转</view>
 	</view>
 </view>

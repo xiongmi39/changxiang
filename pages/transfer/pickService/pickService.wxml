@@ -1,0 +1,38 @@
+<!--pickService.wxml-->
+<view class="container">
+	<view class="page__bd">
+        <view class="weui-cells__title"></view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">请选择</view>
+                <view class="weui-cell__ft"></view>
+            </view>
+            <view class="normal-cell">
+            	<view class="pickLabel">免费住宿</view>
+            	<radio-group class="radio-group" bindchange="reachRdoChange">
+            		<label>选择入住日期</label>
+            		<label class="radio" wx:for="{{items}}">
+            			<radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+            		</label>
+            	</radio-group>
+            </view>
+            <view class="normal-cell">
+            	<view class="pickLabel">免费餐食</view>
+            	<view class="pickLabel">免费空铁巴士</view>
+            	<view class="pickLabel">免费寄存</view>
+            </view>
+            <view class="normal-cell">
+            	<view class="pickLabel">免费餐食</view>
+            	<view class="pickLabel">免费空铁巴士</view>
+            	<view class="pickLabel">免费寄存</view>
+            </view>
+            <view class="weui-cell">
+            	<view class="weui-cell__bd">同行老人及小朋友信息</view>
+            	<view class="weui-cell__ft"><button class="smredbtn" bindtap="seatchFlight">添加</button></view>
+            </view>
+            <view class="normal-cell">
+            	<view>张三</view>
+            </view>
+        </view>
+	</view>
+</view>

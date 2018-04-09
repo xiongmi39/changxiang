@@ -10,7 +10,8 @@
     "pages/airticket/airticket",
     "pages/selectcity/selectcity",
     "pages/switchcity/switchcity",
-    "pages/transfer/transfer"
+    "pages/transfer/transfer",
+    "pages/transfer/pickService/pickService"
   ],
   "window":{
     "backgroundTextStyle":"light",

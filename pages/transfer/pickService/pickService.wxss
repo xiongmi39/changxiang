@@ -1,0 +1,28 @@
+/**pickService.wxss**/
+.normal-cell{
+	display: flex;
+	background: #f8f8f8;
+	padding: 10px 15px;
+}
+.pickLabel {
+  position: relative;
+  float: left;
+  padding: 10rpx;
+  box-sizing: border-box;
+  border: 1rpx solid #e1e1e1;
+  border-radius: 8rpx;
+  margin: 2rpx 12rpx;
+  background: #e1e1e1;
+  color: #222;
+  font-size: 30rpx;
+  flex: 1;
+  text-align: center;
+}
+radio-group{
+	font-size: 30rpx;
+	padding: 10rpx;
+}
+.radio-group label{
+	margin: 10rpx;
+	color: #898989;
+}
