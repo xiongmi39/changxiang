@@ -73,6 +73,10 @@ App({
                   // that.update();
                   that.globalData.userInfo = res.userInfo;
                   res.userInfo.openId = wx.getStorageSync('openId');
+                  res.userInfo.encryptedData = res.encryptedData;
+                  res.userInfo.iv = res.iv;
+                  res.userInfo.signature = res.signature;
+                 
                   console.log(res);
                   that.sendUserInfo(res.userInfo);
                 }
@@ -91,15 +95,16 @@ App({
         that.openAlert();
       }
     });
-    // wx.getUserInfo({
-    //   success: function (res) {
-    //               // that.setData({userInfo: res.userInfo})
-    //               // that.update();
-    //               that.globalData.userInfo = res.userInfo;
-    //               console.log(res);
-    //               that.sendUserInfo(res.userInfo);
-    //             }
-    // })
+    wx.getUserInfo({
+      success: function (res) {
+                  // that.setData({userInfo: res.userInfo})
+                  // that.update();
+                  that.globalData.userInfo = res.userInfo;
+                  console.log(JSON.stringify(res));
+                  console.log(res);
+                  that.sendUserInfo(res.userInfo);
+                }
+    })
     //test
     // wx.setStorageSync('token', "tokentest");
     // wx.setStorageSync('openId', "openIdtest");
