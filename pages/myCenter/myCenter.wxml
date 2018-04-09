@@ -10,4 +10,5 @@
     <text class="user-motto">{{motto}}</text>
   </view>
   <button class="sureBtn" bindtap="showCxmodal">测试按钮</button>
+  <button class="redbtn" bindtap="seatchFlight" open-type="share">分享我的行程</button>
 </view>
