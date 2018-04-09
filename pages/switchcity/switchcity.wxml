@@ -2,6 +2,7 @@
       <view class="home {{currentIndex==0?'active':''}}" data-index="0">国内</view>
       <view class="abroad {{currentIndex==1?'active':''}}" data-index="1">国际/港澳台</view>
     </view>
+    <loading hidden="{{hiddenLoading}}">加载中</loading>
 
     <view class="searchLetter touchClass">
       <view class="thishotText" bindtap="hotCity">

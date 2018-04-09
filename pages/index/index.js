@@ -96,6 +96,8 @@ Page({
         that.setData({
           hiddenLoading:true
         })
+        console.log("航班详情");
+        console.log(res.data.pd);
         if(!res.data.pd || !res.data.pd.FLIGHT_NO){
           that.setData({
             ifShowErrmsg:false,
@@ -109,6 +111,8 @@ Page({
         })
       },
       fail: function(){
+        console.log("failed");
+        app.openAlert();
         that.setData({
           ifShowErrmsg:false,
           hiddenLoading:true

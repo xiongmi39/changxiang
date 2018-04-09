@@ -83,12 +83,12 @@ App({
 
 
         } else {
-          console.log('登录失败！' + res.errMsg)
+          that.openAlert();
         }
 
       },
       fail: function (res) {
-        console.log(res)
+        that.openAlert();
       }
     });
     // wx.getUserInfo({
@@ -101,8 +101,8 @@ App({
     //             }
     // })
     //test
-    wx.setStorageSync('token', "tokentest");
-    wx.setStorageSync('openId', "openIdtest");
+    // wx.setStorageSync('token', "tokentest");
+    // wx.setStorageSync('openId', "openIdtest");
     // wx.request({
     //   url: appConfig.config.saveUserInfo,
     //   data: {
@@ -117,6 +117,17 @@ App({
 
 
 
+  },
+  openAlert: function () {
+    wx.showModal({
+      content: '网络无反应，请检查您的网络设置',
+      showCancel: false,
+      success: function (res) {
+        if (res.confirm) {
+          console.log('用户点击确定')
+        }
+      }
+    });
   }
 
 })

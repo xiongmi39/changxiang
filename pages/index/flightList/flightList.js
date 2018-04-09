@@ -58,6 +58,7 @@ Page({
 
       },
       fail: function(){
+        app.openAlert();
         that.setData({
           hiddenLoading:true
         })  

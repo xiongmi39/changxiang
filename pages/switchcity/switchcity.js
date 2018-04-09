@@ -14,7 +14,8 @@ Page({
     scrollTopId: '',//置顶id
     city: "上海市",
     cityCode:"",
-    hotcityList: [{ cityCode: "TNA", city: '北京市' }, { cityCode: 310000, city: '上海市' }, { cityCode: 440100, city: '广州市' }, { cityCode: 440300, city: '深圳市' }, { cityCode: 330100, city: '杭州市' }, { cityCode: 320100, city: '南京市' }, { cityCode: 420100, city: '武汉市' }, { cityCode: 410100, city: '郑州市' }, { cityCode: 120000, city: '天津市' }, { cityCode: 610100, city: '西安市' }, { cityCode: 510100, city: '成都市' }, { cityCode: 500000, city: '重庆市' }]
+    hotcityList: [],
+    hiddenLoading:true
   },
   onLoad: function () {
     // 生命周期函数--监听页面加载
@@ -126,6 +127,9 @@ Page({
   },
   getChinaCities: function(){
     var that = this;
+    that.setData({
+      hiddenLoading:false
+    }) 
         wx.request({
           url: app.appConfig.config.getAllInlandDestCityinfo,
           data: {
@@ -136,16 +140,25 @@ Page({
             if(!res.data.inlandDestCityList){
               return;
             }
+            that.setData({
+              hiddenLoading:true
+            })
             var cityList = city.cityList(res.data.inlandDestCityList);
             that.setData({
               cityList: cityList,
               hotcityList: res.data.inlandHotCityList
             })
+          },
+          fail: function(){
+            app.openAlert();
           }
         })
   },
   getAllInternationDestCityinfo: function(){
     var that = this;
+    that.setData({
+      hiddenLoading:false
+    }) 
         wx.request({
           url: app.appConfig.config.getAllInternationDestCityinfo,
           data: {
@@ -156,11 +169,17 @@ Page({
             if(!res.data.internationDestCityList){
               return;
             }
+            that.setData({
+              hiddenLoading:true
+            })
             var cityList = city.cityList(res.data.internationDestCityList);
             that.setData({
               cityList: cityList,
               hotcityList: res.data.internationHotCityList
             })
+          },
+          fail: function(){
+            app.openAlert();
           }
         })
   }
