@@ -1,6 +1,6 @@
 <!--flightList.wxml-->
 <view class="container">
-        <cxmodal id='cxmodal' flightNo='{{currentFlight.FLIGHT_NO}}' flight_date='{{currentFlight.startDate}}'>
+        <cxmodal id='cxmodal' flightNo='{{currentFlight.flight_no}}' flight_date='{{currentFlight.startDate}}'>
         </cxmodal>
   <loading hidden="{{hiddenLoading}}">正在查询</loading>
   <view class="weui-cells weui-cells_after-title"  wx:for="{{flightList}}">
@@ -12,11 +12,11 @@
       </view>
       <view class="weui-cell__bd " bindtap="goDetail" data-detail = "{{item}}">
         <view style="width: 5rem;margin-right: 50rpx">
-          <view class="date flight">{{item.FLIGHT_NO}}</view>
+          <view class="date flight">{{item.flight_no}}</view>
           <view class="time">
             <image src="../../../images/cxarrow.png" class="arrow"></image>
           </view>
-          <view class="date plan">{{item.AS_NAME}}</view>
+          <view class="date plan">{{item.as_name}}</view>
         </view>
         <view style="display: flex;flex-direction: column;justify-content:space-between;">
           <view class="date" style="text-align: right;width: 4.3rem">{{item.endDate}}</view>

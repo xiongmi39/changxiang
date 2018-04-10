@@ -24,16 +24,16 @@
       <text class="hotcity hotcity-common">热门城市</text>
       <view class="weui-grids">
         <block wx:for-items="{{hotcityList}}" wx:key="{{index}}">
-          <view class="weui-grid" data-cityCode="{{item.ARPT_IATA}}" data-city="{{item.ARPT_BRIEF_C}}" bindtap="bindHotCity" >
-            <view class="weui-grid__label">{{item.ARPT_BRIEF_C}}</view>
+          <view class="weui-grid" data-cityCode="{{item.arpt_iaia}}" data-city="{{item.arpt_brief_c}}" bindtap="bindHotCity" >
+            <view class="weui-grid__label">{{item.arpt_brief_c}}</view>
           </view>
         </block>
       </view>
     </view>
     <view class="selection" wx:for="{{cityList}}" wx:key="{{item.initial}}">
       <view class="item_letter"  id="{{item.initial}}">{{item.initial}}</view>
-      <view class="item_city"  wx:for="{{item.cityInfo}}" wx:for-item="ct" wx:key="{{ct.dest}}" data-cityCode="{{ct.dest}}" data-city="{{ct.ARPT_BRIEF_C}}" bindtap="bindCity">
-        {{ct.ARPT_BRIEF_C}}
+      <view class="item_city"  wx:for="{{item.cityInfo}}" wx:for-item="ct" wx:key="{{ct.dest}}" data-cityCode="{{ct.dest}}" data-city="{{ct.arpt_brief_c}}" bindtap="bindCity">
+        {{ct.arpt_brief_c}}
       </view>
     </view>
   </scroll-view>

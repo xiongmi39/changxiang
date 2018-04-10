@@ -42,9 +42,9 @@ Page({
     wx.request({
       url: app.appConfig.config.getAllFlightListByDest,
       data: {
-        DEST:that.data.dest,
+        dest:that.data.dest,
         openId:wx.getStorageSync('openId'),
-        sign: app.appConfig.getSign(app.appConfig.config.getAllFlightListByDest,[{key:"DEST",value:that.data.dest}])
+        sign: app.appConfig.getSign(app.appConfig.config.getAllFlightListByDest,[{key:"dest",value:that.data.dest}])
       },
       success: function(res){
         that.setData({

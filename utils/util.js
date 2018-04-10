@@ -70,7 +70,7 @@ function json2Form(json) {
 function  handleFlightList(list){
     list.forEach((item)=> {
       //出发，到达城市
-      let citys = item.ROUTE_C.split("-");
+      let citys = item.route_c.split("-");
       if(citys.length == 0){
         return
       }
@@ -84,26 +84,26 @@ function  handleFlightList(list){
       var reachTime = "";
       var startDate = "";
       var endDate = "";
-      if(item.DA_TIME){
-        startTime = item.DA_TIME.split(" ")[1];
-        startDate = item.DA_TIME.split(" ")[0];
-      }else if(item.DE_TIME){
-        startTime = item.DE_TIME.split(" ")[1];
-        startDate = item.DE_TIME.split(" ")[0];
-      }else if(item.DP_TIME){
-        startTime = item.DP_TIME.split(" ")[1];
-        startDate = item.DP_TIME.split(" ")[0];
+      if(item.da_time){
+        startTime = item.da_time.split(" ")[1];
+        startDate = item.da_time.split(" ")[0];
+      }else if(item.de_time){
+        startTime = item.de_time.split(" ")[1];
+        startDate = item.de_time.split(" ")[0];
+      }else if(item.dp_time){
+        startTime = item.dp_time.split(" ")[1];
+        startDate = item.dp_time.split(" ")[0];
       }
 
-      if(item.AP_TIME){
-        startTime = item.AP_TIME.split(" ")[1];
-        endDate = item.AP_TIME.split(" ")[0];
-      }else if(item.AE_TIME){
-        startTime = item.AE_TIME.split(" ")[1];
-        endDate = item.AE_TIME.split(" ")[0];
-      }else if(item.AA_TIME){
-        startTime = item.AA_TIME.split(" ")[1];
-        endDate = item.AA_TIME.split(" ")[0];
+      if(item.ap_time){
+        startTime = item.ap_time.split(" ")[1];
+        endDate = item.ap_time.split(" ")[0];
+      }else if(item.ae_time){
+        startTime = item.ae_time.split(" ")[1];
+        endDate = item.ae_time.split(" ")[0];
+      }else if(item.aa_time){
+        startTime = item.aa_time.split(" ")[1];
+        endDate = item.aa_time.split(" ")[0];
       }
 
       if(endDate.length == 0){

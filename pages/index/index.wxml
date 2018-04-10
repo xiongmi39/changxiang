@@ -51,11 +51,11 @@
         </view>
         <view class="weui-cell__bd " bindtap="goDetail" data-detail = "{{item}}">
           <view style="width: 5rem;margin-right: 50rpx">
-            <view class="date flight">{{item.FLIGHT_NO}}</view>
+            <view class="date flight">{{item.flight_no}}</view>
             <view class="time">
               <image src="../../images/cxarrow.png" class="arrow"></image>
             </view>
-            <view class="date plan">{{item.AS_NAME}}</view>
+            <view class="date plan">{{item.as_name}}</view>
           </view>
           <view style="display: flex;flex-direction: column;justify-content:space-between;">
             <view class="date" style="text-align: right;">{{item.endDate}}</view>
@@ -65,8 +65,8 @@
         </view>
         <view >
 <!--           <view class="inner remindme" bindtap="showCxmodal" data-detail = "{{item}}">提醒我</view> -->
-         <view class="inner reminding" wx:if="{{item.REMIND_STATS == '0'}}" bindtap="showCxmodal">提醒中</view>
-        <view class="inner reminded" wx:if="{{item.REMIND_STATS == '1'}}" bindtap="showCxmodal">已提醒</view>
+         <view class="inner reminding" wx:if="{{item.remind_stats == '0'}}" bindtap="showCxmodal">提醒中</view>
+        <view class="inner reminded" wx:if="{{item.remind_stats == '1'}}" bindtap="showCxmodal">已提醒</view>
       </view>
     </view>
   </view>

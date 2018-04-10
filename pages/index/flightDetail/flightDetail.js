@@ -33,11 +33,11 @@ Page({
   },
   handleflightInfo: function(info){
     //城市
-    var citys = info.ROUTE_C.split("-");
+    var citys = info.route_c.split("-");
     var start = citys[0];
     var end = citys[1];
     //值机区，柜台
-    var islandarr = info.COUNTERS.split(",");
+    var islandarr = info.counters.split(",");
     var realisland = [];
     for(var i=0 ; i<islandarr.length;i++){
       realisland.push(islandarr[i].slice(0,1));
@@ -47,23 +47,23 @@ Page({
     var startTime = "";
     var reachTime = "";
     var startDate = "";
-    if(info.DA_TIME){
-      startTime = info.DA_TIME.split(" ")[1];
-      startDate = info.DA_TIME.split(" ")[0];
-    }else if(info.DE_TIME){
-      startTime = info.DE_TIME.split(" ")[1];
-      startDate = info.DE_TIME.split(" ")[0];
-    }else if(info.DP_TIME){
-      startTime = info.DP_TIME.split(" ")[1];
-      startDate = info.DP_TIME.split(" ")[0];
+    if(info.da_time){
+      startTime = info.da_time.split(" ")[1];
+      startDate = info.da_time.split(" ")[0];
+    }else if(info.de_time){
+      startTime = info.de_time.split(" ")[1];
+      startDate = info.de_time.split(" ")[0];
+    }else if(info.dp_time){
+      startTime = info.dp_time.split(" ")[1];
+      startDate = info.dp_time.split(" ")[0];
     }
 
-    if(info.AP_TIME){
-      reachTime = info.AP_TIME.split(" ")[1];
-    }else if(info.AE_TIME){
-      reachTime = info.AE_TIME.split(" ")[1];
-    }else if(info.AA_TIME){
-      reachTime = info.AA_TIME.split(" ")[1];
+    if(info.ap_time){
+      reachTime = info.ap_time.split(" ")[1];
+    }else if(info.ae_time){
+      reachTime = info.ae_time.split(" ")[1];
+    }else if(info.aa_time){
+      reachTime = info.aa_time.split(" ")[1];
     }
     this.setData({
       startCity: start,
@@ -82,7 +82,7 @@ Page({
     return {
       title: '畅想旅行',
       // path: '/pages/index/flightDetail/flightDetail?flightInfo='+JSON.stringify(this.data.flightInfo),
-      path: '/pages/index/index?flightNo='+this.data.flightInfo.FLIGHT_NO,
+      path: '/pages/index/index?flightNo='+this.data.flightInfo.flight_no,
      
       success: function(res) {
         // 转发成功

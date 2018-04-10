@@ -88,9 +88,9 @@ Page({
     wx.request({
       url: app.appConfig.config.getAllFlightList,
       data: {
-        FLIGHT_NO:that.data.flightNo,
+        flight_no:that.data.flightNo,
         openId:wx.getStorageSync('openId'),
-        sign: app.appConfig.getSign(app.appConfig.config.getAllFlightList,[{key:"FLIGHT_NO",value:that.data.flightNo}])
+        sign: app.appConfig.getSign(app.appConfig.config.getAllFlightList,[{key:"flight_no",value:that.data.flightNo}])
       },
       success: function(res){
         that.setData({
@@ -98,7 +98,7 @@ Page({
         })
         console.log("航班详情");
         console.log(res.data.pd);
-        if(!res.data.pd || !res.data.pd.FLIGHT_NO){
+        if(!res.data.pd || !res.data.pd.flight_no){
           that.setData({
             ifShowErrmsg:false,
             hiddenLoading:true

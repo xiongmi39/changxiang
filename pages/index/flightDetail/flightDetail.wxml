@@ -1,20 +1,20 @@
 <!--flightDetail.wxml-->
 <view class="container">
-	<cxmodal id='cxmodal' flightNo='{{flightInfo.FLIGHT_NO}}' flight_date='{{startDate}}'>
+	<cxmodal id='cxmodal' flightNo='{{flightInfo.flight_no}}' flight_date='{{startDate}}'>
 	</cxmodal>
 	<view class="mainTitle">
 		<view>飞机预计起飞时间{{startTime}}</view>
-		<view style="font-size:35rpx">{{flightInfo.AS_NAME}}</view>
+		<view style="font-size:35rpx">{{flightInfo.as_name}}</view>
 	</view>
 	<view class="chooseCity pd-70">
-		<view class="date flight"><image class="flighticon" src="../../../images/cxflight.png"></image>{{flightInfo.FLIGHT_NO}}</view>
+		<view class="date flight"><image class="flighticon" src="../../../images/cxflight.png"></image>{{flightInfo.flight_no}}</view>
 		<view class="citySelect">
 			<view class="smlabeldark from">{{startCity}}</view>
 			<view class="smlabeldark to">{{endCity}}</view>
 		</view>
 		<view class="citySelect">
-			<view class="mdlabel from">{{flightInfo.TERMINAL}}</view>
-			<view class="mdlabel ">{{flightInfo.ARRIVE_EXIT}}</view>
+			<view class="mdlabel from">{{flightInfo.terminal}}</view>
+			<view class="mdlabel ">{{flightInfo.arrive_exit}}</view>
 		</view>
 		<view class="citySelect">
 			<view class="startCity" >{{startTime}}</view>
@@ -32,11 +32,11 @@
 		</view>
 		<view class="citySelect">
 			<view class="smlabeldark from">{{realisland}}</view>
-			<view class="smlabeldark">{{flightInfo.COUNTERS}}</view>
-			<view class="smlabeldark to">{{flightInfo.GATES}}</view>
+			<view class="smlabeldark">{{flightInfo.counters}}</view>
+			<view class="smlabeldark to">{{flightInfo.gates}}</view>
 		</view>
 	</view>
-	<button class="sureBtn" bindtap="showCxmodal">添加航班提醒</button>
-	<button class="disableBtn" bindtap="cancelWarn">取消航班提醒</button>
+	<button class="sureBtn" bindtap="showCxmodal" wx:if="{{!flightInfo.remind_stats}}">添加航班提醒</button>
+	<button class="disableBtn" bindtap="cancelWarn" wx:if="{{flightInfo.remind_stats}}">取消航班提醒</button>
 	<button class="redbtn"  open-type="share">分享我的行程</button>
 </view>
