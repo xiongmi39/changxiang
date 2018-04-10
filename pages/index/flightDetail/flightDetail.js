@@ -49,7 +49,7 @@ Page({
     var startDate = "";
     if(info.DA_TIME){
       startTime = info.DA_TIME.split(" ")[1];
-      startDate = item.DA_TIME.split(" ")[0];
+      startDate = info.DA_TIME.split(" ")[0];
     }else if(info.DE_TIME){
       startTime = info.DE_TIME.split(" ")[1];
       startDate = info.DE_TIME.split(" ")[0];

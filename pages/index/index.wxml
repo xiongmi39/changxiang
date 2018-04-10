@@ -50,23 +50,23 @@
           <view class="date">{{item.startCity}}</view>
         </view>
         <view class="weui-cell__bd " bindtap="goDetail" data-detail = "{{item}}">
-          <view style="width: 5rem">
+          <view style="width: 5rem;margin-right: 50rpx">
             <view class="date flight">{{item.FLIGHT_NO}}</view>
             <view class="time">
-              <image src="../../../images/cxarrow.png" class="arrow"></image>
+              <image src="../../images/cxarrow.png" class="arrow"></image>
             </view>
-            <view class="date plan">{{flightInfo.AS_NAME}}</view>
+            <view class="date plan">{{item.AS_NAME}}</view>
           </view>
           <view style="display: flex;flex-direction: column;justify-content:space-between;">
-            <view class="date" style="text-align: right;width: 4.3rem">{{item.endDate}}</view>
-            <view class="time" style="text-align: right;width: 4.3rem">{{item.reachTime}}</view>
-            <view class="date" style="text-align: right;width: 4.3rem">{{item.endCity}}</view>
+            <view class="date" style="text-align: right;">{{item.endDate}}</view>
+            <view class="time" style="text-align: right;">{{item.reachTime}}</view>
+            <view class="date" style="text-align: right;">{{item.endCity}}</view>
           </view>
         </view>
         <view >
 <!--           <view class="inner remindme" bindtap="showCxmodal" data-detail = "{{item}}">提醒我</view> -->
-         <view class="inner reminding" bindtap="showCxmodal">提醒中</view>
-        <!-- <view class="inner reminded" bindtap="showCxmodal">已提醒</view> -->
+         <view class="inner reminding" wx:if="{{item.REMIND_STATS == '0'}}" bindtap="showCxmodal">提醒中</view>
+        <view class="inner reminded" wx:if="{{item.REMIND_STATS == '1'}}" bindtap="showCxmodal">已提醒</view>
       </view>
     </view>
   </view>

@@ -131,7 +131,7 @@ input-holder {
 }
 
 .kbup{
-  bottom: 330rpx;
+  bottom: 200px;
 }
 
 .line-css {
