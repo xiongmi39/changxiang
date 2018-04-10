@@ -7,7 +7,8 @@ Page({
     startCity:"",
     endCity:"",
     realisland:"",
-    startTime:""
+    startTime:"",
+    startDate:""
   },
   onReady: function () {
     //获得dialog组件
@@ -28,12 +29,7 @@ Page({
     })
     console.log(this.data.flightInfo);
     this.handleflightInfo(this.data.flightInfo);
-    //从分享过来的先登录
-    var openId = wx.getStorageSync('openId');
-    if(!openId){
-      //登录
-      app.logIn();
-    }
+
   },
   handleflightInfo: function(info){
     //城市
@@ -50,12 +46,16 @@ Page({
     //出发时间，到达时间
     var startTime = "";
     var reachTime = "";
+    var startDate = "";
     if(info.DA_TIME){
       startTime = info.DA_TIME.split(" ")[1];
+      startDate = item.DA_TIME.split(" ")[0];
     }else if(info.DE_TIME){
       startTime = info.DE_TIME.split(" ")[1];
+      startDate = info.DE_TIME.split(" ")[0];
     }else if(info.DP_TIME){
       startTime = info.DP_TIME.split(" ")[1];
+      startDate = info.DP_TIME.split(" ")[0];
     }
 
     if(info.AP_TIME){
@@ -70,7 +70,8 @@ Page({
       endCity: end,
       realisland: realisland,
       startTime: startTime,
-      reachTime: reachTime
+      reachTime: reachTime,
+      startDate:startDate
     })
   },
   onShareAppMessage: function (res) {
@@ -80,7 +81,9 @@ Page({
     }
     return {
       title: '畅想旅行',
-      path: '/pages/index/flightDetail/flightDetail?flightInfo='+JSON.stringify(this.data.flightInfo),
+      // path: '/pages/index/flightDetail/flightDetail?flightInfo='+JSON.stringify(this.data.flightInfo),
+      path: '/pages/index/index?flightNo='+this.data.flightInfo.FLIGHT_NO,
+     
       success: function(res) {
         // 转发成功
       },

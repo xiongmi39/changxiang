@@ -1,10 +1,10 @@
 <!--flightDetail.wxml-->
 <view class="container">
-	<cxmodal id='cxmodal' flightNo='{{flightInfo.FLIGHT_NO}}'>
+	<cxmodal id='cxmodal' flightNo='{{flightInfo.FLIGHT_NO}}' flight_date='{{startDate}}'>
 	</cxmodal>
 	<view class="mainTitle">
 		<view>飞机预计起飞时间{{startTime}}</view>
-		<view style="font-size:35rpx">正在值机</view>
+		<view style="font-size:35rpx">{{flightInfo.AS_NAME}}</view>
 	</view>
 	<view class="chooseCity pd-70">
 		<view class="date flight"><image class="flighticon" src="../../../images/cxflight.png"></image>{{flightInfo.FLIGHT_NO}}</view>
@@ -38,5 +38,5 @@
 	</view>
 	<button class="sureBtn" bindtap="showCxmodal">添加航班提醒</button>
 	<button class="disableBtn" bindtap="cancelWarn">取消航班提醒</button>
-	<button class="redbtn" bindtap="seatchFlight" open-type="share">分享我的行程</button>
+	<button class="redbtn"  open-type="share">分享我的行程</button>
 </view>

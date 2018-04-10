@@ -16,7 +16,20 @@ Page({
     ifShowErrmsg: true,
     hiddenLoading:true
   },
-  onLoad: function(){
+  onLoad: function(options){
+    //从分享过来的先登录
+    var openId = wx.getStorageSync('openId');
+    if(!openId){
+      //登录
+      app.logIn();
+    }
+    if(options.flightNo){
+      this.setData({    
+        flightNo: options.flightNo    
+      }) 
+      this.searchFlightByNo();     
+    }
+
     this.getAllRemidFlightList();
   },
   onReady: function(){
@@ -119,9 +132,9 @@ Page({
         if(!res.data.pd){
           return;
         }
-        app.util.handleFlightList(res.data.pd);
+        app.util.handleFlightList(res.data.pd.remindFlightList);
         that.setData({
-          warnFlightLst: res.data.pd
+          warnFlightLst: res.data.pd.remindFlightList
         })
       },
       fail: function(){

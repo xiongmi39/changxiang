@@ -32,7 +32,11 @@ Component({
     flightNo :{
       type : String ,
       value : ''
-    } 
+    } ,
+    flight_date:{
+      type : String ,
+      value : ''
+    }
   },
 
   /**
@@ -191,8 +195,9 @@ Component({
           passenger_phone:that.data.phoneNo,
           verticode:that.data.verticode,
           flight_no:that.data.flightNo,
+          flight_date:that.data.flight_date,
           openId:wx.getStorageSync('openId'),
-          sign: app.appConfig.getSign(app.appConfig.config.saveRemindFlightInfo,[{key:"passenger_phone",value:that.data.phoneNo},{key:"verticode",value:that.data.verticode},{key:"flight_no",value:that.data.flightNo}])
+          sign: app.appConfig.getSign(app.appConfig.config.saveRemindFlightInfo,[{key:"passenger_phone",value:that.data.phoneNo},{key:"verticode",value:that.data.verticode},{key:"flight_no",value:that.data.flightNo},{key:"flight_date",value:that.data.flight_date}])
         },
         success: function(res){
           app.openToast('添加提醒成功');

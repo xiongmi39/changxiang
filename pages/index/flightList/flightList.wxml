@@ -1,6 +1,6 @@
 <!--flightList.wxml-->
 <view class="container">
-        <cxmodal id='cxmodal' flightNo='{{currentFlight.FLIGHT_NO}}'>
+        <cxmodal id='cxmodal' flightNo='{{currentFlight.FLIGHT_NO}}' flight_date='{{currentFlight.startDate}}'>
         </cxmodal>
   <loading hidden="{{hiddenLoading}}">正在查询</loading>
   <view class="weui-cells weui-cells_after-title"  wx:for="{{flightList}}">
@@ -16,7 +16,7 @@
           <view class="time">
             <image src="../../../images/cxarrow.png" class="arrow"></image>
           </view>
-          <view class="date plan">计划起飞</view>
+          <view class="date plan">{{item.AS_NAME}}</view>
         </view>
         <view style="display: flex;flex-direction: column;justify-content:space-between;">
           <view class="date" style="text-align: right;width: 4.3rem">{{item.endDate}}</view>

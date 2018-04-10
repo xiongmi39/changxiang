@@ -137,16 +137,21 @@ Page({
             sign: app.appConfig.getSign(app.appConfig.config.getAllInlandDestCityinfo,[])
           },
           success: function(res){
-            if(!res.data.inlandDestCityList){
+
+            if(!res.data.pd.inlandDestCityList){
+              that.setData({
+                hiddenLoading:true
+              })
               return;
             }
-            that.setData({
-              hiddenLoading:true
-            })
-            var cityList = city.cityList(res.data.inlandDestCityList);
+
+            var cityList = city.cityList(res.data.pd.inlandDestCityList);
             that.setData({
               cityList: cityList,
-              hotcityList: res.data.inlandHotCityList
+              hotcityList: res.data.pd.inlandHotCityList
+            })
+            that.setData({
+              hiddenLoading:true
             })
           },
           fail: function(){
@@ -166,16 +171,21 @@ Page({
             sign: app.appConfig.getSign(app.appConfig.config.getAllInternationDestCityinfo,[])
           },
           success: function(res){
-            if(!res.data.internationDestCityList){
+
+            if(!res.data.pd.internationDestCityList){
+              that.setData({
+                hiddenLoading:true
+              })
               return;
             }
-            that.setData({
-              hiddenLoading:true
-            })
-            var cityList = city.cityList(res.data.internationDestCityList);
+            
+            var cityList = city.cityList(res.data.pd.internationDestCityList);
             that.setData({
               cityList: cityList,
-              hotcityList: res.data.internationHotCityList
+              hotcityList: res.data.pd.internationHotCityList
+            })
+            that.setData({
+              hiddenLoading:true
             })
           },
           fail: function(){

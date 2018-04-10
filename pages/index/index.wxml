@@ -55,7 +55,7 @@
             <view class="time">
               <image src="../../../images/cxarrow.png" class="arrow"></image>
             </view>
-            <view class="date plan">计划起飞</view>
+            <view class="date plan">{{flightInfo.AS_NAME}}</view>
           </view>
           <view style="display: flex;flex-direction: column;justify-content:space-between;">
             <view class="date" style="text-align: right;width: 4.3rem">{{item.endDate}}</view>
