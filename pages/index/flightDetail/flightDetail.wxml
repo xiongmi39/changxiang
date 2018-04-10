@@ -1,9 +1,9 @@
 <!--flightDetail.wxml-->
 <view class="container">
-	<cxmodal id='cxmodal'>
+	<cxmodal id='cxmodal' flightNo='{{flightInfo.FLIGHT_NO}}'>
 	</cxmodal>
 	<view class="mainTitle">
-		<view>飞机预计起飞时间9:20</view>
+		<view>飞机预计起飞时间{{startTime}}</view>
 		<view style="font-size:35rpx">正在值机</view>
 	</view>
 	<view class="chooseCity pd-70">

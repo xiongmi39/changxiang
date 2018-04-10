@@ -207,7 +207,7 @@ input-holder {
 
 .warnmsg{
   width: 80%;
-  margin: 0 auto;
+  margin: 10px auto;
   color: #cf4227;
   font-size: 33rpx;
   line-height: 1.3rem;

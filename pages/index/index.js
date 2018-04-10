@@ -17,21 +17,8 @@ Page({
     hiddenLoading:true
   },
   onLoad: function(){
-    console.log('页面加载成功');
-    console.log("openId");
-        //test
-        // wx.request({
-        //   url: app.appConfig.config.saveUserInfo,
-        //   data: {
-        //     USERNAME:'123',
-        //     openId:wx.getStorageSync('openId'),
-        //     sign: app.appConfig.getSign(app.appConfig.config.saveUserInfo,[{key:"USERNAME",value:"123"}])
-        //   },
-        //   success: function(res){
-        //     console.log(res);
-        //   }
-        // })
-      },
+    this.getAllRemidFlightList();
+  },
   onReady: function(){
     this.animation = wx.createAnimation({
       timingFunction: "ease",
@@ -90,7 +77,7 @@ Page({
       data: {
         FLIGHT_NO:that.data.flightNo,
         openId:wx.getStorageSync('openId'),
-        sign: app.appConfig.getSign(app.appConfig.config.saveUserInfo,[{key:"FLIGHT_NO",value:that.data.flightNo}])
+        sign: app.appConfig.getSign(app.appConfig.config.getAllFlightList,[{key:"FLIGHT_NO",value:that.data.flightNo}])
       },
       success: function(res){
         that.setData({
@@ -117,6 +104,30 @@ Page({
           ifShowErrmsg:false,
           hiddenLoading:true
         })        
+      }
+    })
+  },
+  getAllRemidFlightList:function(){
+    var that = this;
+    wx.request({
+      url: app.appConfig.config.getAllRemidFlightList,
+      data: {
+        openId:wx.getStorageSync('openId'),
+        sign: app.appConfig.getSign(app.appConfig.config.getAllRemidFlightList,[])
+      },
+      success: function(res){
+        if(!res.data.pd){
+          return;
+        }
+        app.util.handleFlightList(res.data.pd);
+        that.setData({
+          warnFlightLst: res.data.pd
+        })
+      },
+      fail: function(){
+        console.log("failed");
+        app.openAlert();
+     
       }
     })
   }

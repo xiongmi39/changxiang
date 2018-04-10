@@ -6,7 +6,8 @@ Page({
     dest:"",
     hiddenmodalput:false,
     flightList:[],
-    hiddenLoading:true
+    hiddenLoading:true,
+    currentFlight:{}
   },
   onReady: function () {
     //获得dialog组件
@@ -20,7 +21,11 @@ Page({
     console.log(this.data.dest);
     this.searchFlightByDest();
   },
-  showCxmodal(){
+  showCxmodal(e){
+    var flightInfo = e.currentTarget.dataset.detail;
+    this.setData({
+      currentFlight:flightInfo
+    })
     this.cxmodal.modalinput();
   },
   goDetail: function(e){
@@ -51,7 +56,7 @@ Page({
           }) 
           return;
         }
-        that.handleFlightList(res.data.pd);
+        app.util.handleFlightList(res.data.pd);
         that.setData({
           flightList:res.data.pd
         }) 
@@ -64,54 +69,5 @@ Page({
         })  
       }
     })
-  },
-  handleFlightList:function(list){
-    list.forEach((item)=> {
-      //出发，到达城市
-      let citys = item.ROUTE_C.split("-");
-      if(citys.length == 0){
-        return
-      }
-      let start = citys[0];
-      let end = citys[1];
-      item.startCity = start;
-      item.endCity = end;
-
-      //出发时间，到达时间
-      var startTime = "";
-      var reachTime = "";
-      var startDate = "";
-      var endDate = "";
-      if(item.DA_TIME){
-        startTime = item.DA_TIME.split(" ")[1];
-        startDate = item.DA_TIME.split(" ")[0];
-      }else if(item.DE_TIME){
-        startTime = item.DE_TIME.split(" ")[1];
-        startDate = item.DE_TIME.split(" ")[0];
-      }else if(item.DP_TIME){
-        startTime = item.DP_TIME.split(" ")[1];
-        startDate = item.DP_TIME.split(" ")[0];
-      }
-
-      if(item.AP_TIME){
-        startTime = item.AP_TIME.split(" ")[1];
-        endDate = item.AP_TIME.split(" ")[0];
-      }else if(item.AE_TIME){
-        startTime = item.AE_TIME.split(" ")[1];
-        endDate = item.AE_TIME.split(" ")[0];
-      }else if(item.AA_TIME){
-        startTime = item.AA_TIME.split(" ")[1];
-        endDate = item.AA_TIME.split(" ")[0];
-      }
-
-      if(endDate.length == 0){
-        endDate = startDate;
-      }
-      item.startTime = startTime;
-      item.reachTime = reachTime;
-      item.startDate = startDate;
-      item.endDate = endDate;
-
-    });
   }
 })

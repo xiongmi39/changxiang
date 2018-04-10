@@ -95,16 +95,16 @@ App({
         that.openAlert();
       }
     });
-    wx.getUserInfo({
-      success: function (res) {
-                  // that.setData({userInfo: res.userInfo})
-                  // that.update();
-                  that.globalData.userInfo = res.userInfo;
-                  console.log(JSON.stringify(res));
-                  console.log(res);
-                  that.sendUserInfo(res.userInfo);
-                }
-    })
+    // wx.getUserInfo({
+    //   success: function (res) {
+    //               // that.setData({userInfo: res.userInfo})
+    //               // that.update();
+    //               that.globalData.userInfo = res.userInfo;
+    //               console.log(JSON.stringify(res));
+    //               console.log(res);
+    //               that.sendUserInfo(res.userInfo);
+    //             }
+    // })
     //test
     // wx.setStorageSync('token', "tokentest");
     // wx.setStorageSync('openId', "openIdtest");

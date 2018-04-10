@@ -28,6 +28,12 @@ Page({
     })
     console.log(this.data.flightInfo);
     this.handleflightInfo(this.data.flightInfo);
+    //从分享过来的先登录
+    var openId = wx.getStorageSync('openId');
+    if(!openId){
+      //登录
+      app.logIn();
+    }
   },
   handleflightInfo: function(info){
     //城市
@@ -53,11 +59,11 @@ Page({
     }
 
     if(info.AP_TIME){
-      startTime = info.AP_TIME.split(" ")[1];
+      reachTime = info.AP_TIME.split(" ")[1];
     }else if(info.AE_TIME){
-      startTime = info.AE_TIME.split(" ")[1];
+      reachTime = info.AE_TIME.split(" ")[1];
     }else if(info.AA_TIME){
-      startTime = info.AA_TIME.split(" ")[1];
+      reachTime = info.AA_TIME.split(" ")[1];
     }
     this.setData({
       startCity: start,
@@ -73,8 +79,8 @@ Page({
       console.log(res.target)
     }
     return {
-      title: '自定义转发标题',
-      path: '/pages/main/main',
+      title: '畅想旅行',
+      path: '/pages/index/flightDetail/flightDetail?flightInfo='+JSON.stringify(this.data.flightInfo),
       success: function(res) {
         // 转发成功
       },

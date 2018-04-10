@@ -1,6 +1,6 @@
 <!--flightList.wxml-->
 <view class="container">
-        <cxmodal id='cxmodal' >
+        <cxmodal id='cxmodal' flightNo='{{currentFlight.FLIGHT_NO}}'>
         </cxmodal>
   <loading hidden="{{hiddenLoading}}">正在查询</loading>
   <view class="weui-cells weui-cells_after-title"  wx:for="{{flightList}}">
@@ -25,7 +25,7 @@
         </view>
       </view>
       <view >
-        <view class="inner remindme" bindtap="showCxmodal">提醒我</view>
+        <view class="inner remindme" bindtap="showCxmodal" data-detail = "{{item}}">提醒我</view>
 <!--          <view class="inner reminding" bindtap="showCxmodal">提醒中</view>
         <view class="inner reminded" bindtap="showCxmodal">已提醒</view> -->
       </view>

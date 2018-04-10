@@ -1,9 +1,9 @@
 //假数据
-// var basePath = "http://rap2api.taobao.org/app/mock/8763/GET/";
+var basePath = "http://rap2api.taobao.org/app/mock/8763/GET/";
 var md5 = require('./md5.js');
 
 //测试服务地址
-var basePath = "http://192.168.4.82:9080/pss_mp/";
+// var basePath = "http://192.168.4.82:9080/pss_mp/";
 // var basePath = "http://47.104.178.197:8082/pss_mp/";
 
 function getSign(url,params){
@@ -60,7 +60,9 @@ var config = {
 	'getAllFlightList':`${basePath}flight/getAllFlightByFlightNo`,
 	'getAllFlightListByDest': `${basePath}flight/getAllFlightListByDest`,
 	'getAllInlandDestCityinfo': `${basePath}dest/getAllInlandDestCityinfo`,
-	'getAllInternationDestCityinfo': `${basePath}dest/getAllInternationDestCityinfo`
+	'getAllInternationDestCityinfo': `${basePath}dest/getAllInternationDestCityinfo`,
+	'saveRemindFlightInfo':`${basePath}flightRemind/saveRemindFlightInfo`,
+	'getAllRemidFlightList':`${basePath}flightRemind/getAllRemidFlightList`
 };
 
 module.exports = {

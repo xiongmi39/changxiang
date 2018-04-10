@@ -28,6 +28,10 @@ Component({
     confirmText :{
       type : String ,
       value : '确定'
+    } ,
+    flightNo :{
+      type : String ,
+      value : ''
     } 
   },
 
@@ -80,13 +84,24 @@ Component({
     },  
     //确认  
     confirm: function(){  
+      if(this.data.isDisabled == true){
+        return;
+      }
+      if(app.util.commonCheck.isNull(this.data.phoneNo) || !app.util.commonCheck.isPhone(this.data.phoneNo)){
+        console.log("不能为空");
+        this.setData({
+          ifPhoneErr:false
+        })
+        return;
+      }
       if(app.util.commonCheck.isNull(this.data.verticode)){
         this.setData({
           ifVericodeErr:false
         })
         return;
       }
-      this.resetData(); 
+      this.saveRemindFlightInfo();
+      // this.resetData(); 
     },
     getVertiCode: function(){
       if(this.data.isDisabled == true){
@@ -167,6 +182,41 @@ Component({
      this.setData({
       isUp:false
     })   
+    },
+    saveRemindFlightInfo: function(){
+      var that = this;
+      wx.request({
+        url: app.appConfig.config.saveRemindFlightInfo,
+        data: {
+          passenger_phone:that.data.phoneNo,
+          verticode:that.data.verticode,
+          flight_no:that.data.flightNo,
+          openId:wx.getStorageSync('openId'),
+          sign: app.appConfig.getSign(app.appConfig.config.saveRemindFlightInfo,[{key:"passenger_phone",value:that.data.phoneNo},{key:"verticode",value:that.data.verticode},{key:"flight_no",value:that.data.flightNo}])
+        },
+        success: function(res){
+          that.setData({
+            hiddenLoading:true
+          })
+          if(!res.data.pd || res.data.pd <0){
+            that.setData({
+              hiddenLoading:true
+            }) 
+            return;
+          }
+          that.handleFlightList(res.data.pd);
+          that.setData({
+            flightList:res.data.pd
+          }) 
+
+        },
+        fail: function(){
+          app.openAlert();
+          that.setData({
+            hiddenLoading:true
+          })  
+        }
+      })
     }
   }
 })
