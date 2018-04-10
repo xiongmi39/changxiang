@@ -64,9 +64,9 @@
           </view>
         </view>
         <view >
-          <view class="inner remindme" bindtap="showCxmodal" data-detail = "{{item}}">提醒我</view>
-       <!--   <view class="inner reminding" bindtap="showCxmodal">提醒中</view>
-        <view class="inner reminded" bindtap="showCxmodal">已提醒</view> -->
+<!--           <view class="inner remindme" bindtap="showCxmodal" data-detail = "{{item}}">提醒我</view> -->
+         <view class="inner reminding" bindtap="showCxmodal">提醒中</view>
+        <!-- <view class="inner reminded" bindtap="showCxmodal">已提醒</view> -->
       </view>
     </view>
   </view>

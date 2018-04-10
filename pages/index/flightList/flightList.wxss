@@ -51,7 +51,4 @@
   color: #015f89;
   font-size: 0.8rem;
 }
-.weui-cells:first-child{
-  margin-top: 0;
-}
 

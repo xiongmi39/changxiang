@@ -37,5 +37,6 @@
 		</view>
 	</view>
 	<button class="sureBtn" bindtap="showCxmodal">添加航班提醒</button>
+	<button class="disableBtn" bindtap="cancelWarn">取消航班提醒</button>
 	<button class="redbtn" bindtap="seatchFlight" open-type="share">分享我的行程</button>
 </view>

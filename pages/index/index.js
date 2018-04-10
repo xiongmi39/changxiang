@@ -130,6 +130,12 @@ Page({
      
       }
     })
+  },
+  goDetail: function(e){
+    var flightInfo = JSON.stringify(e.currentTarget.dataset.detail);
+    wx.navigateTo({
+      url: './flightDetail/flightDetail?flightInfo='+flightInfo
+    })
   }
 
 })

@@ -88,5 +88,8 @@ Page({
         // 转发失败
       }
     }
+  },
+  cancelWarn: function(){
+    
   }
 })

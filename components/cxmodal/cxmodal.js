@@ -195,26 +195,11 @@ Component({
           sign: app.appConfig.getSign(app.appConfig.config.saveRemindFlightInfo,[{key:"passenger_phone",value:that.data.phoneNo},{key:"verticode",value:that.data.verticode},{key:"flight_no",value:that.data.flightNo}])
         },
         success: function(res){
-          that.setData({
-            hiddenLoading:true
-          })
-          if(!res.data.pd || res.data.pd <0){
-            that.setData({
-              hiddenLoading:true
-            }) 
-            return;
-          }
-          that.handleFlightList(res.data.pd);
-          that.setData({
-            flightList:res.data.pd
-          }) 
-
+          app.openToast('添加提醒成功');
+          that.resetData();
         },
         fail: function(){
           app.openAlert();
-          that.setData({
-            hiddenLoading:true
-          })  
         }
       })
     }

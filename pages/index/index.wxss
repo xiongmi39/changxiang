@@ -130,7 +130,7 @@
 }
 
 .time{
-  font-size: 65rpx;
+  font-size: 50rpx;
 }
 
 .week {

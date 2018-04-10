@@ -133,6 +133,13 @@ App({
         }
       }
     });
+  },
+  openToast: function (val) {
+    wx.showToast({
+      title: val,
+      icon: 'success',
+      duration: 3000
+    });
   }
 
 })
