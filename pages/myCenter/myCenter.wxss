@@ -1,8 +1,11 @@
 /**myCenter.wxss**/
 .userinfo {
+  align-items: left;
+  background: #015f89;
+  height: 25vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  color: #fff;
+  font-size: 35rpx;
 }
 
 .userinfo-avatar {
@@ -10,12 +13,23 @@
   height: 128rpx;
   margin: 20rpx;
   border-radius: 50%;
+  margin-top: 130rpx;
+}
+.rightPart {
+
 }
 
 .userinfo-nickname {
-  color: #aaa;
+  margin-top: 150rpx;
+}
+.userinfo-phone{
+	margin-top: 10rpx;
 }
 
 .usermotto {
   margin-top: 200px;
+}
+
+.weui-cells{
+	color: #222222;
 }
