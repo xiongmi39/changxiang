@@ -25,9 +25,9 @@
         </view>
       </view>
       <view >
-        <view class="inner remindme" bindtap="showCxmodal" data-detail = "{{item}}">提醒我</view>
-<!--          <view class="inner reminding" bindtap="showCxmodal">提醒中</view>
-        <view class="inner reminded" bindtap="showCxmodal">已提醒</view> -->
+        <view class="inner remindme" bindtap="showCxmodal" data-detail = "{{item}}" wx:if="{{item.remind_stats == '2'}}">提醒我</view>
+         <view class="inner reminding"  wx:if="{{item.remind_stats == '0'}}">提醒中</view>
+        <view class="inner reminded"  wx:if="{{item.remind_stats == '1'}}">已提醒</view>
       </view>
     </view>
   </view>

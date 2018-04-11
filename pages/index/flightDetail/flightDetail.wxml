@@ -36,7 +36,7 @@
 			<view class="smlabeldark to">{{flightInfo.gates}}</view>
 		</view>
 	</view>
-	<button class="sureBtn" bindtap="showCxmodal" wx:if="{{!flightInfo.remind_stats}}">添加航班提醒</button>
-	<button class="disableBtn" bindtap="cancelWarn" wx:if="{{flightInfo.remind_stats}}">取消航班提醒</button>
+	<button class="sureBtn" bindtap="showCxmodal" wx:if="{{flightInfo.remind_stats == '2'}}">添加航班提醒</button>
+	<button class="disableBtn" bindtap="cancelWarn" wx:if="{{flightInfo.remind_stats == '0' ||flightInfo.remind_stats == '1'}}">取消航班提醒</button>
 	<button class="redbtn"  open-type="share">分享我的行程</button>
 </view>
