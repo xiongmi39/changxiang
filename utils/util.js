@@ -22,7 +22,8 @@ var commonCheck = {
 		}
 	},
 	isMinAndMaxStr: function(data,min,max){
-		if(eval(`/^.{${min},${max}}$/`).test(data)){
+		// if(eval(`/^.{${min},${max}}$/`).test(data)){
+		if(data.length > min && data.length <= max){
 		 
 			return true;
 		}else {

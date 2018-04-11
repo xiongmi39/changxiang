@@ -12,7 +12,7 @@
         <view class="weui-cells weui-cells_after-title">
             <view class="weui-cell">
                 <view class="weui-cell__bd">
-                    <textarea class="weui-textarea" placeholder="请输入文字" style="height: 3.3em" />
+                    <textarea maxlength='510' class="weui-textarea" bindinput="complainInput" placeholder="请输入文字" style="height: 10em" />
                     <view class="weui-uploader">
                     	<view class="weui-uploader__hd">
                     		<view class="weui-uploader__info">{{files.length}}/4</view>
@@ -25,12 +25,12 @@
                     				</view>
                     			</block>
                     		</view>
-                    		<view class="weui-uploader__input-box">
+                    		<view class="weui-uploader__input-box {{isShow ? '' : 'overImg'}}">
                     			<view class="weui-uploader__input" bindtap="chooseImage"></view>
                     		</view>
                     	</view>
                     </view>
-                    <view class="weui-textarea-counter">0/500</view>
+                    <view class="weui-textarea-counter {{isOver ? 'over' : ''}}">{{count}}</view>
                 </view>
             </view>
         </view>
@@ -43,10 +43,11 @@
         <view class="weui-cells weui-cells_after-title">
         	<view class="weui-cell weui-cell_input">
         		<view class="weui-cell__bd">
-        			<input class="weui-input" placeholder="输入手机号码" />
+        			<input class="weui-input" bindinput="phoneInput" placeholder="输入手机号码" />
+        			<view class="errmsg" hidden="{{ifPhoneErr}}"><icon type="clear" color="#cf4227" size="10"/>请输入正确的手机号</view>
         		</view>
         	</view>
         </view>
 	</view>
-	<button class="sureBtn" bindtap="seatchFlight">查询航班</button>
+	<button class="sureBtn" bindtap="confirm">提交</button>
 </view>

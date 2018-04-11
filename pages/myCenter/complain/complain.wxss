@@ -19,3 +19,9 @@
 .usermotto {
   margin-top: 200px;
 }
+.over{
+	color: #cf4227;
+}
+.overImg{
+	display: none;
+}
