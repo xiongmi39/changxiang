@@ -34,7 +34,7 @@
   <view class="errmsg" hidden="{{ifShowErrmsg}}"><icon type="clear" color="#cf4227" size="10"/>航班号输入错误</view>
 
   <button class="sureBtn" bindtap="seatchFlight">查询航班</button>
-  <view class="weui-cells__title">已添加的航班提醒</view>
+  <view class="weui-cells__title" style="margin-top: 0">已添加的航班提醒</view>
 
 
 </view>
@@ -50,7 +50,7 @@
           <view class="date">{{item.startCity}}</view>
         </view>
         <view class="weui-cell__bd " bindtap="goDetail" data-detail = "{{item}}">
-          <view style="width: 5rem;margin-right: 50rpx">
+          <view style="width: 5rem;">
             <view class="date flight">{{item.flight_no}}</view>
             <view class="time">
               <image src="../../images/cxarrow.png" class="arrow"></image>

@@ -11,7 +11,7 @@
         <view class="date">{{item.startCity}}</view>
       </view>
       <view class="weui-cell__bd " bindtap="goDetail" data-detail = "{{item}}">
-        <view style="width: 5rem;margin-right: 50rpx">
+        <view style="width: 5rem;">
           <view class="date flight">{{item.flight_no}}</view>
           <view class="time">
             <image src="../../../images/cxarrow.png" class="arrow"></image>

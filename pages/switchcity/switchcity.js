@@ -128,7 +128,9 @@ Page({
   getChinaCities: function(){
     var that = this;
     that.setData({
-      hiddenLoading:false
+      hiddenLoading:false,
+      cityList: [],
+      hotcityList: []
     }) 
         wx.request({
           url: app.appConfig.config.getAllInlandDestCityinfo,
@@ -138,17 +140,24 @@ Page({
           },
           success: function(res){
 
-            if(!res.data.pd.inlandDestCityList){
-              that.setData({
-                hiddenLoading:true
-              })
-              return;
+            // if(!res.data.pd.inlandDestCityList){
+            //   that.setData({
+            //     hiddenLoading:true
+            //   })
+            //   return;
+            // }
+            var cityList = [];
+            var hotcityList = [];
+            if(res.data.pd.inlandDestCityList && res.data.pd.inlandDestCityList.length> 0){
+              cityList = city.cityList(res.data.pd.inlandDestCityList);
+            }
+            if(res.data.pd.inlandHotCityList && res.data.pd.inlandHotCityList.length> 0){
+              hotcityList = res.data.pd.inlandHotCityList;
             }
 
-            var cityList = city.cityList(res.data.pd.inlandDestCityList);
             that.setData({
               cityList: cityList,
-              hotcityList: res.data.pd.inlandHotCityList
+              hotcityList: hotcityList
             })
             that.setData({
               hiddenLoading:true
@@ -162,7 +171,9 @@ Page({
   getAllInternationDestCityinfo: function(){
     var that = this;
     that.setData({
-      hiddenLoading:false
+      hiddenLoading:false,
+      cityList: [],
+      hotcityList: []
     }) 
         wx.request({
           url: app.appConfig.config.getAllInternationDestCityinfo,
@@ -172,17 +183,23 @@ Page({
           },
           success: function(res){
 
-            if(!res.data.pd.internationDestCityList){
-              that.setData({
-                hiddenLoading:true
-              })
-              return;
+            // if(!res.data.pd.internationDestCityList || res.data.pd.internationDestCityList.length == 0){
+            //   that.setData({
+            //     hiddenLoading:true
+            //   })
+            //   return;
+            // }
+            var cityList = [];
+            var hotcityList = [];
+            if(res.data.pd.internationDestCityList && res.data.pd.internationDestCityList.length> 0){
+              cityList = city.cityList(res.data.pd.internationDestCityList);
             }
-            
-            var cityList = city.cityList(res.data.pd.internationDestCityList);
+            if(res.data.pd.internationHotCityList && res.data.pd.internationHotCityList.length> 0){
+              hotcityList = res.data.pd.internationHotCityList;
+            }
             that.setData({
               cityList: cityList,
-              hotcityList: res.data.pd.internationHotCityList
+              hotcityList: res.data.pd.hotcityList
             })
             that.setData({
               hiddenLoading:true
