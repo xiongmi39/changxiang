@@ -1,0 +1,52 @@
+<!--complain.wxml-->
+<view class="container">
+	<view class="page__bd">
+		<view class="weui-cells__title"></view>
+		<view class="weui-cells weui-cells_after-title">
+			<navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+				<view class="weui-cell__bd">我的投诉建议</view>
+				<view class="weui-cell__ft weui-cell__ft_in-access"></view>
+			</navigator>
+		</view>
+        <view class="weui-cells__title"></view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <textarea class="weui-textarea" placeholder="请输入文字" style="height: 3.3em" />
+                    <view class="weui-uploader">
+                    	<view class="weui-uploader__hd">
+                    		<view class="weui-uploader__info">{{files.length}}/4</view>
+                    	</view>
+                    	<view class="weui-uploader__bd">
+                    		<view class="weui-uploader__files" id="uploaderFiles">
+                    			<block wx:for="{{files}}" wx:key="*this">
+                    				<view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+                    					<image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                    				</view>
+                    			</block>
+                    		</view>
+                    		<view class="weui-uploader__input-box">
+                    			<view class="weui-uploader__input" bindtap="chooseImage"></view>
+                    		</view>
+                    	</view>
+                    </view>
+                    <view class="weui-textarea-counter">0/500</view>
+                </view>
+            </view>
+        </view>
+        <view class="weui-cells weui-cells_after-title">
+        	<navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        		<view class="weui-cell__bd">选择问题分类</view>
+        		<view class="weui-cell__ft weui-cell__ft_in-access"></view>
+        	</navigator>
+        </view>
+        <view class="weui-cells weui-cells_after-title">
+        	<view class="weui-cell weui-cell_input">
+        		<view class="weui-cell__bd">
+        			<input class="weui-input" placeholder="输入手机号码" />
+        		</view>
+        	</view>
+        </view>
+	</view>
+	<button class="sureBtn" bindtap="seatchFlight">查询航班</button>
+</view>

@@ -11,7 +11,8 @@
     "pages/selectcity/selectcity",
     "pages/switchcity/switchcity",
     "pages/transfer/transfer",
-    "pages/transfer/pickService/pickService"
+    "pages/transfer/pickService/pickService",
+    "pages/myCenter/complain/complain"
   ],
   "window":{
     "backgroundTextStyle":"light",

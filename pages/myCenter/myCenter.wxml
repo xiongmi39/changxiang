@@ -3,18 +3,13 @@
 		<cxmodal id='cxmodal'>
 	</cxmodal>
   <view  bindtap="bindViewTap" class="userinfo">
-    <!-- <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image> -->
-    <image class="userinfo-avatar" src="../../images/cxnotice.png" background-size="cover"></image>
-    <!-- <text class="userinfo-nickname">{{userInfo.nickName}}</text> -->
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
     <view class="rightPart">
-      <view class="userinfo-nickname">nicknameaaa</view>
+      <view class="userinfo-nickname">{{userInfo.nickName}}</view>
       <view class="userinfo-phone">手机号：18011111111</view>
     </view>
     
   </view>
-<!--   <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view> -->
 <!--   <button class="sureBtn" bindtap="showCxmodal">测试按钮</button>
   <button class="redbtn" bindtap="seatchFlight" open-type="share">分享我的行程</button> -->
   <view class="page__bd">
@@ -28,7 +23,7 @@
         <view class="weui-cell__bd">航班提醒</view>
         <view class="weui-cell__ft weui-cell__ft_in-access"></view>
       </navigator>
-      <navigator url="" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <navigator url="./complain/complain" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
         <view class="weui-cell__bd">投诉建议</view>
         <view class="weui-cell__ft weui-cell__ft_in-access"></view>
       </navigator>

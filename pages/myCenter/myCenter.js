@@ -25,6 +25,9 @@ Page({
     //   that.update()
     // })
     console.log(app.globalData);
+    this.setData({
+      userInfo: app.globalData.userInfo
+    })
   },
   onReady: function () {
     //获得dialog组件
