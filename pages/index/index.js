@@ -30,13 +30,16 @@ Page({
       this.searchFlightByNo();     
     }
 
-    this.getAllRemidFlightList();
+    
   },
   onReady: function(){
     this.animation = wx.createAnimation({
       timingFunction: "ease",
       duration: 400
     })
+  },
+  onShow: function(){
+    this.getAllRemidFlightList();
   },
   selectCity:function(){//选择城市
     console.log('跳转城市选择页面');
