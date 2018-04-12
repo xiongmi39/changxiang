@@ -285,3 +285,6 @@
 .destlabel{
   font-size: 37rpx;
 }
+.hasCity{
+  color: #0968a7 !important;
+}

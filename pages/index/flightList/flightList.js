@@ -19,7 +19,7 @@ Page({
     })  
     
     console.log(this.data.dest);
-    this.searchFlightByDest();
+    // this.searchFlightByDest();
   },
   showCxmodal(e){
     var flightInfo = e.currentTarget.dataset.detail;
@@ -71,6 +71,9 @@ Page({
     })
   },
   _refreshFlight: function(){
+    this.searchFlightByDest();
+  },
+  onShow: function(){
     this.searchFlightByDest();
   }
 })

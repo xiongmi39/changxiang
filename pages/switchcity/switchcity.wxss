@@ -11,13 +11,13 @@
 }
 
 .searchLetter view {
-  margin-top: 20rpx;
+  margin-top: 15rpx;
 }
 
 .touchClass {
   background-color: #fff;
   color: #fff;
-  padding-top: 46rpx;
+  /*padding-top: 46rpx;*/
 }
 
 .showSlectedLetter {

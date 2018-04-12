@@ -19,7 +19,7 @@
        <view class="citySelect_img">
         <image class="samll_plane" src="../../images/cxplan.png"></image>
       </view>
-      <view class="endCity destlabel" bindtap="selectCity">{{endCity}}</view>
+      <view class="endCity destlabel {{endCity == '请输入目的地' ? '' : '.hasCity'}}" bindtap="selectCity">{{endCity}}</view>
     </view>
   </view>
 
