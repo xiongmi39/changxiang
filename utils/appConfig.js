@@ -62,7 +62,8 @@ var config = {
 	'getAllInlandDestCityinfo': `${basePath}dest/getAllInlandDestCityinfo`,
 	'getAllInternationDestCityinfo': `${basePath}dest/getAllInternationDestCityinfo`,
 	'saveRemindFlightInfo':`${basePath}flightRemind/saveRemindFlightInfo`,
-	'getAllRemidFlightList':`${basePath}flightRemind/getAllRemidFlightList`
+	'getAllRemidFlightList':`${basePath}flightRemind/getAllRemidFlightList`,
+	'deleteFlightRemind': `${basePath}flightRemind/deleteFlightRemind`
 };
 
 module.exports = {

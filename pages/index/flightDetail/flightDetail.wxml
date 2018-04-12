@@ -21,7 +21,7 @@
 			<view class="citySelect_img">
 				<image class="samll_plane" src="../../../images/cxplan.png"></image>
 			</view>
-			<view class="endCity" bindtap="selectCity">{{reachTime}}</view>
+			<view class="endCity" bindtap="selectCity">{{flightInfo.reachTime}}</view>
 		</view>
 	</view>
 	<view class="chooseCity pd-70 nobottom">
@@ -37,6 +37,6 @@
 		</view>
 	</view>
 	<button class="sureBtn" bindtap="showCxmodal" wx:if="{{flightInfo.remind_stats == '2'}}">添加航班提醒</button>
-	<button class="disableBtn" bindtap="cancelWarn" wx:if="{{flightInfo.remind_stats == '0' ||flightInfo.remind_stats == '1'}}">取消航班提醒</button>
+	<button class="disableBtn" bindtap="deleteFlightRemind" wx:if="{{flightInfo.remind_stats == '0' ||flightInfo.remind_stats == '1'}}">取消航班提醒</button>
 	<button class="redbtn"  open-type="share">分享我的行程</button>
 </view>

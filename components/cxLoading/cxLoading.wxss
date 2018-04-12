@@ -1,0 +1,12 @@
+/**cxLoading.wxss**/
+
+
+.loading image{
+  position: absolute;
+  height: 96px;
+  width: 106px;
+  margin: auto;
+  z-index: 1000;
+  top: 30%;
+  left: 35%;
+}

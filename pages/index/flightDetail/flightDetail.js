@@ -53,9 +53,6 @@ Page({
       }
     }
   },
-  cancelWarn: function(){
-
-  },
   _refreshFlight: function(){
     this.searchFlightByNo();
   },
@@ -79,5 +76,23 @@ Page({
       
       }
     })
+  },
+  deleteFlightRemind: function(){
+    var that = this;
+    wx.request({
+      url: app.appConfig.config.deleteFlightRemind,
+      data: {
+        flight_no:that.data.flightInfo.flight_no,
+        openId:wx.getStorageSync('openId'),
+        sign: app.appConfig.getSign(app.appConfig.config.deleteFlightRemind,[{key:"flight_no",value:that.data.flightInfo.flight_no}])
+      },
+      success: function(res){
+        app.openToast('取消关注成功');
+        that._refreshFlight();
+      },
+      fail: function(){
+        app.openAlert();
+      }
+    })      
   }
 })

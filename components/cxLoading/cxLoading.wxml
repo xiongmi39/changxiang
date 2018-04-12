@@ -1,0 +1,4 @@
+<!--cxLoading.wxml-->
+<view class="loading" hidden="{{hiddenLoading}}">
+	<image animation="{{animation}}" src="../../images/cxtransfer.png" class="cancelbtn" bindtap="cancel" data-status="cancel"></image>
+</view>

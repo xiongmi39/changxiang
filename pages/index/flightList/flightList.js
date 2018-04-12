@@ -12,6 +12,7 @@ Page({
   onReady: function () {
     //获得dialog组件
     this.cxmodal = this.selectComponent("#cxmodal");
+    this.cxLoading = this.selectComponent("#cxLoading");
   },
   onLoad: function (options) {
     this.setData({    

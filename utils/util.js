@@ -70,50 +70,6 @@ function json2Form(json) {
 
 function  handleFlightList(list){
   list.forEach((item)=> {
-      // //出发，到达城市
-      // let citys = item.route_c.split("-");
-      // if(citys.length == 0){
-      //   return
-      // }
-      // let start = citys[0];
-      // let end = citys[1];
-      // item.startCity = start;
-      // item.endCity = end;
-
-      // //出发时间，到达时间
-      // var startTime = "";
-      // var reachTime = "";
-      // var startDate = "";
-      // var endDate = "";
-      // if(item.dp_time){
-      // 	startTime = item.dp_time.split(" ")[1];
-      // 	startDate = item.dp_time.split(" ")[0];
-      // }else if(item.de_time){
-      // 	startTime = item.de_time.split(" ")[1];
-      // 	startDate = item.de_time.split(" ")[0];
-      // }else if(item.da_time){
-      // 	startTime = item.da_time.split(" ")[1];
-      // 	startDate = item.da_time.split(" ")[0];
-      // }
-
-      // if(item.ap_time){
-      //   startTime = item.ap_time.split(" ")[1];
-      //   endDate = item.ap_time.split(" ")[0];
-      // }else if(item.ae_time){
-      //   startTime = item.ae_time.split(" ")[1];
-      //   endDate = item.ae_time.split(" ")[0];
-      // }else if(item.aa_time){
-      //   startTime = item.aa_time.split(" ")[1];
-      //   endDate = item.aa_time.split(" ")[0];
-      // }
-
-      // if(endDate.length == 0){
-      //   endDate = startDate;
-      // }
-      // item.startTime = startTime;
-      // item.reachTime = reachTime;
-      // item.startDate = startDate;
-      // item.endDate = endDate;
       handleflightInfo(item);
     });
 }
@@ -125,7 +81,7 @@ function handleflightInfo(item){
         return
       }
       let start = citys[0];
-      let end = citys[1];
+      let end = citys[citys.length-1];
       item.startCity = start;
       item.endCity = end;
 
@@ -154,13 +110,13 @@ function handleflightInfo(item){
       }
 
       if(item.ap_time){
-        startTime = item.ap_time.split(" ")[1];
+        reachTime = item.ap_time.split(" ")[1];
         endDate = item.ap_time.split(" ")[0];
       }else if(item.ae_time){
-        startTime = item.ae_time.split(" ")[1];
+        reachTime = item.ae_time.split(" ")[1];
         endDate = item.ae_time.split(" ")[0];
       }else if(item.aa_time){
-        startTime = item.aa_time.split(" ")[1];
+        reachTime = item.aa_time.split(" ")[1];
         endDate = item.aa_time.split(" ")[0];
       }
 
