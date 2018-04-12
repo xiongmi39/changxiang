@@ -1,6 +1,6 @@
 <!--flightDetail.wxml-->
 <view class="container">
-	<cxmodal id='cxmodal' flightNo='{{flightInfo.flight_no}}' flight_date='{{startDate}}'>
+	<cxmodal id='cxmodal' bind:refreshFlight="_refreshFlight" flightNo='{{flightInfo.flight_no}}' flight_date='{{startDate}}'>
 	</cxmodal>
 	<view class="mainTitle">
 		<view>飞机预计起飞时间{{startTime}}</view>

@@ -83,7 +83,7 @@ Page({
       title: '畅想旅行',
       // path: '/pages/index/flightDetail/flightDetail?flightInfo='+JSON.stringify(this.data.flightInfo),
       path: '/pages/index/index?flightNo='+this.data.flightInfo.flight_no,
-     
+
       success: function(res) {
         // 转发成功
       },
@@ -93,6 +93,30 @@ Page({
     }
   },
   cancelWarn: function(){
-    
+
+  },
+  _refreshFlight: function(){
+    this.searchFlightByNo();
+  },
+  searchFlightByNo:function(){
+    var that = this;
+    wx.request({
+      url: app.appConfig.config.getAllFlightList,
+      data: {
+        flight_no:that.data.flightInfo.flight_no,
+        openId:wx.getStorageSync('openId'),
+        sign: app.appConfig.getSign(app.appConfig.config.getAllFlightList,[{key:"flight_no",value:that.data.flightInfo.flight_no}])
+      },
+      success: function(res){
+        that.handleflightInfo(res.data.pd);
+        that.setData({
+          flightInfo: res.data.pd
+        })
+      },
+      fail: function(){
+        app.openAlert();
+      
+      }
+    })
   }
 })

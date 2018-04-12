@@ -201,12 +201,16 @@ Component({
         },
         success: function(res){
           app.openToast('添加提醒成功');
+          that._refreshFlight();
           that.resetData();
         },
         fail: function(){
           app.openAlert();
         }
       })
+    },
+    _refreshFlight: function(){
+      this.triggerEvent("refreshFlight");
     }
   }
 })

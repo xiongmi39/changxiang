@@ -69,5 +69,8 @@ Page({
         })  
       }
     })
+  },
+  _refreshFlight: function(){
+    this.searchFlightByDest();
   }
 })
