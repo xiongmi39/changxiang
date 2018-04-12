@@ -1,0 +1,32 @@
+<!--cxFlightList.wxml-->
+<!-- 航班列表 -->
+
+<view class="listContainer" wx:if="{{warnFlightLst.length > 0}}">
+  <view class="weui-cells weui-cells_after-title"  wx:for="{{warnFlightLst}}">
+    <view open-type="switchTab"  class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+      <view class="weui-cell__hd">
+        <view class="date">{{item.startDate}}</view>
+        <view class="time">{{item.startTime}}</view>
+        <view class="date">{{item.startCity}}</view>
+      </view>
+      <view class="weui-cell__bd " bindtap="goDetail" data-detail = "{{item}}">
+        <view style="width: 5rem;">
+          <view class="date flight">{{item.flight_no}}</view>
+          <view class="time">
+            <image src="../../images/cxarrow.png" class="arrow"></image>
+          </view>
+          <view class="date plan">{{item.as_name}}</view>
+        </view>
+        <view style="display: flex;flex-direction: column;justify-content:space-between;">
+          <view class="date" style="text-align: right;">{{item.endDate}}</view>
+          <view class="time" style="text-align: right;">{{item.reachTime}}</view>
+          <view class="date" style="text-align: right;">{{item.endCity}}</view>
+        </view>
+      </view>
+      <view >
+       <view class="inner reminding" wx:if="{{item.remind_stats == '0'}}" bindtap="showCxmodal">提醒中</view>
+       <view class="inner reminded" wx:if="{{item.remind_stats == '1'}}" bindtap="showCxmodal">已提醒</view>
+     </view>
+   </view>
+ </view>
+</view>

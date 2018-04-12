@@ -1,0 +1,142 @@
+/**cxFlightList.wxss**/
+.show-btn {
+  margin-top: 100rpx;
+  color: #22cc22;
+}
+
+.modal-mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+  z-index: 9000;
+  color: #fff;
+}
+
+.modal-dialog {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+  background: #f9f9f9;
+  margin: 0;
+}
+
+.modal-title {
+  padding-top: 50rpx;
+  font-size: 36rpx;
+  color: #030303;
+  text-align: center;
+}
+
+.modal-content {
+  padding: 50rpx 32rpx;
+}
+
+/*.modal-input {
+  display: flex;
+  background: #fff;
+  border: 2rpx solid #ddd;
+  border-radius: 4rpx;
+  font-size: 28rpx;
+}*/
+
+
+.input {
+  width: 80%;
+  margin: 0 auto;
+  height: 82rpx;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+  color: #333;
+  border-bottom: 1px solid #015f89;
+}
+
+input-holder {
+  color: #666;
+  font-size: 28rpx;
+}
+
+.modal-footer {
+  display: flex;
+  flex-direction: row;
+  height: 86rpx;
+  border-top: 1px solid #dedede;
+  font-size: 34rpx;
+  line-height: 86rpx;
+}
+
+.btn-cancel {
+  width: 50%;
+  color: #666;
+  text-align: center;
+  border-right: 1px solid #dedede;
+}
+
+.btn-confirm {
+  width: 50%;
+  color: #ec5300;
+  text-align: center;
+}
+
+.warnmsg{
+  width: 80%;
+  margin: 0 auto;
+  color: #cf4227;
+  font-size: 33rpx;
+  line-height: 1.3rem;
+}
+
+.cancelbtn{
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  display: inline-block;
+  right: 10px;
+  top: 10px;
+}
+.sendTxt{
+/*  position: absolute;
+  font-size: 30rpx;
+  right: 15%;
+  top: 40%;
+  z-index: 999;*/
+  float: right;
+  position: relative;
+  font-size: 30rpx;
+  right: 10%;
+  /*top: 70rpx;*/
+  top: 20rpx;
+  z-index: 999;
+}
+
+.errmsg{
+  font-size: 30rpx;
+  margin-left: 2rem;
+  color: #cf4227;
+
+}
+
+.errmsg icon{
+  height: 30rpx;
+  width: 30rpx;
+}
+
+.kbup{
+  bottom: 200px;
+}
+
+.line-css {
+    height: 1px;
+    background: #015f89;
+    margin: 0 auto;
+    width: 80%;
+}

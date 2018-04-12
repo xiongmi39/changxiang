@@ -101,21 +101,28 @@ function handleflightInfo(item){
       if(item.dp_time){
       	startTime = item.dp_time.split(" ")[1];
       	startDate = item.dp_time.split(" ")[0];
-      }else if(item.de_time){
+        item.status = "计划";
+      }
+      if(item.de_time){
       	startTime = item.de_time.split(" ")[1];
       	startDate = item.de_time.split(" ")[0];
-      }else if(item.da_time){
+        item.status = "预计";
+      }
+      if(item.da_time){
       	startTime = item.da_time.split(" ")[1];
       	startDate = item.da_time.split(" ")[0];
+        item.status = "实际";
       }
 
       if(item.ap_time){
         reachTime = item.ap_time.split(" ")[1];
         endDate = item.ap_time.split(" ")[0];
-      }else if(item.ae_time){
+      }
+      if(item.ae_time){
         reachTime = item.ae_time.split(" ")[1];
         endDate = item.ae_time.split(" ")[0];
-      }else if(item.aa_time){
+      }
+       if(item.aa_time){
         reachTime = item.aa_time.split(" ")[1];
         endDate = item.aa_time.split(" ")[0];
       }
