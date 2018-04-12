@@ -31,8 +31,15 @@
       </view>
       <view class="selection" wx:for="{{cityList}}" wx:key="{{item.initial}}">
         <view class="item_letter"  id="{{item.initial}}">{{item.initial}}</view>
-        <view class="item_city"  wx:for="{{item.cityInfo}}" wx:for-item="ct" wx:key="{{ct.dest}}" data-cityCode="{{ct.dest}}" data-city="{{ct.arpt_brief_c}}" bindtap="bindCity">
+<!--         <view class="item_city"  wx:for="{{item.cityInfo}}" wx:for-item="ct" wx:key="{{ct.dest}}" data-cityCode="{{ct.dest}}" data-city="{{ct.arpt_brief_c}}" bindtap="bindCity">
           {{ct.arpt_brief_c}}
+        </view> -->
+        <view>
+          <view wx:for="{{item.cityInfo}}" wx:for-item="ct" wx:key="{{ct.dest}}">
+            <view class="weui-grid" data-cityCode="{{ct.dest}}" data-city="{{ct.arpt_brief_c}}" bindtap="bindCity" >
+              <view class="weui-grid__label">{{ct.arpt_brief_c}}</view>
+            </view>
+          </view>
         </view>
       </view>
     </view>
