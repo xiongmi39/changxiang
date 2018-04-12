@@ -3,21 +3,21 @@
 	<cxmodal id='cxmodal' bind:refreshFlight="_refreshFlight" flightNo='{{flightInfo.flight_no}}' flight_date='{{startDate}}'>
 	</cxmodal>
 	<view class="mainTitle">
-		<view>飞机预计起飞时间{{startTime}}</view>
+		<view>飞机{{status}}起飞时间{{flightInfo.startTime}}</view>
 		<view style="font-size:35rpx">{{flightInfo.as_name}}</view>
 	</view>
 	<view class="chooseCity pd-70">
 		<view class="date flight"><image class="flighticon" src="../../../images/cxflight.png"></image>{{flightInfo.flight_no}}</view>
 		<view class="citySelect">
-			<view class="smlabeldark from">{{startCity}}</view>
-			<view class="smlabeldark to">{{endCity}}</view>
+			<view class="smlabeldark from">{{flightInfo.startCity}}</view>
+			<view class="smlabeldark to">{{flightInfo.endCity}}</view>
 		</view>
 		<view class="citySelect">
 			<view class="mdlabel from">{{flightInfo.terminal}}</view>
 			<view class="mdlabel ">{{flightInfo.arrive_exit}}</view>
 		</view>
 		<view class="citySelect">
-			<view class="startCity" >{{startTime}}</view>
+			<view class="startCity" >{{flightInfo.startTime}}</view>
 			<view class="citySelect_img">
 				<image class="samll_plane" src="../../../images/cxplan.png"></image>
 			</view>
@@ -31,7 +31,7 @@
 			<view class="smlabeldark to">登机口</view>
 		</view>
 		<view class="citySelect">
-			<view class="smlabeldark from">{{realisland}}</view>
+			<view class="smlabeldark from">{{flightInfo.realisland}}</view>
 			<view class="smlabeldark">{{flightInfo.counters}}</view>
 			<view class="smlabeldark to">{{flightInfo.gates}}</view>
 		</view>
