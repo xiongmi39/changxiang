@@ -59,7 +59,7 @@ button {
 }
 .date {
   font-size: 23rpx;
-  margin-right: 1.067rem;
+  /*margin-right: 1.067rem;*/
   color: #898989;
 }
 
@@ -241,4 +241,8 @@ input-holder {
 .disableBtn{
   background: #898989;
   color: #fff;
+}
+
+.listContainer .weui-cell__hd{
+margin-right: 10px;
 }

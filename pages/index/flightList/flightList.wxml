@@ -5,7 +5,7 @@
         <cxLoading  hiddenLoading="{{hiddenLoading}}" id='cxLoading'></cxLoading>
   <!-- <loading hidden="{{hiddenLoading}}">正在查询</loading> -->
   <view wx:if="{{flightList.length == 0}}" style="text-align: center;">无航班信息</view>
-  <view wx:if="{{flightList.length > 0}}">
+  <view class="listContainer" wx:if="{{flightList.length > 0}}">
     <view class="weui-cells weui-cells_after-title"  wx:for="{{flightList}}">
       <view open-type="switchTab"  class="weui-cell weui-cell_access" hover-class="weui-cell_active">
         <view class="weui-cell__hd">
@@ -14,7 +14,7 @@
           <view class="date">{{item.startCity}}</view>
         </view>
         <view class="weui-cell__bd " bindtap="goDetail" data-detail = "{{item}}">
-          <view style="width: 5rem;">
+          <view >
             <view class="date flight">{{item.flight_no}}</view>
             <view class="time">
               <image src="../../../images/cxarrow.png" class="arrow"></image>

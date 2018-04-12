@@ -1,4 +1,6 @@
 {
   "component": true,        
-  "usingComponents": {}     
+    "usingComponents": {
+    "cxmodal": "../../../components/cxmodal/cxmodal"
+  }     
 }

@@ -125,7 +125,7 @@
 
 .date {
   font-size: 23rpx;
-  margin-right: 1.067rem;
+/*  margin-right: 1.067rem;*/
   color: #898989;
 }
 
