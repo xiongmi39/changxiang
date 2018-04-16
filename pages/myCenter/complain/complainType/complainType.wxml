@@ -1,0 +1,8 @@
+<!--sample.wxml-->
+<view class="page__bd">
+	<view class="container">
+		<view class="weui-cells__title"></view>
+		<cxFolder id='cxFolder' bind:refreshFlight="_refreshFlight" flightNo='{{currentFlight.flight_no}}' flight_date='{{currentFlight.startDate}}'>
+		</cxFolder>
+	</view>
+</view>

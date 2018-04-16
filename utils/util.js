@@ -8,7 +8,7 @@ var commonCheck = {
 		}		
 	},
 	isPhone: function(data){
-		if(data.length === 11 || /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(17[0-9]{1})|(14[0-9]{1})|)+\d{8})$/.test(data)){
+		if(data.length === 11 && /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(17[0-9]{1})|(14[0-9]{1})|)+\d{8})$/.test(data)){
 			return true;
 		}else{
 			return false;
@@ -24,6 +24,15 @@ var commonCheck = {
 	isMinAndMaxStr: function(data,min,max){
 		// if(eval(`/^.{${min},${max}}$/`).test(data)){
       if(data.length > min && data.length <= max){
+
+       return true;
+     }else {
+       return false;
+     }
+   },
+   isNNum: function(data,len){
+    //是否是n位数字
+      if(/^[0-9]*$/.test(data) && data.length == len){
 
        return true;
      }else {

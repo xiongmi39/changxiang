@@ -19,7 +19,7 @@
 					</navigator>
 				</block>
 				<block>
-					<navigator url="" class="weui-grid shortgrid" hover-class="weui-grid_active">
+					<navigator url="/pages/myCenter/complain/complain" class="weui-grid shortgrid" hover-class="weui-grid_active">
 						<image class="weui-grid__icon" src="../../images/cxcomplain.png" />
 						<view class="weui-grid__label">投诉建议</view>
 					</navigator>

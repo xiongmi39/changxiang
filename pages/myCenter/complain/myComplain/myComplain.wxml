@@ -29,4 +29,5 @@
             <view class="complain_no"><text>编号：1234</text></view>
 		</view>
 	</view>
+    <button class="sureBtn" bindtap="seatchFlight">新增评价</button>
 </view>

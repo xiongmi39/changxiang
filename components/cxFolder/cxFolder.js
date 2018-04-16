@@ -1,4 +1,4 @@
-//cxmodal.js
+//cxFolder.js
 var app = getApp()
 Component({
   options: {
@@ -98,7 +98,7 @@ Component({
         })
         return;
       }
-      if(app.util.commonCheck.isNull(this.data.verticode) || !app.util.commonCheck.isNNum(this.data.verticode,4)){
+      if(app.util.commonCheck.isNull(this.data.verticode)){
         this.setData({
           ifVericodeErr:false
         })

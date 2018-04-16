@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "cxFolder": "../../../../components/cxFolder/cxFolder"
+  },
+  "navigationBarTitleText": "投诉类型"
+}
