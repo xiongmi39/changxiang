@@ -104,10 +104,14 @@ Component({
         })
         return;
       }
+      this.setData({
+        isDisabled: true
+      })
       this.saveRemindFlightInfo();
       // this.resetData(); 
     },
     getVertiCode: function(){
+      var that = this;
       if(this.data.isDisabled == true){
         return;
       }
@@ -118,43 +122,30 @@ Component({
         })
         return;
       }
-      // if(!this.commonCheck.isPhone(this.formData.LoginName)){
-      //   this.ifShowMsg = true;
-      //   this.msg = "电话号码不正确";
-      //   return;
-      // }
       this.time();
-      // this.data.isDisabled = true;
-      // this.homeService.getSMSCodeSend({
-      //   ReguserID: '',
-      //   PhoneNumber: this.formData.LoginName
-      // }).subscribe((data:any) => {
-      //   let alert = this.alertCtrl.create({
-      //     title: '验证码获取成功',
-      //     buttons: [
-      //     {
-      //       text: data
-      //     }
-      //     ]
-      //   });
-      //   alert.present();
-      //   this.time();
-      // },err =>{
-      //   let toast = this.toastCtrl.create({
-      //     message: '获取验证码失败',
-      //     duration: 1000,
-      //     position: 'top'
-      //   });
-      //   toast.present();
-      // });
+
+      wx.request({
+        url: app.appConfig.config.sendPhoneVerificationCode,
+        data: {
+          passenger_phone:that.data.phoneNo,
+          openId:wx.getStorageSync('openId'),
+          sign: app.appConfig.getSign(app.appConfig.config.sendPhoneVerificationCode,[{key:"passenger_phone",value:that.data.phoneNo}])
+        },
+        success: function(res){
+          app.openToast('验证码发送成功');
+        },
+        fail: function(){
+          app.openAlert();
+        }
+      })
+      
     },
     time: function() {
       if (this.data.wait == 0) {
         this.setData({
-          sendCount: "获取验证码"
+          sendCount: "获取验证码",
+          wait:60
         })
-        this.data.wait = 60;
-        this.data.isDisabled = false;
       } else { 
         var showcount =this.data.wait+"s";
         this.setData({
@@ -164,7 +155,6 @@ Component({
         setTimeout(()=>{
           this.time();
         },1000);
-        this.data.isDisabled = true;
       }
     },
     inputChange: function(e){
@@ -200,11 +190,17 @@ Component({
           sign: app.appConfig.getSign(app.appConfig.config.saveRemindFlightInfo,[{key:"passenger_phone",value:that.data.phoneNo},{key:"verticode",value:that.data.verticode},{key:"flight_no",value:that.data.flightNo},{key:"flight_date",value:that.data.flight_date}])
         },
         success: function(res){
+          if(res.statusCode == "404"){
+            app.openAlert('添加提醒失败');
+            that.resetData();
+            return;
+          }
           app.openToast('添加提醒成功');
           that._refreshFlight();
           that.resetData();
         },
         fail: function(){
+          that.resetData();
           app.openAlert();
         }
       })

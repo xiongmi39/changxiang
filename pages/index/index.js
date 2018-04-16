@@ -29,8 +29,10 @@ Page({
       }) 
       this.searchFlightByNo();     
     }
-
-    
+  
+  },
+  onPullDownRefresh: function(){
+    this.getAllRemidFlightList();
   },
   onReady: function(){
     this.animation = wx.createAnimation({
@@ -124,6 +126,7 @@ Page({
     })
   },
   getAllRemidFlightList:function(){
+    wx.showNavigationBarLoading();
     var that = this;
     wx.request({
       url: app.appConfig.config.getAllRemidFlightList,
@@ -139,6 +142,10 @@ Page({
         that.setData({
           warnFlightLst: res.data.pd.remindFlightList
         })
+       // 隐藏导航栏加载框  
+       wx.hideNavigationBarLoading();  
+       // 停止下拉动作  
+       wx.stopPullDownRefresh(); 
       },
       fail: function(){
         console.log("failed");

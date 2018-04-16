@@ -3,7 +3,8 @@
 var md5 = require('./md5.js');
 
 //测试服务地址
-var basePath = "http://192.168.4.82:9080/pss_mp/";
+// var basePath = "http://192.168.4.82:9080/pss_mp/";
+var basePath = "http://192.168.1.137:9080/pss_mp/";
 // var basePath = "http://47.104.178.197:8082/pss_mp/";
 
 function getSign(url,params){
@@ -63,7 +64,9 @@ var config = {
 	'getAllInternationDestCityinfo': `${basePath}dest/getAllInternationDestCityinfo`,
 	'saveRemindFlightInfo':`${basePath}flightRemind/saveRemindFlightInfo`,
 	'getAllRemidFlightList':`${basePath}flightRemind/getAllRemidFlightList`,
-	'deleteFlightRemind': `${basePath}flightRemind/deleteFlightRemind`
+	'deleteFlightRemind': `${basePath}flightRemind/deleteFlightRemind`,
+	'getCarouselFigureinfo': `${basePath}carouselFigure/getCarouselFigureinfo`,
+	'sendPhoneVerificationCode': `${basePath}verification/sendPhoneVerificationCode`
 };
 
 module.exports = {

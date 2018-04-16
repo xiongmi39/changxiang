@@ -123,9 +123,13 @@ App({
 
 
   },
-  openAlert: function () {
+  openAlert: function (val) {
+    var text = '网络无反应，请检查您的网络设置';
+    if(val){
+      text = val;
+    }
     wx.showModal({
-      content: '网络无反应，请检查您的网络设置',
+      content: text,
       showCancel: false,
       success: function (res) {
         if (res.confirm) {

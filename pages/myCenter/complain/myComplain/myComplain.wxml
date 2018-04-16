@@ -1,0 +1,32 @@
+<!--sample.wxml-->
+<view class="container">
+	<view class="page__bd">
+		<view class="weui-cells__title"></view>
+		<view class="weui-cells weui-cells_after-title">
+            <navigator url="" class="weui-cell weui-cell_access no_handle" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">2018年3月4日</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access">待处理</view>
+            </navigator>
+            <view class="complain_main">概要：<text>机场大巴周围很多黑车，每次都很受困扰，希望可以改善改善改善改善改善改善改善改善</text></view>
+            <view class="complain_no"><text>编号：1234</text></view>
+		</view>
+		<view class="weui-cells__title"></view>
+		<view class="weui-cells weui-cells_after-title">
+            <navigator url="" class="weui-cell weui-cell_access wait_for" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">2018年3月4日</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access">待评价</view>
+            </navigator>
+            <view class="complain_main">概要：<text>机场大巴周围很多黑车，每次都很受困扰，希望可以改善改善改善改善改善改善改善改善</text></view>
+            <view class="complain_no"><text>编号：1234</text></view>
+		</view>
+		<view class="weui-cells__title"></view>
+		<view class="weui-cells weui-cells_after-title">
+            <navigator url="" class="weui-cell weui-cell_access evaluated" hover-class="weui-cell_active">
+                <view class="weui-cell__bd">2018年3月4日</view>
+                <view class="weui-cell__ft weui-cell__ft_in-access">已评价</view>
+            </navigator>
+            <view class="complain_main">概要：<text>机场大巴周围很多黑车，每次都很受困扰，希望可以改善改善改善改善改善改善改善改善</text></view>
+            <view class="complain_no"><text>编号：1234</text></view>
+		</view>
+	</view>
+</view>

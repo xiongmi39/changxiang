@@ -12,13 +12,15 @@
     "pages/switchcity/switchcity",
     "pages/transfer/transfer",
     "pages/transfer/pickService/pickService",
-    "pages/myCenter/complain/complain"
+    "pages/myCenter/complain/complain",
+    "pages/myCenter/complain/myComplain/myComplain"
   ],
   "window":{
-    "backgroundTextStyle":"light",
+    "backgroundTextStyle":"dark",
     "navigationBarBackgroundColor": "white",
     "navigationBarTitleText": "畅想旅行",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh": true
   },
   "tabBar":{
     "selectedColor":"#25538a",

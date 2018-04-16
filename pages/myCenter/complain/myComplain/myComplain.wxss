@@ -1,0 +1,33 @@
+/**sample.wxss**/
+.complain_main {
+	padding: 10px 15px;
+}
+.complain_no{
+	padding: 10px 15px;
+	text-align: right;
+}
+text {
+	font-size: 30rpx;
+	color: #898989;
+}
+.weui-cell__bd {
+	color: #6c6c6c;
+}
+.no_handle{
+	background: #ffeae3;
+}
+.no_handle .weui-cell__ft {
+	color: #df3b02 !important;
+}
+.wait_for{
+	background: #e6ffe3;
+}
+.wait_for .weui-cell__ft {
+	color: #17a608 !important;
+}
+.evaluated{
+	background: #e3e3e3;
+}
+.evaluated .weui-cell__ft {
+	color: #6c6c6c !important;
+}

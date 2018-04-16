@@ -32,6 +32,7 @@ Page({
                 that.setData({
                   files: that.data.files.concat(res.tempFilePaths)
                 });
+                console.log(that.data.files);
               }
             })
     if(this.data.files.length == 3){

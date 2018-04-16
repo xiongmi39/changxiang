@@ -59,6 +59,11 @@ Page({
   },
   onPullDownRefresh: function () {
     // 页面相关事件处理函数--监听用户下拉动作
+    if(this.data.currentIndex == 0){
+      this.getChinaCities();
+    }else{
+      this.getAllInternationDestCityinfo();
+    }
 
   },
   onReachBottom: function () {
@@ -127,6 +132,7 @@ Page({
   },
   getChinaCities: function(){
     var that = this;
+    wx.showNavigationBarLoading();
     that.setData({
       hiddenLoading:false,
       cityList: [],
@@ -162,6 +168,10 @@ Page({
             that.setData({
               hiddenLoading:true
             })
+           // 隐藏导航栏加载框  
+           wx.hideNavigationBarLoading();  
+           // 停止下拉动作  
+           wx.stopPullDownRefresh(); 
           },
           fail: function(){
             app.openAlert();
@@ -170,6 +180,7 @@ Page({
   },
   getAllInternationDestCityinfo: function(){
     var that = this;
+    wx.showNavigationBarLoading();
     that.setData({
       hiddenLoading:false,
       cityList: [],
@@ -204,6 +215,10 @@ Page({
             that.setData({
               hiddenLoading:true
             })
+            // 隐藏导航栏加载框  
+           wx.hideNavigationBarLoading();  
+           // 停止下拉动作  
+           wx.stopPullDownRefresh(); 
           },
           fail: function(){
             app.openAlert();
