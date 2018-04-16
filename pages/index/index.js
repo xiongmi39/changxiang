@@ -126,6 +126,9 @@ Page({
     })
   },
   getAllRemidFlightList:function(){
+    this.setData({
+      warnFlightLst: []
+    })
     wx.showNavigationBarLoading();
     var that = this;
     wx.request({

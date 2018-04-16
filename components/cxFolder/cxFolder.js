@@ -29,11 +29,11 @@ Component({
       type : String ,
       value : '确定'
     } ,
-    flightNo :{
+    folderTitle :{
       type : String ,
       value : ''
     } ,
-    flight_date:{
+    folderKey:{
       type : String ,
       value : ''
     }
@@ -53,8 +53,17 @@ Component({
     sendCount:"获取验证码",
     ifPhoneErr:true,
     isUp:false,
-    ifVericodeErr:true
+    ifVericodeErr:true,
+    keyName:''
 
+  },
+  attached: function(){
+    var folderKey = "isShowFrom"+this.data.folderKey;
+    this.setData({ 
+      [folderKey]: false,
+      keyName:folderKey
+    });
+    console.log(this.data);
   },
 
   /**
@@ -207,6 +216,14 @@ Component({
     },
     _refreshFlight: function(){
       this.triggerEvent("refreshFlight");
+    },
+    showFrom: function(e){
+      var param = e.currentTarget.dataset.param; 
+      var key = "isShowFrom"+param;
+      this.setData({ 
+        [key]: !this.data[key]
+      });
     }
+
   }
 })

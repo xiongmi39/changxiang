@@ -89,6 +89,9 @@ Page({
       success: function(res){
         app.openToast('取消关注成功');
         that._refreshFlight();
+        var pages = getCurrentPages()
+        var prevPage = pages[pages.length-2]  //上一个页面
+        wx.navigateBack(prevPage);
       },
       fail: function(){
         app.openAlert();

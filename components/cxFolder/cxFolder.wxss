@@ -33,3 +33,8 @@
   text-overflow: ellipsis;
   overflow: hidden;
 }
+.tui-hide{display: none;}
+.tui-hide .down{
+  display: block;
+  transform :rotate(-180deg);
+}
