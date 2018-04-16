@@ -54,14 +54,15 @@ Component({
     ifPhoneErr:true,
     isUp:false,
     ifVericodeErr:true,
-    keyName:''
+    keyName:'',
+    arrowClass:'down',
+    panelClass:'tui-hide'
 
   },
   attached: function(){
     var folderKey = "isShowFrom"+this.data.folderKey;
     this.setData({ 
-      [folderKey]: false,
-      keyName:folderKey
+      [folderKey]: false
     });
     console.log(this.data);
   },
@@ -220,8 +221,26 @@ Component({
     showFrom: function(e){
       var param = e.currentTarget.dataset.param; 
       var key = "isShowFrom"+param;
+      if(this.data.arrowClass == 'arrow-turn'){
+        this.setData({ 
+          arrowClass: 'down'
+        });
+      }else{
+        this.setData({ 
+          arrowClass: 'arrow-turn'
+        });
+      }
+      if(this.data.panelClass == 'tui-hide'){
+        this.setData({ 
+          panelClass: ''
+        });
+      }else{
+        this.setData({ 
+          panelClass: 'tui-hide'
+        });
+      }     
       this.setData({ 
-        [key]: !this.data[key]
+        [key]: !this.data[key],
       });
     }
 

@@ -1,5 +1,6 @@
 <!--cxmodal.wxml-->
   <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{hiddenmodalput}}"></view>
+  <form bindsubmit="formSubmit"  report-submit = "true">
   <view class="modal-dialog {{isUp?'kbup':''}}" wx:if="{{hiddenmodalput}}" >
     <image src="../../images/cxcancel.png" class="cancelbtn" bindtap="cancel" data-status="cancel"></image>
     <view class="modal-content">
@@ -18,5 +19,6 @@
         <view class="errmsg" hidden="{{ifVericodeErr}}"><icon type="clear" color="#cf4227" size="10"/>请输入正确的验证码</view>
       </view>
     </view>
-    <button class="sureBtn" data-status="confirm" bindtap="confirm">确定</button>
+    <button class="sureBtn" data-status="confirm" formType="submit" >确定</button>
   </view>
+</form>

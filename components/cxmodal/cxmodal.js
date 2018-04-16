@@ -87,7 +87,7 @@ Component({
       this.resetData();
     },  
     //确认  
-    confirm: function(){  
+    confirm: function(formId){  
       if(this.data.isDisabled == true){
         return;
       }
@@ -107,7 +107,7 @@ Component({
       this.setData({
         isDisabled: true
       })
-      this.saveRemindFlightInfo();
+      this.saveRemindFlightInfo(formId);
       // this.resetData(); 
     },
     getVertiCode: function(){
@@ -177,7 +177,7 @@ Component({
       isUp:false
     })   
     },
-    saveRemindFlightInfo: function(){
+    saveRemindFlightInfo: function(formId){
       var that = this;
       wx.request({
         url: app.appConfig.config.saveRemindFlightInfo,
@@ -186,8 +186,9 @@ Component({
           verticode:that.data.verticode,
           flight_no:that.data.flightNo,
           flight_date:that.data.flight_date,
+          form_id:formId,
           openId:wx.getStorageSync('openId'),
-          sign: app.appConfig.getSign(app.appConfig.config.saveRemindFlightInfo,[{key:"passenger_phone",value:that.data.phoneNo},{key:"verticode",value:that.data.verticode},{key:"flight_no",value:that.data.flightNo},{key:"flight_date",value:that.data.flight_date}])
+          sign: app.appConfig.getSign(app.appConfig.config.saveRemindFlightInfo,[{key:"passenger_phone",value:that.data.phoneNo},{key:"verticode",value:that.data.verticode},{key:"flight_no",value:that.data.flightNo},{key:"flight_date",value:that.data.flight_date},{key:"form_id",value:that.data.form_id}])
         },
         success: function(res){
           if(res.statusCode == "404"){
@@ -204,6 +205,10 @@ Component({
           app.openAlert();
         }
       })
+    },
+    formSubmit: function(e) {
+      console.log('form发生了submit事件，fromId为：', e.detail.formId);
+      this.confirm(e.detail.formId);
     },
     _refreshFlight: function(){
       this.triggerEvent("refreshFlight");

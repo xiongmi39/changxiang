@@ -3,9 +3,9 @@
 <view class="weui-cells weui-cells_after-title">
   <view url="" class="weui-cell weui-cell_access no_handle" hover-class="weui-cell_active">
     <view class="weui-cell__bd">{{folderTitle}}</view>
-    <view style="top:0" bindtap="showFrom" data-param="{{folderKey}}" class="down {{keyName ? 'tui-hide' : ''}}"><image   src="../../images/cxdown.png" class=" down "></image></view>
+    <view style="top:0" bindtap="showFrom" data-param="{{folderKey}}" class="{{arrowClass}}"><image   src="../../images/cxdown.png" class=" down "></image></view>
   </view>
-  <view style="background: #f8f8f8;" class="{{keyName ? '' : 'tui-hide'}}">
+  <view style="background: #f8f8f8;" class="{{panelClass}}">
     <view class="weui-grids">
       <view class="weui-grid"  bindtap="bindCity" >
         <view class="weui-grid__label">机场大巴</view>

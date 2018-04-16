@@ -8,10 +8,7 @@
   width: 17px;
   height: 22px;
 }
-.tui-hide .down{
-  display: block;
-  transform :rotate(-180deg);
-}
+
 .weui-grid {
   position: relative;
   float: left;
@@ -34,7 +31,12 @@
   overflow: hidden;
 }
 .tui-hide{display: none;}
-.tui-hide .down{
-  display: block;
-  transform :rotate(-180deg);
+.arrow-turn {
+  display: inline-block;
+  position: absolute;
+  top: 20rpx;
+  right: 40rpx;
+  width: 17px;
+  height: 22px;
+  transform :rotate(-180deg) ;
 }
