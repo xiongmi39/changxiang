@@ -12,7 +12,7 @@
 		</view>
 		<view class="weui-cells__title"></view>
 		<view class="weui-cells weui-cells_after-title">
-            <navigator url="" class="weui-cell weui-cell_access wait_for" hover-class="weui-cell_active">
+            <navigator url="../complainDetail/complainDetail" class="weui-cell weui-cell_access wait_for" hover-class="weui-cell_active">
                 <view class="weui-cell__bd">2018年3月4日</view>
                 <view class="weui-cell__ft weui-cell__ft_in-access">待评价</view>
             </navigator>

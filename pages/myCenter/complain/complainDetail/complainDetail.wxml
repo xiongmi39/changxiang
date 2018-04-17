@@ -1,0 +1,16 @@
+<!--complainDetail.wxml-->
+<view class="container">
+	<view class="page__bd">
+		<view class="weui-cells__title">原文</view>
+		<view class="weui-cell">
+			<view class="main">机场大巴周围很多黑车，每次都很受困扰，希望治理治理</view>
+			<view class="imgs"></view>
+			<view class="date">2018年3月4日</view>
+		</view>
+		<view class="weui-cells__title">客户回复</view>
+		<view class="weui-cell">
+			<view class="main">尊敬的客户您好，关于您提出的问题，我们已经加强了管理，并进行了解决，感谢您的建议，祝您旅途愉快</view>
+			<view class="date">2018年3月4日</view>
+		</view>
+	</view>
+</view>

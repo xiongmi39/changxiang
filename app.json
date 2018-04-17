@@ -14,7 +14,8 @@
     "pages/transfer/pickService/pickService",
     "pages/myCenter/complain/complain",
     "pages/myCenter/complain/myComplain/myComplain",
-    "pages/myCenter/complain/complainType/complainType"
+    "pages/myCenter/complain/complainType/complainType",
+    "pages/myCenter/complain/complainDetail/complainDetail"
   ],
   "window":{
     "backgroundTextStyle":"dark",
