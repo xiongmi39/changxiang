@@ -25,6 +25,7 @@ Page({
   chooseImage: function (e) {
     var that = this;
     wx.chooseImage({
+            count: 4,
             sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
             sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
             success: function (res) {
@@ -32,18 +33,19 @@ Page({
                 that.setData({
                   files: that.data.files.concat(res.tempFilePaths)
                 });
+                if(that.data.files.length == 4){
+                  that.setData({
+                    isShow:false
+                  })
+                }else{
+                  that.setData({
+                    isShow:true
+                  })
+                }
                 console.log(that.data.files);
               }
             })
-    if(this.data.files.length == 3){
-      this.setData({
-        isShow:false
-      })
-    }else{
-      this.setData({
-        isShow:true
-      })
-    }
+
   },
   previewImage: function(e){
     wx.previewImage({

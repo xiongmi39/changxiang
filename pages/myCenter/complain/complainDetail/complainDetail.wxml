@@ -9,6 +9,11 @@
             <view class="complain_main">机场大巴周围很多黑车，每次都很受困扰，希望可以改善改善改善改善改善改善改善改善</view>
             <view class="weui-uploader__bd" style="padding: 25rpx">
             	<view class="weui-uploader__files" id="uploaderFiles">
+            		<block wx:for="{{files}}" wx:key="*this">
+            			<view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+            				<image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+            			</view>
+            		</block>
             		<view class="weui-uploader__file">
             			<image class="weui-uploader__img" src="../../../../images/swiper.png" mode="aspectFill" />
             		</view>
