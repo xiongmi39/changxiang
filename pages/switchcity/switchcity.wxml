@@ -20,7 +20,7 @@
     scroll-into-view="{{scrollTopId}}" scroll-top="{{scrollTop}}">
     <view wx:if="{{hotcityList || cityList}}">
       <view>
-        <text class="hotcity hotcity-common">热门城市</text>
+        <text class="hotcity hotcity-common" wx:if="{{hotcityList.length > 0}}">热门城市</text>
         <view class="weui-grids">
           <block wx:for-items="{{hotcityList}}" wx:key="{{index}}">
             <view class="weui-grid" data-cityCode="{{item.arpt_iata}}" data-city="{{item.arpt_brief_c}}" bindtap="bindHotCity" >

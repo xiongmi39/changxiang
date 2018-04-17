@@ -55,7 +55,7 @@ Component({
     isUp:false,
     ifVericodeErr:true,
     keyName:'',
-    arrowClass:'down',
+    arrowClass:'',
     panelClass:'tui-hide'
 
   },
@@ -223,7 +223,7 @@ Component({
       var key = "isShowFrom"+param;
       if(this.data.arrowClass == 'arrow-turn'){
         this.setData({ 
-          arrowClass: 'down'
+          arrowClass: ''
         });
       }else{
         this.setData({ 

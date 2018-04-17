@@ -111,6 +111,9 @@ Page({
           return;
         }
         var flightInfo = JSON.stringify(res.data.pd); 
+        that.setData({
+          flightNo:""
+        })
         wx.navigateTo({
           url: './flightDetail/flightDetail?flightInfo='+flightInfo
         })

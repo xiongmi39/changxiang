@@ -17,7 +17,7 @@
   box-sizing: border-box;
   border: 1rpx solid #f0f0f0;
   border-radius: 8rpx;
-  margin: 10rpx 12rpx;
+  margin: 25rpx 12rpx;
   background: #f0f0f0;
 }
 
@@ -31,12 +31,6 @@
   overflow: hidden;
 }
 .tui-hide{display: none;}
-.arrow-turn {
-  display: inline-block;
-  position: absolute;
-  top: 20rpx;
-  right: 40rpx;
-  width: 17px;
-  height: 22px;
+.arrow-turn .down{
   transform :rotate(-180deg) ;
 }

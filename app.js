@@ -142,7 +142,7 @@ App({
     wx.showToast({
       title: val,
       icon: 'success',
-      duration: 3000
+      duration: 1000
     });
   }
 

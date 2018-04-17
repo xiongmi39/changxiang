@@ -14,11 +14,11 @@
         <view class="sendTxt" bindtap="getVertiCode">{{sendCount}}</view>
         <input style="width: 60%;border-bottom:0" placeholder-class="input-holder" type="number" maxlength="11" bindinput="inputChange" id="phoneNo" class="input" placeholder="请输入手机号" bindfocus="onFocus"  value="{{phoneNo}}"></input>
         <view class="line-css"></view>
-        <view class="errmsg" hidden="{{ifPhoneErr}}"><icon type="clear" color="#cf4227" size="10"/>请输入正确的手机号</view>
-        <input placeholder-class="input-holder" bindfocus="onFocus"  type="number" id="verticode" maxlength="10" bindinput="inputChange" class="input" placeholder="请输入验证码">{{verticode}}</input>
-        <view class="errmsg" hidden="{{ifVericodeErr}}"><icon type="clear" color="#cf4227" size="10"/>请输入正确的验证码</view>
+        <view class="errmsg" hidden="{{ifPhoneErr}}"><icon type="clear" color="#cf4227" size="10"/>{{phoneErr}}</view>
+        <input placeholder-class="input-holder" bindfocus="onFocus"  type="number" id="verticode" maxlength="4" bindinput="inputChange" class="input" placeholder="请输入验证码">{{verticode}}</input>
+        <view class="errmsg" hidden="{{ifVericodeErr}}"><icon type="clear" color="#cf4227" size="10"/>{{vericodeErr}}</view>
       </view>
     </view>
-    <button class="sureBtn" data-status="confirm" formType="submit" >确定</button>
+    <button class="sureBtn" style="margin-top: 0" data-status="confirm" formType="submit" >确定</button>
   </view>
 </form>

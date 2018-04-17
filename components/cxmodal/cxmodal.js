@@ -52,8 +52,10 @@ Component({
     wait:60,
     sendCount:"获取验证码",
     ifPhoneErr:true,
+    phoneErr:"",
     isUp:false,
-    ifVericodeErr:true
+    ifVericodeErr:true,
+    vericodeErr:""
 
   },
 
@@ -91,16 +93,31 @@ Component({
       if(this.data.isDisabled == true){
         return;
       }
-      if(app.util.commonCheck.isNull(this.data.phoneNo) || !app.util.commonCheck.isPhone(this.data.phoneNo)){
-        console.log("不能为空");
+      if(app.util.commonCheck.isNull(this.data.phoneNo)){
         this.setData({
-          ifPhoneErr:false
+          ifPhoneErr:false,
+          phoneErr:"手机号不能为空"
         })
         return;
       }
-      if(app.util.commonCheck.isNull(this.data.verticode) || !app.util.commonCheck.isNNum(this.data.verticode,4)){
+      if(!app.util.commonCheck.isPhone(this.data.phoneNo)){
         this.setData({
-          ifVericodeErr:false
+          ifPhoneErr:false,
+          phoneErr:"请输入正确的手机号"
+        })
+        return;
+      }
+      if(app.util.commonCheck.isNull(this.data.verticode)){
+        this.setData({
+          ifVericodeErr:false,
+          vericodeErr:"验证码不能为空"
+        })
+        return;
+      }
+      if(!app.util.commonCheck.isNNum(this.data.verticode,4)){
+        this.setData({
+          ifVericodeErr:false,
+          vericodeErr:"请输入四位数字"
         })
         return;
       }
@@ -115,10 +132,17 @@ Component({
       if(this.data.isDisabled == true){
         return;
       }
-      if(app.util.commonCheck.isNull(this.data.phoneNo) || !app.util.commonCheck.isPhone(this.data.phoneNo)){
-        console.log("不能为空");
+      if(app.util.commonCheck.isNull(this.data.phoneNo)){
         this.setData({
-          ifPhoneErr:false
+          ifPhoneErr:false,
+          phoneErr:"手机号不能为空"
+        })
+        return;
+      }
+      if(!app.util.commonCheck.isPhone(this.data.phoneNo)){
+        this.setData({
+          ifPhoneErr:false,
+          phoneErr:"请输入正确的手机号"
         })
         return;
       }

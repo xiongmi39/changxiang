@@ -193,13 +193,6 @@ Page({
             sign: app.appConfig.getSign(app.appConfig.config.getAllInternationDestCityinfo,[])
           },
           success: function(res){
-
-            // if(!res.data.pd.internationDestCityList || res.data.pd.internationDestCityList.length == 0){
-            //   that.setData({
-            //     hiddenLoading:true
-            //   })
-            //   return;
-            // }
             var cityList = [];
             var hotcityList = [];
             if(res.data.pd.internationDestCityList && res.data.pd.internationDestCityList.length> 0){
@@ -210,7 +203,7 @@ Page({
             }
             that.setData({
               cityList: cityList,
-              hotcityList: res.data.pd.hotcityList
+              hotcityList: hotcityList
             })
             that.setData({
               hiddenLoading:true

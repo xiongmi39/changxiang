@@ -28,7 +28,7 @@
       <view class="smlabel from">航班号</view>
     </view>
     <view class="citySelect">
-      <input placeholder="请输入航班号"  bindinput="flightNoInput" type="text" placeholder-style="color:#b2b1b1; font-size:0.9em;" />
+      <input placeholder="请输入航班号" value="{{flightNo}}"  bindinput="flightNoInput" type="text" placeholder-style="color:#b2b1b1; font-size:0.9em;" />
     </view>
   </view>
   <view class="errmsg" hidden="{{ifShowErrmsg}}"><icon type="clear" color="#cf4227" size="10"/>航班号输入错误</view>
