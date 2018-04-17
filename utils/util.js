@@ -100,7 +100,9 @@ function handleflightInfo(item){
       for(var i=0 ; i<islandarr.length;i++){
         realisland.push(islandarr[i].slice(0,1));
       }
-      item.realisland =realisland.join(",");
+      //去重
+      const set = new Set(realisland);
+      item.realisland =[...set].join(",");
 
       //出发时间，到达时间
       var startTime = "";
