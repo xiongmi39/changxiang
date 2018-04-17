@@ -14,5 +14,9 @@ Page({
   },
   onLoad: function () {
 
+  },
+  onReady: function () {
+    //获得dialog组件
+    this.cxRate = this.selectComponent("#cxRate");
   }
 })

@@ -1,16 +1,40 @@
 <!--complainDetail.wxml-->
 <view class="container">
 	<view class="page__bd">
-		<view class="weui-cells__title">原文</view>
-		<view class="weui-cell">
-			<view class="main">机场大巴周围很多黑车，每次都很受困扰，希望治理治理</view>
-			<view class="imgs"></view>
-			<view class="date">2018年3月4日</view>
+		<view class="weui-cells__title">
+			<text>原文</text>
+			<text >编号：12345</text>
+		</view>
+		<view class="weui-cells weui-cells_after-title">
+            <view class="complain_main">机场大巴周围很多黑车，每次都很受困扰，希望可以改善改善改善改善改善改善改善改善</view>
+            <view class="weui-uploader__bd" style="padding: 25rpx">
+            	<view class="weui-uploader__files" id="uploaderFiles">
+            		<view class="weui-uploader__file">
+            			<image class="weui-uploader__img" src="../../../../images/swiper.png" mode="aspectFill" />
+            		</view>
+            		<view class="weui-uploader__file">
+            			<image class="weui-uploader__img" src="../../../../images/swiper.png" mode="aspectFill" />
+            		</view>
+            		<view class="weui-uploader__file">
+            			<image class="weui-uploader__img" src="../../../../images/swiper.png" mode="aspectFill" />
+            		</view>
+            		<view class="weui-uploader__file">
+            			<image class="weui-uploader__img" src="../../../../images/swiper.png" mode="aspectFill" />
+            		</view>
+            	</view>
+            </view>
+            <view class="complain_no"><text>2018年3月4日</text></view>
 		</view>
 		<view class="weui-cells__title">客户回复</view>
-		<view class="weui-cell">
-			<view class="main">尊敬的客户您好，关于您提出的问题，我们已经加强了管理，并进行了解决，感谢您的建议，祝您旅途愉快</view>
-			<view class="date">2018年3月4日</view>
+		<view class="weui-cells weui-cells_after-title">
+			<view class="complain_main">尊敬的客户您好，关于您提出的问题，我们已经加强了管理，并进行了解决，感谢您的建议，祝您旅途愉快</view>
+			<view class="complain_no"><text>2018年3月4日</text></view>
 		</view>
 	</view>
+	<view class="rate">
+		<view style="text-align: center;" ><text>请为本次服务进行打分</text></view>
+		<cxRate id='cxRate' bind:refreshFlight="_refreshFlight" flightNo='{{currentFlight.flight_no}}' flight_date='{{currentFlight.startDate}}'>
+		</cxRate>
+	</view>
+	<button class="sureBtn" bindtap="seatchFlight">提交评价</button>
 </view>

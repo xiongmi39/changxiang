@@ -1,21 +1,19 @@
 /**complainDetail.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.weui-cells__title{
+	display: flex;
+	justify-content: space-between;
 }
-
-.userinfo-nickname {
-  color: #aaa;
+.complain_main {
+	padding: 10px 15px;
+	font-size: 30rpx;
+	color: #6c6c6c;
 }
-
-.usermotto {
-  margin-top: 200px;
+.complain_no{
+	padding: 10px 15px;
+	text-align: right;
+}
+text {
+	font-size: 30rpx;
+	color: #898989;
 }

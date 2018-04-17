@@ -1,0 +1,9 @@
+<!--cxRate.wxml-->
+<view style="display: flex;width: 500rpx;margin: 10rpx auto;">
+ 
+    <block wx:for="{{stars}}">
+      <image class="star-image" style="left: {{item*100}}rpx" src="{{key > item ?(key-item == 0.5?halfSrc:selectedSrc) : normalSrc}}">
+        <view class="item"  data-key="{{item+1}}" bindtap="selectRight"></view>
+      </image>
+    </block>
+</view>

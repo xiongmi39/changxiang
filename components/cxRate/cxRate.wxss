@@ -1,0 +1,12 @@
+/**cxRate.wxss**/
+.star-image{
+  margin: 0 25rpx;
+  width: 50rpx;
+  height: 50rpx;
+  src: "../../images/no-star.png";
+}
+.item{
+  margin-top: -50rpx;
+  width: 100rpx;
+  height: 100rpx;
+}

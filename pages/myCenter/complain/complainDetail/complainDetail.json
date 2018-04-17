@@ -1,3 +1,5 @@
-{
+{  "usingComponents": {
+    "cxRate": "../../../../components/cxRate/cxRate"
+  },
   "navigationBarTitleText": "我的投诉建议"
 }
