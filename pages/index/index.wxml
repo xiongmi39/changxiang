@@ -42,14 +42,14 @@
   <!-- 航班列表 -->
   
   <view class="listContainer" wx:if="{{warnFlightLst.length > 0}}">
-    <view class="weui-cells weui-cells_after-title"  wx:for="{{warnFlightLst}}">
+    <view class="weui-cells weui-cells_after-title"  wx:for="{{warnFlightLst}}" bindtap="goDetail" data-detail = "{{item}}">
       <view open-type="switchTab"  class="weui-cell weui-cell_access" hover-class="weui-cell_active">
         <view class="weui-cell__hd">
           <view class="date">{{item.startDate}}</view>
           <view class="time">{{item.startTime}}</view>
           <view class="date">{{item.startCity}}</view>
         </view>
-        <view class="weui-cell__bd " bindtap="goDetail" data-detail = "{{item}}">
+        <view class="weui-cell__bd " >
           <view >
             <view class="date flight">{{item.flight_no}}</view>
             <view class="time">
