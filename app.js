@@ -6,7 +6,6 @@ App({
   globalData: {},
   appConfig: appConfig,
   util:util,
-
   // ========== 应用程序全局方法 ==========
   
   // ========== 生命周期方法 ==========

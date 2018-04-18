@@ -29,7 +29,7 @@
           </block>
         </view>
       </view>
-      <view class="selection" wx:for="{{cityList}}" wx:key="{{item.initial}}">
+      <view class="selection" wx:for="{{cityList}}" wx:key="{{item.initial}}" wx:if="{{item.cityInfo.length > 0}}">
         <view class="item_letter" wx:if="{{item.cityInfo.length > 0}}"  id="{{item.initial}}">{{item.initial}}</view>
 <!--         <view class="item_city"  wx:for="{{item.cityInfo}}" wx:for-item="ct" wx:key="{{ct.dest}}" data-cityCode="{{ct.dest}}" data-city="{{ct.arpt_brief_c}}" bindtap="bindCity">
           {{ct.arpt_brief_c}}

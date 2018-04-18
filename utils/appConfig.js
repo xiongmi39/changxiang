@@ -7,6 +7,11 @@ var md5 = require('./md5.js');
 var basePath = "http://192.168.1.137:80/pss_mp/";
 // var basePath = "http://47.104.178.197:8082/pss_mp/";
 // var basePath = "https://www.kkhedu.cn/pss_mp/";
+var accessid= 'LTAI9x58N5LlyUIP';
+var accesskey= 'hQuVSHsJwwxjZ0MvjB9RKBYepKiMYD';
+var host = 'https://cwagpss.oss-cn-qingdao.aliyuncs.com/';
+var policy = 'eyJleHBpcmF0aW9uIjoiMjAyMC0wMS0wMVQxMjowMDowMC4wMDBaIiwiY29uZGl0aW9ucyI6W1siY29udGVudC1sZW5ndGgtcmFuZ2UiLDAsMTA0ODU3NjAwMF1dfQ==';
+var signature = 'xwEIIJrFp6tnDWBJkG/qziqSl+M=';
 
 function getSign(url,params){
 	var paramstext = "";
@@ -55,6 +60,11 @@ return format;
 }
 
 var config = {
+	'accessid':accessid,
+	'accesskey':accesskey,
+	'host':host,
+	'policy':policy,
+	'signature':signature,
 	'test': `${basePath}test`,
 	'login':basePath+'login'+'?',
 	'getOpenId':`${basePath}login/getOpenId`,
@@ -67,7 +77,8 @@ var config = {
 	'getAllRemidFlightList':`${basePath}flightRemind/getAllRemidFlightList`,
 	'deleteFlightRemind': `${basePath}flightRemind/deleteFlightRemind`,
 	'getCarouselFigureinfo': `${basePath}carouselFigure/getCarouselFigureinfo`,
-	'sendPhoneVerificationCode': `${basePath}verification/sendPhoneVerificationCode`
+	'sendPhoneVerificationCode': `${basePath}verification/sendPhoneVerificationCode`,
+	'getAllComplaintsType' :`${basePath}complaint/getAllComplaintsType`
 };
 
 module.exports = {
