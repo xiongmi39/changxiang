@@ -2,20 +2,23 @@
 
 <view class="weui-cells weui-cells_after-title">
   <view url="" class="weui-cell weui-cell_access no_handle" hover-class="weui-cell_active">
-    <view class="weui-cell__bd">{{folderTitle}}</view>
-    <view style="top:0" bindtap="showFrom" data-param="{{folderKey}}" class="down {{arrowClass}}"><image   src="../../images/cxdown.png" class="down"></image></view>
+    <view class="weui-cell__bd">{{complaintType.name}}</view>
+    <view style="top:0" bindtap="showFrom" data-param="{{complaintType.complaint_type_id}}" class="down {{arrowClass}}"><image   src="../../images/cxdown.png" class="down"></image></view>
   </view>
   <view style="background: #f8f8f8;" class="{{panelClass}}">
     <view class="weui-grids">
-      <view class="weui-grid"  bindtap="bindCity" >
-        <view class="weui-grid__label">机场大巴</view>
-      </view>
-      <view class="weui-grid"  bindtap="bindCity" >
-        <view class="weui-grid__label">网约车</view>
-      </view>
-      <view class="weui-grid"  bindtap="bindCity" >
-        <view class="weui-grid__label">出租车</view>
-      </view>
+      <block wx:for="{{complaintType.complaint_typemx}}">
+        <block wx:if="{{item.checked == true}}">
+          <view  class="weui-grid checked"  bindtap="chooseType" data-param = "{{item}}" >
+            <view class="weui-grid__label">{{item.name}}</view>
+          </view>
+        </block>
+        <block wx:if="{{item.checked == false}}">
+          <view  class="weui-grid"  bindtap="chooseType" data-param = "{{item}}" >
+            <view class="weui-grid__label">{{item.name}}</view>
+          </view>
+        </block>
+      </block>
     </view>
   </view>
 </view>

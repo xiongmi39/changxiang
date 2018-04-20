@@ -4,6 +4,7 @@ var app = getApp()
 Page({
   data: {
     flightInfo:"",
+    isFromList:"",
     startCity:"",
     endCity:"",
     realisland:"",
@@ -26,7 +27,8 @@ Page({
   },
   onLoad: function (options) {
     this.setData({    
-      flightInfo: JSON.parse(options.flightInfo)    
+      flightInfo: JSON.parse(options.flightInfo),
+      isFromList: options.isFromList    
     })
     console.log(this.data.flightInfo);
     var flightInfo = app.util.handleflightInfo(this.data.flightInfo);
@@ -54,7 +56,17 @@ Page({
     }
   },
   _refreshFlight: function(){
-    this.searchFlightByNo();
+    var pages = getCurrentPages()
+    var prevPage = ""  //上上一个页面
+    
+    if(this.data.isFromList == "true"){
+      prevPage = pages[pages.length-1]
+      wx.navigateBack(prevPage);
+    }else{
+      prevPage = pages[pages.length-2]
+      wx.navigateBack(prevPage);
+    }
+    // this.searchFlightByNo();
   },
   searchFlightByNo:function(){
     var that = this;

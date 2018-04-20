@@ -36,6 +36,10 @@ Component({
     folderKey:{
       type : String ,
       value : ''
+    },
+    complaintType: {
+      type : Object,
+      value: {}
     }
   },
 
@@ -72,152 +76,6 @@ Component({
    * 更新属性和数据的方法与更新页面数据的方法类似
    */
    methods: {
-     modalinput:function(){  
-        this.setData({  
-         hiddenmodalput: !this.data.hiddenmodalput  
-       })  
-    },
-    resetData: function(){
-      this.setData({  
-        hiddenmodalput:false,
-        verticode:"",
-        isDisabled: false,
-        phoneNo:"",
-        wait:0,
-        sendCount:"获取验证码",
-        ifPhoneErr:true,
-        isUp:false,
-        ifVericodeErr:true
-      }) 
-
-
-    },  
-    //取消按钮  
-    cancel: function(){  
-      this.resetData();
-    },  
-    //确认  
-    confirm: function(){  
-      if(this.data.isDisabled == true){
-        return;
-      }
-      if(app.util.commonCheck.isNull(this.data.phoneNo) || !app.util.commonCheck.isPhone(this.data.phoneNo)){
-        console.log("不能为空");
-        this.setData({
-          ifPhoneErr:false
-        })
-        return;
-      }
-      if(app.util.commonCheck.isNull(this.data.verticode)){
-        this.setData({
-          ifVericodeErr:false
-        })
-        return;
-      }
-      this.setData({
-        isDisabled: true
-      })
-      this.saveRemindFlightInfo();
-      // this.resetData(); 
-    },
-    getVertiCode: function(){
-      var that = this;
-      if(this.data.isDisabled == true){
-        return;
-      }
-      if(app.util.commonCheck.isNull(this.data.phoneNo) || !app.util.commonCheck.isPhone(this.data.phoneNo)){
-        console.log("不能为空");
-        this.setData({
-          ifPhoneErr:false
-        })
-        return;
-      }
-      this.time();
-
-      wx.request({
-        url: app.appConfig.config.sendPhoneVerificationCode,
-        data: {
-          passenger_phone:that.data.phoneNo,
-          openId:wx.getStorageSync('openId'),
-          sign: app.appConfig.getSign(app.appConfig.config.sendPhoneVerificationCode,[{key:"passenger_phone",value:that.data.phoneNo}])
-        },
-        success: function(res){
-          app.openToast('验证码发送成功');
-        },
-        fail: function(){
-          app.openAlert();
-        }
-      })
-      
-    },
-    time: function() {
-      if (this.data.wait == 0) {
-        this.setData({
-          sendCount: "获取验证码",
-          wait:60
-        })
-      } else { 
-        var showcount =this.data.wait+"s";
-        this.setData({
-          sendCount: showcount
-        })
-        this.data.wait--;
-        setTimeout(()=>{
-          this.time();
-        },1000);
-      }
-    },
-    inputChange: function(e){
-      var key = e.currentTarget.id;
-      var value = e.detail.value;
-      console.log(e);
-      this.setData({
-        [key]:value,
-        ifPhoneErr:true,
-        ifVericodeErr:true
-      })
-    },
-    onFocus: function(){
-      this.setData({
-        isUp:true
-      })
-    },
-    onBlur: function(){
-     this.setData({
-      isUp:false
-    })   
-    },
-    saveRemindFlightInfo: function(){
-      var that = this;
-      wx.request({
-        url: app.appConfig.config.saveRemindFlightInfo,
-        data: {
-          passenger_phone:that.data.phoneNo,
-          verticode:that.data.verticode,
-          flight_no:that.data.flightNo,
-          flight_date:that.data.flight_date,
-          openId:wx.getStorageSync('openId'),
-          sign: app.appConfig.getSign(app.appConfig.config.saveRemindFlightInfo,[{key:"passenger_phone",value:that.data.phoneNo},{key:"verticode",value:that.data.verticode},{key:"flight_no",value:that.data.flightNo},{key:"flight_date",value:that.data.flight_date}])
-        },
-        success: function(res){
-          if(res.statusCode == "404"){
-            app.openAlert('添加提醒失败');
-            that.resetData();
-            return;
-          }
-          app.openToast('添加提醒成功');
-          that._refreshFlight();
-          that.resetData();
-        },
-        fail: function(){
-          that.resetData();
-          app.openAlert();
-        }
-      })
-    },
-    _refreshFlight: function(){
-      this.triggerEvent("refreshFlight");
-    },
     showFrom: function(e){
       var param = e.currentTarget.dataset.param; 
       var key = "isShowFrom"+param;
@@ -241,6 +99,23 @@ Component({
       }     
       this.setData({ 
         [key]: !this.data[key],
+      });
+    },
+    chooseType: function(e){
+      var param = e.currentTarget.dataset.param.complaint_type_code;
+      var changed = this.data.complaintType.complaint_typemx.map((item)=>{
+          if(item.complaint_type_code == param){
+              item.checked = true;
+              
+          }else{
+            item.checked = false;
+          }
+          return item;
+      })
+      var newData = this.data.complaintType;
+      newData.complaint_typemx = changed;
+      this.setData({
+        complaintType:newData
       });
     }
 

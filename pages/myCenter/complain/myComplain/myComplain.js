@@ -13,6 +13,22 @@ Page({
     })
   },
   onLoad: function () {
-    
+    this.getAllComplaintsAdvice();
+  },
+  getAllComplaintsAdvice: function(){
+    wx.request({
+      url: app.appConfig.config.getAllComplaintsAdvice,
+      data: {
+        openId:wx.getStorageSync('openId'),
+        sign: app.appConfig.getSign(app.appConfig.config.getAllComplaintsAdvice,[])
+      },
+      success: function(res){
+        console.log(res);
+      },
+      fail: function(){
+        app.openAlert();
+
+      }
+    })
   }
 })

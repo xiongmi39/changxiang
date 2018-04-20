@@ -2,8 +2,7 @@
 <view class="page__bd">
 	<view class="container">
 		<view class="weui-cells__title"></view>
-		<cxFolder id='cxFolder' bind:refreshFlight="_refreshFlight" folderTitle='出行相关' folderKey='transport' flight_date='{{currentFlight.startDate}}'>
+		<cxFolder bindchange='handleChange' id='cxFolder' wx:for="{{complaintType}}" bind:refreshFlight="_refreshFlight" complaintType="{{item}}" folderTitle='出行相关' folderKey='transport' flight_date='{{currentFlight.startDate}}'>
 		</cxFolder>
-		<cxFolder id='cxFolder' bind:refreshFlight="_refreshFlight" folderTitle='航站楼设施' folderKey='building' flight_date='{{currentFlight.startDate}}'></cxFolder>
 	</view>
 </view>

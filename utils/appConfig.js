@@ -1,5 +1,5 @@
 //假数据
-// var basePath = "http://rap2api.taobao.org/app/mock/8763/GET/";
+// var basePath = "http://rap2api.taobao.org/app/mock/8763/";
 var md5 = require('./md5.js');
 
 //测试服务地址
@@ -30,6 +30,7 @@ function getSign(url,params){
 	var finalurl = `${url.replace("http://", "")}?${paramstext}token=${wx.getStorageSync('token')}&date=${currentdate}`;
 	console.log("finalurl:" + finalurl);
 	var sign = md5.hexMD5(finalurl);
+	console.log("sign:"+ sign);
 	return sign;
 }
 function getparamArr(){
@@ -78,7 +79,10 @@ var config = {
 	'deleteFlightRemind': `${basePath}flightRemind/deleteFlightRemind`,
 	'getCarouselFigureinfo': `${basePath}carouselFigure/getCarouselFigureinfo`,
 	'sendPhoneVerificationCode': `${basePath}verification/sendPhoneVerificationCode`,
-	'getAllComplaintsType' :`${basePath}complaint/getAllComplaintsType`
+	'getAllComplaintsType' :`${basePath}complaint/getAllComplaintsType`,
+	'saveComplain': `${basePath}complaint/saveComplaintsAdvice`,
+	'getAllComplaintsAdvice': `${basePath}complaint/getAllComplaintsAdvice`
+	
 };
 
 module.exports = {

@@ -4,8 +4,6 @@ var app = getApp()
 // var upload = require('../../../utils/upload.js');
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
     files: [],
     complain:"",
     count:"0/500",
@@ -14,7 +12,11 @@ Page({
     phoneNo:"",
     ifPhoneErr:true,
     uploaded:"",
-    uploadFilesPath:[]
+    uploadFilesPath:[],
+    complaintType:"",
+    isAllUploaded:false,
+    complaint_type_code:"05",
+    complaint_subtype_code:"0502"
   },
   //事件处理函数
   bindViewTap: function() {
@@ -75,6 +77,11 @@ Page({
            that.setData({
             uploadFilesPath :uploadFilesPath
           })
+           if(that.data.uploadFilesPath.length == that.data.files.length){
+            that.setData({
+              isAllUploaded: true
+            })
+           }
            console.log(that.data.uploadFilesPath);
          }  
        }) 
@@ -114,6 +121,7 @@ Page({
     console.log(this.data.phoneNo);
   },
   confirm: function(){
+    var that = this;
     if(app.util.commonCheck.isNull(this.data.complain) || !app.util.commonCheck.isMinAndMaxStr(this.data.complain,0,500)){
       return;
     }
@@ -127,6 +135,34 @@ Page({
       return;
     }
     this.uploadFile();
+    var i=setInterval(function(){
+      if(that.data.isAllUploaded){
+        that.saveComplain();
+        clearInterval(i);
+      }
+    },500)
+    // this.saveComplain();
+  },
+  saveComplain: function(){
+    var complain = {
+      complaint_content: this.data.complain,
+      imgs:this.data.uploadFilesPath,
+      phone_number: this.data.phoneNo,
+      complaint_type_code: this.data.complaint_type_code,
+      complaint_subtype_code: this.data.complaint_subtype_code,
+      openId:wx.getStorageSync('openId')
+    };
+    wx.request( { 
+     url: app.appConfig.config.saveComplain, 
+     header: { 
+      "content-type": "application/x-www-form-urlencoded"
+    }, 
+    method: "POST", 
+    data: app.util.json2Form(complain), 
+    complete: function( res ) { 
+      console.log(res);
+    } 
+  }) 
   }
 
 })

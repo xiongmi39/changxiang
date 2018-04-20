@@ -10,17 +10,9 @@ Component({
    * 用于组件自定义设置
    */
    properties: {
-    confirmText :{
+    star :{
       type : String ,
-      value : '确定'
-    } ,
-    flightNo :{
-      type : String ,
-      value : ''
-    } ,
-    flight_date:{
-      type : String ,
-      value : ''
+      value : '0'
     }
   },
 
@@ -57,8 +49,11 @@ Component({
       var key = e.currentTarget.dataset.key
       count = key
       this.setData({
-        key: key
-      }) 
+        key: key,
+        star: key
+      })
+      console.log(this.data.star) 
+      this.triggerEvent('change', { value: this.data.star }, e);
     },
     startRating:function(e){
       wx.showModal({

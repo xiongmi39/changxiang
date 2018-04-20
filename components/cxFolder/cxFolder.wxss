@@ -34,3 +34,6 @@
 .arrow-turn .down{
   transform :rotate(-180deg) ;
 }
+.checked{
+  border: 1px solid #cf4227 ;
+}
