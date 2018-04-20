@@ -36,5 +36,23 @@ Page({
     this.setData({
       star: e.detail.value
     })
+  },
+  saveComplaintEvaluate: function(){
+    var that = this;
+    wx.request({
+      url: app.appConfig.config.saveComplaintEvaluate,
+      data: {
+        complaint_code: that.data.complaintDetail.complaint_code,
+        score: that.data.star,
+        openId:wx.getStorageSync('openId'),
+        sign: app.appConfig.getSign(app.appConfig.config.saveComplaintEvaluate,[{key:"complaint_code",value:that.data.complaintDetail.complaint_code},{key:"score",value:that.data.star}])
+      },
+      success: function(res){
+        
+      },
+      fail: function(){
+
+      }
+    })
   }
 })

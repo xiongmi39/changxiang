@@ -5,4 +5,5 @@
 		<cxFolder bindchange='handleChange' id='cxFolder'  bind:refreshFlight="_refreshFlight" complaintType="{{complaintType}}"  flight_date='{{currentFlight.startDate}}'>
 		</cxFolder>
 	</view>
+	<button class="sureBtn" bindtap="sureType">确定</button>
 </view>

@@ -15,16 +15,16 @@
             			</view>
             		</block> -->
             		<view class="weui-uploader__file">
-            			<image class="weui-uploader__img" src="{{complaintDetail.complaint_content.picture_url1}}" mode="aspectFill" />
+            			<image class="weui-uploader__img" src="{{complaintDetail.picture_url1}}" mode="aspectFill" />
             		</view>
             		<view class="weui-uploader__file">
-            			<image class="weui-uploader__img" src="{{complaintDetail.complaint_content.picture_url2}}" mode="aspectFill" />
+            			<image class="weui-uploader__img" src="{{complaintDetail.picture_url2}}" mode="aspectFill" />
             		</view>
             		<view class="weui-uploader__file">
-            			<image class="weui-uploader__img" src="{{complaintDetail.complaint_content.picture_url3}}" mode="aspectFill" />
+            			<image class="weui-uploader__img" src="{{complaintDetail.picture_url3}}" mode="aspectFill" />
             		</view>
             		<view class="weui-uploader__file">
-            			<image class="weui-uploader__img" src="{{complaintDetail.complaint_content.picture_url4}}" mode="aspectFill" />
+            			<image class="weui-uploader__img" src="{{complaintDetail.picture_url4}}" mode="aspectFill" />
             		</view>
             	</view>
             </view>
@@ -32,7 +32,7 @@
             </view>
             <block wx:if="{{complaintDetail.complaint_status == '2'}}">
             
-		<view class="weui-cells__title">客户回复</view>
+		<view class="weui-cells__title">客服回复</view>
 		<view class="weui-cells weui-cells_after-title">
 			<view class="complain_main">{{complaintDetail.back_content}}</view>
 			<view class="complain_no"><text>{{complaintDetail.back_time}}</text></view>
@@ -44,5 +44,5 @@
 		<cxRate id='cxRate' star='{{star}}' bindchange='handleChange'>
 		</cxRate>
 	</view>
-	<button class="sureBtn" bindtap="sendStar">提交评价</button>
+	<button class="sureBtn" bindtap="saveComplaintEvaluate">提交评价</button>
 </view>

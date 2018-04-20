@@ -17,13 +17,19 @@ Page({
     })
   },
   onLoad: function () {
+    wx.setStorageSync('token', "");
+    wx.setStorageSync('openId', "");
     console.log('onLoad')
     var that = this;
   	//登录
     app.logIn();
-    //接口测试
-    this.getCarouselFigureinfo();
-
+    //同步处理
+    var i=setInterval(function(){
+      if(wx.getStorageSync('token') !== ""){
+        that.getCarouselFigureinfo();
+        clearInterval(i);
+      }
+    },500)
 
   },
   bindViewTap: function(event){

@@ -3,7 +3,9 @@
 var app = getApp()
 Page({
   data: {
-    complaintType:[]
+    complaintType:[],
+    complaint_type_code: "",
+    complaint_typemx_code:""
   },
   onLoad: function () {
     this.getAllComplaintsType();
@@ -31,11 +33,35 @@ Page({
           complaintType: res.data.pd
         })
         console.log(that.data.complaintType);
+        
       },
       fail: function(){
         app.openAlert();
 
       }
     })
+  },
+  handleChange: function(e) {
+    this.setData({
+      complaint_type_code: e.detail.complaint_type_code,
+      complaint_typemx_code: e.detail.complaint_typemx_code
+    })
+    console.log("back");
+    console.log(this.data.complaint_type_code);
+    console.log(this.data.complaint_typemx_code);
+  },
+  navigateBackFunc: function(){
+    var pages = getCurrentPages()
+    var prevPage = pages[pages.length-1]  //当前界面
+    var prevPage = pages[pages.length-2]  //上一个页面
+    var that = this
+    prevPage.setData({
+      complaint_type_code: that.data.complaint_type_code,
+      complaint_subtype_code: that.data.complaint_typemx_code
+    })
+    wx.navigateBack(prevPage);
+  },
+  sureType: function(){
+    this.navigateBackFunc();
   }
 })

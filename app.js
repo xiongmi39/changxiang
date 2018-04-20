@@ -54,6 +54,7 @@ App({
               that.globalData.openId = res.data.openId;
               wx.setStorageSync('token', res.data.token);
               wx.setStorageSync('openId', res.data.openid);
+              console.log("token:"+res.data.token);
               wx.getUserInfo({
                 success: function (res) {
                   // that.setData({userInfo: res.userInfo})

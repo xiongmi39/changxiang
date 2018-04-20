@@ -1,10 +1,10 @@
 //假数据
-var basePath = "http://rap2api.taobao.org/app/mock/8763/";
+// var basePath = "http://rap2api.taobao.org/app/mock/8763/";
 var md5 = require('./md5.js');
 
 //测试服务地址
 // var basePath = "http://192.168.4.82:9080/pss_mp/";
-// var basePath = "http://192.168.1.137:80/pss_mp/";
+var basePath = "http://192.168.1.137:80/pss_mp/";
 // var basePath = "http://47.104.178.197:8082/pss_mp/";
 // var basePath = "https://www.kkhedu.cn/pss_mp/";
 var accessid= 'LTAI9x58N5LlyUIP';
@@ -26,7 +26,7 @@ function getSign(url,params){
 	// console.log("currentdate:"+currentdate);
 	// console.log("token:"+wx.getStorageSync('token'));
 	// console.log("openid:"+wx.getStorageSync('openid'));
-	
+	console.log('token:'+wx.getStorageSync('token'));
 	var finalurl = `${url.replace("http://", "")}?${paramstext}token=${wx.getStorageSync('token')}&date=${currentdate}`;
 	console.log("finalurl:" + finalurl);
 	var sign = md5.hexMD5(finalurl);
@@ -81,7 +81,8 @@ var config = {
 	'sendPhoneVerificationCode': `${basePath}verification/sendPhoneVerificationCode`,
 	'getAllComplaintsType' :`${basePath}complaint/getAllComplaintsType`,
 	'saveComplain': `${basePath}complaint/saveComplaintsAdvice`,
-	'getAllComplaintsAdvice': `${basePath}complaint/getAllComplaintsAdvice`
+	'getAllComplaintsAdvice': `${basePath}complaint/getAllComplaintsAdvice`,
+	'saveComplaintEvaluate': `${basePath}complaint/saveComplaintEvaluate`
 	
 };
 

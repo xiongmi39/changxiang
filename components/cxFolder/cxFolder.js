@@ -89,6 +89,7 @@ Component({
               complaint_type_code: item.complaint_type_code,
               complaint_typemx_code:i.complaint_type_code
             })
+            that.triggerEvent('change', { complaint_type_code: that.data.complaint_type_code,complaint_typemx_code: that.data.complaint_typemx_code }, e);
           }else{
             i.checked = false;
           }
