@@ -38,8 +38,8 @@ Component({
       value : ''
     },
     complaintType: {
-      type : Object,
-      value: {}
+      type : Array,
+      value: []
     }
   },
 
@@ -48,19 +48,8 @@ Component({
    * 可用于模版渲染
    */
   data: {
-    // 弹窗显示控制
-    hiddenmodalput:false,
-    verticode:"",
-    isDisabled: false,
-    phoneNo:"",
-    wait:60,
-    sendCount:"获取验证码",
-    ifPhoneErr:true,
-    isUp:false,
-    ifVericodeErr:true,
-    keyName:'',
-    arrowClass:'',
-    panelClass:'tui-hide'
+    complaint_type_code: "",
+    complaint_typemx_code:""
 
   },
   attached: function(){
@@ -78,45 +67,38 @@ Component({
    methods: {
     showFrom: function(e){
       var param = e.currentTarget.dataset.param; 
-      var key = "isShowFrom"+param;
-      if(this.data.arrowClass == 'arrow-turn'){
-        this.setData({ 
-          arrowClass: ''
-        });
-      }else{
-        this.setData({ 
-          arrowClass: 'arrow-turn'
-        });
-      }
-      if(this.data.panelClass == 'tui-hide'){
-        this.setData({ 
-          panelClass: ''
-        });
-      }else{
-        this.setData({ 
-          panelClass: 'tui-hide'
-        });
-      }     
-      this.setData({ 
-        [key]: !this.data[key],
-      });
+      var newItem = this.data.complaintType.map((item) =>{
+        if(item.complaint_type_id == param){
+          item.isExpanded = !item.isExpanded;
+        }
+        return item;
+      })
+      this.setData({
+        complaintType:newItem
+      })
     },
     chooseType: function(e){
       var param = e.currentTarget.dataset.param.complaint_type_code;
-      var changed = this.data.complaintType.complaint_typemx.map((item)=>{
-          if(item.complaint_type_code == param){
-              item.checked = true;
-              
+      var tmplist = this.data.complaintType;
+      var that = this;
+      tmplist.map((item)=>{
+        item.complaint_typemx.map((i) =>{
+          if(i.complaint_type_code == param){
+            i.checked = true;
+            that.setData({
+              complaint_type_code: item.complaint_type_code,
+              complaint_typemx_code:i.complaint_type_code
+            })
           }else{
-            item.checked = false;
+            i.checked = false;
           }
-          return item;
+        })
       })
-      var newData = this.data.complaintType;
-      newData.complaint_typemx = changed;
+      console.log(this.data.complaint_type_code);
+      console.log(this.data.complaint_typemx_code);
       this.setData({
-        complaintType:newData
-      });
+        complaintType: tmplist
+      })
     }
 
   }

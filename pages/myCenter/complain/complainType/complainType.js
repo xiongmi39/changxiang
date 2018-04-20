@@ -25,6 +25,7 @@ Page({
           item.complaint_typemx.map((i) =>{
             i.checked = false;
           })
+          item.isExpanded = false;
         })
         that.setData({
           complaintType: res.data.pd

@@ -1,24 +1,31 @@
 <!--cxFolder.wxml-->
 
-<view class="weui-cells weui-cells_after-title">
+<view class="weui-cells weui-cells_after-title" wx:for="{{complaintType}}">
   <view url="" class="weui-cell weui-cell_access no_handle" hover-class="weui-cell_active">
-    <view class="weui-cell__bd">{{complaintType.name}}</view>
-    <view style="top:0" bindtap="showFrom" data-param="{{complaintType.complaint_type_id}}" class="down {{arrowClass}}"><image   src="../../images/cxdown.png" class="down"></image></view>
+    <view class="weui-cell__bd">{{item.name}}</view>
+    <block wx:if="{{item.isExpanded == false}}">
+      <view style="top:0" bindtap="showFrom" data-param="{{item.complaint_type_id}}" class="down"><image   src="../../images/cxdown.png" class="down"></image></view>
+    </block>
+    <block wx:if="{{item.isExpanded == true}}">
+      <view style="top:0" bindtap="showFrom" data-param="{{item.complaint_type_id}}" class="down arrow-turn"><image   src="../../images/cxdown.png" class="down"></image></view>
+    </block>
   </view>
-  <view style="background: #f8f8f8;" class="{{panelClass}}">
-    <view class="weui-grids">
-      <block wx:for="{{complaintType.complaint_typemx}}">
-        <block wx:if="{{item.checked == true}}">
-          <view  class="weui-grid checked"  bindtap="chooseType" data-param = "{{item}}" >
-            <view class="weui-grid__label">{{item.name}}</view>
-          </view>
+  <block wx:if="{{item.isExpanded == true}}">
+    <view style="background: #f8f8f8;" >
+      <view class="weui-grids">
+        <block wx:for="{{item.complaint_typemx}}"  wx:for-item="itemx" wx:key="itemx">
+          <block wx:if="{{itemx.checked == true}}">
+            <view  class="weui-grid checked"  bindtap="chooseType" data-param = "{{itemx}}" >
+              <view class="weui-grid__label">{{itemx.name}}</view>
+            </view>
+          </block>
+          <block wx:if="{{itemx.checked == false}}">
+            <view  class="weui-grid"  bindtap="chooseType" data-param = "{{itemx}}" >
+              <view class="weui-grid__label">{{itemx.name}}</view>
+            </view>
+          </block>
         </block>
-        <block wx:if="{{item.checked == false}}">
-          <view  class="weui-grid"  bindtap="chooseType" data-param = "{{item}}" >
-            <view class="weui-grid__label">{{item.name}}</view>
-          </view>
-        </block>
-      </block>
+      </view>
     </view>
-  </view>
+  </block>
 </view>

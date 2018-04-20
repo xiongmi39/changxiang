@@ -37,7 +37,7 @@ Page({
   goDetail: function(e){
     var complaintDetail = JSON.stringify(e.currentTarget.dataset.detail);
     wx.navigateTo({
-      url: '../flightDetail/flightDetail?complaintDetail='+complaintDetail
+      url: '../complainDetail/complainDetail?complaintDetail='+complaintDetail
     })
   }
 })
