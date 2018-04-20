@@ -35,10 +35,10 @@
             </view>
         </view>
         <view class="weui-cells weui-cells_after-title">
-        	<navigator url="./complainType/complainType" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+        	<view  class="weui-cell weui-cell_access" hover-class="weui-cell_active" bindtap="goType">
         		<view class="weui-cell__bd">选择问题分类</view>
         		<view class="weui-cell__ft weui-cell__ft_in-access"></view>
-        	</navigator>
+        	</view>
         </view>
         <view class="weui-cells weui-cells_after-title">
         	<view class="weui-cell weui-cell_input">

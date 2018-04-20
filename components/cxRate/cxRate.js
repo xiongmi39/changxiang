@@ -10,9 +10,15 @@ Component({
    * 用于组件自定义设置
    */
    properties: {
-    star :{
+    score :{
       type : String ,
-      value : '0'
+      value : '0',
+      observer: function(){
+        var that = this;
+        this.setData({
+          key: that.data.score
+        })
+      }
     }
   },
 
@@ -54,20 +60,6 @@ Component({
       })
       console.log(this.data.star) 
       this.triggerEvent('change', { value: this.data.star }, e);
-    },
-    startRating:function(e){
-      wx.showModal({
-        title: '分数',
-        content: ""+count,
-        success: function(res) {
-          if (res.confirm) {
-            console.log('用户点击确定')
-          }
-        }
-      })
-    },
-  _refreshFlight: function(){
-    this.triggerEvent("refreshFlight");
-  }
+    }
 }
 })

@@ -15,8 +15,8 @@ Page({
     uploadFilesPath:[],
     complaintType:"",
     isAllUploaded:false,
-    complaint_type_code:"05",
-    complaint_subtype_code:"0502"
+    complaint_type_code:"",
+    complaint_subtype_code:""
   },
   //事件处理函数
   bindViewTap: function() {
@@ -134,6 +134,9 @@ Page({
       })
       return;
     }
+    if(app.util.commonCheck.isNull(this.data.complaint_type_code)){
+      app.openToast('请选择问题分类');
+    }
     this.uploadFile();
     var i=setInterval(function(){
       if(that.data.isAllUploaded){
@@ -166,6 +169,11 @@ Page({
       console.log(res);
     } 
   }) 
+  },
+  goType: function(){
+    wx.navigateTo({
+      url: '../complain/complainType/complainType?complaint_type_code='+this.data.complaint_type_code+'&complaint_typemx_code='+this.data.complaint_subtype_code
+    })
   }
 
 })

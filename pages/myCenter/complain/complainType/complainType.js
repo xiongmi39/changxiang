@@ -7,7 +7,11 @@ Page({
     complaint_type_code: "",
     complaint_typemx_code:""
   },
-  onLoad: function () {
+  onLoad: function (options) {
+    this.setData({    
+      complaint_type_code: options.complaint_type_code,
+      complaint_typemx_code: options.complaint_typemx_code    
+    })
     this.getAllComplaintsType();
   },
   onReady: function () {
@@ -25,9 +29,14 @@ Page({
       success: function(res){
         res.data.pd.map((item) => {
           item.complaint_typemx.map((i) =>{
-            i.checked = false;
+            if(that.data.complaint_typemx_code == i.complaint_type_code){
+              i.checked = true;
+            }else{
+              i.checked = false;
+            }
+           
           })
-          item.isExpanded = false;
+          item.isExpanded = true;
         })
         that.setData({
           complaintType: res.data.pd
