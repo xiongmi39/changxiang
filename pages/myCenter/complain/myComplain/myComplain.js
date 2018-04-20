@@ -3,8 +3,7 @@
 var app = getApp()
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {}
+    complaintList:[]
   },
   //事件处理函数
   bindViewTap: function() {
@@ -16,6 +15,7 @@ Page({
     this.getAllComplaintsAdvice();
   },
   getAllComplaintsAdvice: function(){
+    var that = this;
     wx.request({
       url: app.appConfig.config.getAllComplaintsAdvice,
       data: {
@@ -23,12 +23,21 @@ Page({
         sign: app.appConfig.getSign(app.appConfig.config.getAllComplaintsAdvice,[])
       },
       success: function(res){
+        that.setData({
+          complaintList: res.data.pd
+        })
         console.log(res);
       },
       fail: function(){
         app.openAlert();
 
       }
+    })
+  },
+  goDetail: function(e){
+    var complaintDetail = JSON.stringify(e.currentTarget.dataset.detail);
+    wx.navigateTo({
+      url: '../flightDetail/flightDetail?complaintDetail='+complaintDetail
     })
   }
 })

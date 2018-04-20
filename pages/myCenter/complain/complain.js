@@ -146,12 +146,15 @@ Page({
   saveComplain: function(){
     var complain = {
       complaint_content: this.data.complain,
-      imgs:this.data.uploadFilesPath,
       phone_number: this.data.phoneNo,
       complaint_type_code: this.data.complaint_type_code,
       complaint_subtype_code: this.data.complaint_subtype_code,
       openId:wx.getStorageSync('openId')
     };
+    for(var i=1; i<this.data.uploadFilesPath.length+1; i++ ){
+      var name = "picture_url"+i;
+      complain[name] = this.data.uploadFilesPath[i-1];
+    }
     wx.request( { 
      url: app.appConfig.config.saveComplain, 
      header: { 

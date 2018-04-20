@@ -3,7 +3,8 @@
 var app = getApp()
 Page({
   data: {
-    star: "0"
+    star: "0",
+    complaintDetail:{}
   },
   //事件处理函数
   bindViewTap: function() {
@@ -11,7 +12,11 @@ Page({
       url: '../logs/logs'
     })
   },
-  onLoad: function () {
+  onLoad: function (options) {
+    this.setData({    
+      complaintDetail: JSON.parse(options.complaintDetail)
+    })
+    console.log(this.data.complaintDetail);   
 
   },
   onReady: function () {
